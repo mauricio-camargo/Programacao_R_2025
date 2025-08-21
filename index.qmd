@@ -1,8 +1,9 @@
 ---
 title: "Lógica da programação (de computadores) e análise de dados no R"
+subtitle: Prof. Mauricio Camargo
+format: html
 lang: pt-br
 engine: knitr
-
 ---
 
 ```{css,  echo=FALSE}
@@ -10,4 +11,8 @@ engine: knitr
  text-align:
 justify !important}
 ```
+
+## Links para as aulas
+
+[Aula 21-08-25](Aula1.html)
 
