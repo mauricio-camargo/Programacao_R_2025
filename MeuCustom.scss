@@ -1,0 +1,25 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: Helvetica;
+$presentation-h1-font-size:	1.3em;
+$presentation-heading-color:  #e0020c;
+$presentation-h2-font-size:	1.2em;
+$presentation-h3-font-size:	1.1em;
+$presentation-h4-font-size:	1.0em;
+
+$presentation-font-smaller:	0.8;
+$presentation-line-height: 1.2;
+
+/*-- scss:rules --*/
+
+.reveal .slide-logo {
+  height: 100px !important;
+  width: 100px!important;
+  max-width: unset !important;
+  max-height: unset !important;
+}
+
+.reveal .slide blockquote {
+  border-left: 3px solid $text-muted;
+  padding-left: 0.5em;
+}

@@ -1,0 +1,37 @@
+---
+title: "Programação no R - Aula 1"
+institute: "Prof. Maurício Garcia de Camargo. IO-FURG."
+author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R"
+date: 2025-08-21
+lang: pt-br
+format: 
+  revealjs:
+#    theme: [serif, MeuCustom.scss]
+    logo: images/furg3.png
+    slide-number: true
+    chalkboard: true #Muito bom para aula
+    show-slide-number: all
+    controls: true #Não é menu. ToDo.
+    #Sem estes css o :::box não funciona
+    css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
+---
+
+## Nome da disciplina{.larger}
+
+    
+<br>
+
+<span style="font-size:40pt">Lógica da programação (de computadores) e análise de dados no R</span>.
+
+
+<!--
+::: callout-note
+Para entender a importância do **metamerismo**, temos que saber o que é um organismo **celomado**.
+:::
+-->
+
+## Celoma
+
+-   Celoma é uma cavidade corporal preenchida pelo fluído celômico.\
+-   Celoma atinge o maior estágio de desenvolvimento nos Annelida, por isso é **chamado de verdadeiro**.
+-   Para ser um celoma verdadeiro, precisa ter origem **mesodérmica** e estar encerrado entre a ectoderme e a endoderme. Vermes inferiores, como platelmintos e Nematoda não possuem celoma verdadeiro.
