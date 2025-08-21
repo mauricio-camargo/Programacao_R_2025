@@ -1,0 +1,1 @@
+História da computação. Elementos de um computador. Sistemas operacionais e sistemas de arquivos. Linguagens de programação. Ambientes de desenvolvimento integrado (IDEs). Algoritmos. Elementos básicos: objetos, variáveis (tipos), listas, duplas, arranjos e vetores. Estruturas de repetição. Testes lógicos. Carregamento, transformação e salvamento de dados.

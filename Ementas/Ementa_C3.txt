@@ -1,0 +1,12 @@
+Introdução à Lógica de Programação
+C3 - 23105P
+
+Ementa
+Conceitos Básicos; Declaração de Variáveis Tipos Básicos. Comandos de Atribuição, Entrada e Saída. Expressões Aritméticas, Lógicas e Literais. Estruturas de Seleção (Decisão). Estruturas de Repetição. Variáveis Compostas Homogêneas (Vetores, Algoritmos de Ordenação, Busca em Vetores, Matrizes). Variáveis Compostas Heterogêneas (Registros, Arquivos). Modularização (Funções, Procedimentos).Estruturas Abstratas de Dados (Listas, Pilhas, Filas). Uso do JavaScript.
+
+Número de Semanas
+15
+Total de Horas Aula
+30
+Número de Créditos
+2

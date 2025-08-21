@@ -1,0 +1,4 @@
+Lógica da programação em R.
+
+Ementa
+R como uma linguagem de programação. Por que aprender lógica de programação em R? Linguagens compiladas e interpretadas. Funções em R e seus argumentos. Introdução à orientação a objetos. Variáveis, vetores, matrizes e outras estruturas de dados em R. Expressões aritméticas, lógicas e literais. Estruturas de controle em R: repetição e condição. Particularidades do R (base-R) para manipulação de dados, usando estruturas de repetição e condição embutidas. 
