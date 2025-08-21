@@ -16,13 +16,13 @@ format:
     css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
 ---
 
-## Nome da disciplina{.larger}
+## Lógica da programação (de computadores) e análise de dados no R.
 
-    
-<br>
-
-<span style="font-size:40pt">Lógica da programação (de computadores) e análise de dados no R</span>.
-
+Computadores: como funcionam?  
+Programação: o que é?  
+Lógica: para que serve?  
+Análise de dados: do que se trata?  
+R: por que vale a pena aprender?  
 
 <!--
 ::: callout-note
