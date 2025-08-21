@@ -1,5 +1,5 @@
 ---
-title: "Maurício Garcia de Camargo"
+title: "Lógica da programação (de computadores) e análise de dados no R"
 lang: pt-br
 engine: knitr
 
@@ -11,4 +11,3 @@ engine: knitr
 justify !important}
 ```
 
-TEstestes
