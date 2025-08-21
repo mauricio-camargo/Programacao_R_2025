@@ -1,0 +1,14 @@
+---
+title: "Maurício Garcia de Camargo"
+lang: pt-br
+engine: knitr
+
+---
+
+```{css,  echo=FALSE}
+.justify {
+ text-align:
+justify !important}
+```
+
+Teste
