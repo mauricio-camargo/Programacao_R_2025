@@ -16,7 +16,8 @@ format:
     css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
 ---
 
-## Lógica da programação (de computadores) e análise de dados no R.
+## <span style="font-size:40pt">Lógica da programação (de computadores) e análise de dados no R.</span>
+
 
 Computadores: como funcionam?  
 Programação: o que é?  
@@ -30,8 +31,107 @@ Para entender a importância do **metamerismo**, temos que saber o que é um org
 :::
 -->
 
-## Celoma
+## R
 
--   Celoma é uma cavidade corporal preenchida pelo fluído celômico.\
--   Celoma atinge o maior estágio de desenvolvimento nos Annelida, por isso é **chamado de verdadeiro**.
--   Para ser um celoma verdadeiro, precisa ter origem **mesodérmica** e estar encerrado entre a ectoderme e a endoderme. Vermes inferiores, como platelmintos e Nematoda não possuem celoma verdadeiro.
+**1.** É um sistema livre (Copyleft), extremamente **versátil**, que serve para:  
+
+-   Ler e manipular **dados**
+-   Realizar **cálculos**  
+-   Conduzir análises **estatísticas**  
+-   Apresentar **graficamente** os resultados  
+
+Em resumo, R é um ambiente para computação estatística e gráfica.
+
+## R
+
+**2.** É um clone de código aberto do sistema comercial S-Plus e uma implementação da linguagem de programação S (orientada a objetos)
+
+## R
+
+**3.** Uma plataforma para desenvolvimento de novos algoritmos.  
+
+ “Não pergunte ‘o que’ o R faz, mas 'como' ele faz...” (Paulo Justiniano)  
+ 
+R funciona com "pacotes", pedaços de software para determinadas funções, que podem ser desenvolvidos por qualquer pessoa.
+
+## R
+
+**4.** É a linguagem moderna dos cientistas, que facilita a tranferência de tecnologia (muito importante para países do terceiro mundo).
+
+## R
+
+**5.** É um sistema que faz milagres!
+
+*library(vegan)  
+data(dune)  
+plot(metaMDS(dune)$species)  *
+
+## Vantagens do R
+
+-   R é grátis!  
+-    Funciona em qualquer sistema operacional (Windows, Linux e Mac)  
+-   Grandes estatísticos colaboram com o projeto
+-   Códigos podem ser trocados entre cientistas.
+-   Facilita o **aprendizado** de estatística.
+-   Quem não souber R estará **defasado**.
+
+## Recursos na internet
+
+Os recursos da internet mais importantes sobre o sistema R são:
+
+-   [http://www.cran.r-project.org/]() - CRAN (“Comprehensive R Archive Network”) é o site onde se podem baixar os arquivos de instalação do R e onde se encontram todos os pacotes oficiais que complementam o programa. O site abriga também toda documentação do R. Digite no Google: CRAN.
+
+## Recursos na internet
+
+-   [http://www.rstudio.com/]()	- Página do Rstudio, o melhor IDE (Integrated Development Environment) para R. Aqui também existem pacotes para o R que auxiliam na manipulação de dados (planilhagem) e gráficos de alta complexidade.
+
+-   [https://livro.curso-r.com/index.html]() - Curso livre sobre muitos aspectos do R, como os vistos até aqui. Não é um livro de estatística.
+
+## Recursos na internet
+
+[http://www.r-bloggers.com/]() Página que agrega bloggers do mundo inteiro falando sobre R. É só pesquisar dentro do site. 
+
+<br>
+
+[http://pt.stackoverflow.com/]() - Site em português de perguntas e respostas para entusiastas no R (ou em qualquer outra linguagen). É famoso pela abrangência das respostas. Todas as dúvidas estão lá.
+
+## MÃOS NA MASSA...
+<br>
+
+Instalar versão atualizada do R:  
+[http://cran.r-project.org/]()
+
+<br>
+
+Instalar versão atualilzada do Rstudio
+[http://www.rstudio.com/]()
+
+<br>
+
+**Aula1.R** até os exercícios
+
+## Exercício 1 (calculadora)
+
+Muitos dos erros cometidos por iniciantes no R estão relacionados com parênteses:
+
+![](images/exerc1.png)
+
+## Exercício 2 (manipulação de objetos)
+
+**a.**  Crie um objeto chamado z que irá armazenar o valor da raiz quadrada de 12. Logo após, crie um outro objeto chamado w que irá armazenar o logaritmo de 20 na base 10. A seguir, crie uma variável chamada s que irá armazenar a soma dos dois valores anteriores.
+
+<br>
+
+**b.** – Sabendo que o raio R de um círculo é igual a 20 cm, calcular a área A deste círculo. 
+
+## Exercícios 3 (criação e cálculo com vetores)
+
+a. Crie um vetor x composto pelos números 1,3,5,7,9.
+b. Crie um vetor y composto por uma sequência de 10 até 50.
+c. Crie um vetor w com a mesma sequência anterior, porém espaçado em 3.
+d. Extraia o comprimento do vetor (4,2,7,12,23,5), seu valor mínimo e sua média, desvio padrão e variância.
+
+## Exercícios 3 (criação e cálculo com vetores)
+
+e. Crie um vetor z composto pela repetição por 5 vezes da letra A e repetição por 5 vezes da letra B.
+f. Crie um vetor k contendo 20 números aleatórios seguindo a distribuição normal, com média de 12 e desvio padrão de 3. Extraia a média e desvio padrão deste vetor para verificar se os valores são próximos do informado

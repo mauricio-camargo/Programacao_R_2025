@@ -348,7 +348,7 @@ Disciplina: Lógica da programação (de computadores) e análise de dados no R
   <p class="date">2025-08-21</p>
 </section>
 <section id="lógica-da-programação-de-computadores-e-análise-de-dados-no-r." class="slide level2">
-<h2>Lógica da programação (de computadores) e análise de dados no R.</h2>
+<h2><span style="font-size:40pt">Lógica da programação (de computadores) e análise de dados no R.</span></h2>
 <p>Computadores: como funcionam?<br>
 Programação: o que é?<br>
 Lógica: para que serve?<br>
@@ -360,14 +360,109 @@ Para entender a importância do **metamerismo**, temos que saber o que é um org
 :::
 -->
 </section>
-<section id="celoma" class="slide level2">
-<h2>Celoma</h2>
+<section id="r" class="slide level2">
+<h2>R</h2>
+<p><strong>1.</strong> É um sistema livre (Copyleft), extremamente <strong>versátil</strong>, que serve para:</p>
 <ul>
-<li>Celoma é uma cavidade corporal preenchida pelo fluído celômico.<br>
+<li>Ler e manipular <strong>dados</strong></li>
+<li>Realizar <strong>cálculos</strong><br>
 </li>
-<li>Celoma atinge o maior estágio de desenvolvimento nos Annelida, por isso é <strong>chamado de verdadeiro</strong>.</li>
-<li>Para ser um celoma verdadeiro, precisa ter origem <strong>mesodérmica</strong> e estar encerrado entre a ectoderme e a endoderme. Vermes inferiores, como platelmintos e Nematoda não possuem celoma verdadeiro.</li>
+<li>Conduzir análises <strong>estatísticas</strong><br>
+</li>
+<li>Apresentar <strong>graficamente</strong> os resultados</li>
 </ul>
+<p>Em resumo, R é um ambiente para computação estatística e gráfica.</p>
+</section>
+<section id="r-1" class="slide level2">
+<h2>R</h2>
+<p><strong>2.</strong> É um clone de código aberto do sistema comercial S-Plus e uma implementação da linguagem de programação S (orientada a objetos)</p>
+</section>
+<section id="r-2" class="slide level2">
+<h2>R</h2>
+<p><strong>3.</strong> Uma plataforma para desenvolvimento de novos algoritmos.</p>
+<p>“Não pergunte ‘o que’ o R faz, mas ‘como’ ele faz…” (Paulo Justiniano)</p>
+<p>R funciona com “pacotes”, pedaços de software para determinadas funções, que podem ser desenvolvidos por qualquer pessoa.</p>
+</section>
+<section id="r-3" class="slide level2">
+<h2>R</h2>
+<p><strong>4.</strong> É a linguagem moderna dos cientistas, que facilita a tranferência de tecnologia (muito importante para países do terceiro mundo).</p>
+</section>
+<section id="r-4" class="slide level2">
+<h2>R</h2>
+<p><strong>5.</strong> É um sistema que faz milagres!</p>
+<p><em>library(vegan)<br>
+data(dune)<br>
+plot(metaMDS(dune)$species) </em></p>
+</section>
+<section id="vantagens-do-r" class="slide level2">
+<h2>Vantagens do R</h2>
+<ul>
+<li>R é grátis!<br>
+</li>
+<li>Funciona em qualquer sistema operacional (Windows, Linux e Mac)<br>
+</li>
+<li>Grandes estatísticos colaboram com o projeto</li>
+<li>Códigos podem ser trocados entre cientistas.</li>
+<li>Facilita o <strong>aprendizado</strong> de estatística.</li>
+<li>Quem não souber R estará <strong>defasado</strong>.</li>
+</ul>
+</section>
+<section id="recursos-na-internet" class="slide level2">
+<h2>Recursos na internet</h2>
+<p>Os recursos da internet mais importantes sobre o sistema R são:</p>
+<ul>
+<li><a href="">http://www.cran.r-project.org/</a> - CRAN (“Comprehensive R Archive Network”) é o site onde se podem baixar os arquivos de instalação do R e onde se encontram todos os pacotes oficiais que complementam o programa. O site abriga também toda documentação do R. Digite no Google: CRAN.</li>
+</ul>
+</section>
+<section id="recursos-na-internet-1" class="slide level2">
+<h2>Recursos na internet</h2>
+<ul>
+<li><p><a href="">http://www.rstudio.com/</a> - Página do Rstudio, o melhor IDE (Integrated Development Environment) para R. Aqui também existem pacotes para o R que auxiliam na manipulação de dados (planilhagem) e gráficos de alta complexidade.</p></li>
+<li><p><a href="">https://livro.curso-r.com/index.html</a> - Curso livre sobre muitos aspectos do R, como os vistos até aqui. Não é um livro de estatística.</p></li>
+</ul>
+</section>
+<section id="recursos-na-internet-2" class="slide level2">
+<h2>Recursos na internet</h2>
+<p><a href="">http://www.r-bloggers.com/</a> Página que agrega bloggers do mundo inteiro falando sobre R. É só pesquisar dentro do site.</p>
+<p><br></p>
+<p><a href="">http://pt.stackoverflow.com/</a> - Site em português de perguntas e respostas para entusiastas no R (ou em qualquer outra linguagen). É famoso pela abrangência das respostas. Todas as dúvidas estão lá.</p>
+</section>
+<section id="mãos-na-massa" class="slide level2">
+<h2>MÃOS NA MASSA…</h2>
+<p><br></p>
+<p>Instalar versão atualizada do R:<br>
+<a href="">http://cran.r-project.org/</a></p>
+<p><br></p>
+<p>Instalar versão atualilzada do Rstudio <a href="">http://www.rstudio.com/</a></p>
+<p><br></p>
+<p><strong>Aula1.R</strong> até os exercícios</p>
+</section>
+<section id="exercício-1-calculadora" class="slide level2">
+<h2>Exercício 1 (calculadora)</h2>
+<p>Muitos dos erros cometidos por iniciantes no R estão relacionados com parênteses:</p>
+
+<img data-src="images/exerc1.png" class="r-stretch"></section>
+<section id="exercício-2-manipulação-de-objetos" class="slide level2">
+<h2>Exercício 2 (manipulação de objetos)</h2>
+<p><strong>a.</strong> Crie um objeto chamado z que irá armazenar o valor da raiz quadrada de 12. Logo após, crie um outro objeto chamado w que irá armazenar o logaritmo de 20 na base 10. A seguir, crie uma variável chamada s que irá armazenar a soma dos dois valores anteriores.</p>
+<p><br></p>
+<p><strong>b.</strong> – Sabendo que o raio R de um círculo é igual a 20 cm, calcular a área A deste círculo.</p>
+</section>
+<section id="exercícios-3-criação-e-cálculo-com-vetores" class="slide level2">
+<h2>Exercícios 3 (criação e cálculo com vetores)</h2>
+<ol type="a">
+<li>Crie um vetor x composto pelos números 1,3,5,7,9.</li>
+<li>Crie um vetor y composto por uma sequência de 10 até 50.</li>
+<li>Crie um vetor w com a mesma sequência anterior, porém espaçado em 3.</li>
+<li>Extraia o comprimento do vetor (4,2,7,12,23,5), seu valor mínimo e sua média, desvio padrão e variância.</li>
+</ol>
+</section>
+<section id="exercícios-3-criação-e-cálculo-com-vetores-1" class="slide level2">
+<h2>Exercícios 3 (criação e cálculo com vetores)</h2>
+<ol start="5" type="a">
+<li>Crie um vetor z composto pela repetição por 5 vezes da letra A e repetição por 5 vezes da letra B.</li>
+<li>Crie um vetor k contendo 20 números aleatórios seguindo a distribuição normal, com média de 12 e desvio padrão de 3. Extraia a média e desvio padrão deste vetor para verificar se os valores são próximos do informado</li>
+</ol>
 
 <img src="images/furg3.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
