@@ -16,11 +16,13 @@ justify !important}
 gitcreds::gitcreds_set()
 -->
 
-## Links para as aulas
+## Links para as aulas e arquivos
+
+- Aulas
 
 [Aula 29-08-25](Aula1.html)
 
-Arquivos
+- Arquivos
 
 [Aula1.R](Aula1.R)
 
