@@ -2,7 +2,7 @@
 title: "Programação no R - Aula 1"
 institute: "Prof. Maurício Garcia de Camargo. IO-FURG."
 author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R"
-date: 2025-08-21
+date: 2025-08-29
 lang: pt-br
 format: 
   revealjs:
