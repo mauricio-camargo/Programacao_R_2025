@@ -12,7 +12,11 @@ engine: knitr
 justify !important}
 ```
 
+<!--
+gitcreds::gitcreds_set()
+-->
+
 ## Links para as aulas
 
-[Aula 21-08-25](Aula1.html)
+[Aula 29-08-25](Aula1.html)
 
