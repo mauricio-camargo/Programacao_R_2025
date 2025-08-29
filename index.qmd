@@ -20,3 +20,7 @@ gitcreds::gitcreds_set()
 
 [Aula 29-08-25](Aula1.html)
 
+Arquivos
+
+[Aula1.R](Aula1.R)
+
