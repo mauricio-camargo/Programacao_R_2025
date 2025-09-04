@@ -1,0 +1,35 @@
+---
+title: "Programação no R - Aula 2"
+institute: "Prof. Maurício Garcia de Camargo. IO-FURG."
+author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R"
+date: 2025-09-05
+lang: pt-br
+format: 
+  revealjs:
+#    theme: [serif, MeuCustom.scss]
+    logo: images/furg3.png
+    slide-number: true
+    chalkboard: true #Muito bom para aula
+    show-slide-number: all
+    controls: true #Não é menu. ToDo.
+    #Sem estes css o :::box não funciona
+    css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
+---
+
+## <span style="font-size:40pt">Lógica da programação (de computadores) e análise de dados no R.</span>
+
+Instalar versão atualilzada do Rstudio
+[http://www.rstudio.com/]()
+
+<br>
+
+**Aula1.R** até os exercícios
+
+## Exercício 1 (calculadora)
+
+Muitos dos erros cometidos por iniciantes no R estão relacionados com parênteses:
+
+![](images/exerc1.png)
+
+## Exercício 2 (manipulação de objetos)
+
