@@ -20,7 +20,7 @@ gitcreds::gitcreds_set()
 
 - Aulas
 
-[Aula 29-08-25](Aula1.html)
+[Aula 29-08-25](Aula1.html)  
 [Aula 05-09-25](Aula2.html)
 
 - Arquivos
