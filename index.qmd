@@ -21,10 +21,10 @@ gitcreds::gitcreds_set()
 - Aulas
 
 [Aula 29-08-25](Aula1.html)  
-[Aula 05-09-25]<!--(Aula2.html) -->
+[Aula 05-09-25]
 
-- Arquivos em R
+- Arquivos em R.
 
-[Aula1.R](Aula1.R)
-[Aula2.R]<!--(Aula1.R)-->
+[Aula1.R](Aula1.R)  
+[Aula2.R]
 
