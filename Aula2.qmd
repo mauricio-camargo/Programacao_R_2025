@@ -16,20 +16,10 @@ format:
     css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
 ---
 
-## <span style="font-size:40pt">Lógica da programação (de computadores) e análise de dados no R.</span>
+## <span style="font-size:40pt">Algoritmos</span>
 
-Instalar versão atualilzada do Rstudio
-[http://www.rstudio.com/]()
+**Algoritmo** é uma série de passos lógicos para resolver um problema.  
 
-<br>
+**Exemplos:** receita de um bolo, trocar um pneu, somar dois números.
 
-**Aula1.R** até os exercícios
-
-## Exercício 1 (calculadora)
-
-Muitos dos erros cometidos por iniciantes no R estão relacionados com parênteses:
-
-![](images/exerc1.png)
-
-## Exercício 2 (manipulação de objetos)
 
