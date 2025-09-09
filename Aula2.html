@@ -30,6 +30,71 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="Aula2_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="assets/syntax-highlight.css">
@@ -326,6 +391,9 @@
       margin-right: 0; 
     }
   </style>
+  <script src="Aula2_files/libs/quarto-diagram/mermaid.min.js"></script>
+  <script src="Aula2_files/libs/quarto-diagram/mermaid-init.js"></script>
+  <link href="Aula2_files/libs/quarto-diagram/mermaid.css" rel="stylesheet">
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -350,9 +418,226 @@ Disciplina: Lógica da programação (de computadores) e análise de dados no R
 <section id="algoritmos" class="slide level2">
 <h2><span style="font-size:40pt">Algoritmos</span></h2>
 <p><strong>Algoritmo</strong> é uma série de passos lógicos para resolver um problema.</p>
-<p><strong>Exemplos:</strong> receita de um bolo, trocar um pneu, somar dois números.</p>
+<strong>Exemplos:</strong> receita de um bolo, trocar um pneu, somar dois números.
+<p>
+</p><p>Formas de representação de algoritmos:<br>
+1. Textual<br>
+2. Fluxograma<br>
+3. Linguagem de programação</p>
+</section>
+<section id="representação-textual-de-algoritmos" class="slide level2">
+<h2><span style="font-size:40pt"><strong>1. Representação Textual de algoritmos</strong></span></h2>
+Tarefa: somar dois números.<br>
 
-<img src="images/furg3.png" class="slide-logo r-stretch"><div class="footer footer-default">
+<p>
+Passo a passo:<br>
+
+</p><p>
+</p><ol type="1">
+<li>(INPUT) Pegue os dois números (x1 e x2)<br>
+</li>
+<li>(OPERAÇÃO) Realize a soma (xt = x1 + x2)<br>
+</li>
+<li>(OUTPUT) Devolva o resultado (xt)</li>
+</ol>
+<div class="callout callout-tip callout-titled callout-style-default">
+<div class="callout-body">
+<div class="callout-title">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<p><strong>Dica</strong></p>
+</div>
+<div class="callout-content">
+<p>Dica: ao escrever em texto, procure usar <strong>verbos no imperativo</strong> (pegue, calcule, devolva) ao nomear inputs/outputs**.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="representação-de-algoritmos-por-fluxogramas" class="slide level2">
+<h2><span style="font-size:40pt"><strong>2. Representação de algoritmos por Fluxogramas</strong></span></h2>
+<p>O fluxograma do nosso programa possui<br>
+<em>entradas → operações → saída</em><br>
+de forma visual.</p>
+<p><br></p>
+<div class="cell" data-reveal="true">
+<div class="cell-output-display">
+<div>
+<div>
+<pre class="mermaid mermaid-js">%%{init: {'theme': 'default', 'themeVariables': { 'fontSize': '32px' }}}%%
+flowchart LR
+    A[/Inputs: x1, x2/] --&gt; B[Operações: xt = x1 + x2]
+    B --&gt; C[/Output: xt/]
+</pre>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="exemplo-de-fluxograma-mais-complexo" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Exemplo de fluxograma mais complexo</strong></span></h2>
+
+<img data-src="images/fluxograma.png" class="r-stretch"></section>
+<section id="algoritmos-como-linguagens-de-programação" class="slide level2">
+<h2><span style="font-size:40pt"><strong>3. Algoritmos como Linguagens de programação</strong></span></h2>
+<p>Pode ser implementado em diferentes linguagens: BASIC, Pascal, Java, Python, R, etc.</p>
+<p>A lógica da programação (objetivo desta aula) é universal para todas as linguagens. Mudam apenas a sintaxe e a semântica.</p>
+<p>Um algoritmo pode ser implementado de diferentes maneiras com a mesma linguagem, criando assim diferentes programas com os mesmos procedimentos.</p>
+</section>
+<section id="relembrando-tipos-de-dados" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Relembrando tipos de dados </strong></span></h2>
+<ul>
+<li>Numérico (x = 12): Operações: + - * / ^</li>
+<li>String (s = ‘olá!’): Operações: paste(s1,s2)</li>
+<li>Lógico (TRUE ou FALSE). Pode ser abreviado (T ou F). Operações: &lt; &gt; &lt;= &gt;= ==.</li>
+</ul>
+</section>
+<section id="funções" class="slide level2">
+<h2>Funções</h2>
+<p><br></p>
+<p><strong>Funções</strong> existem em todas as linguagens de programação e funcionam como um programa inteiro, podendo conter IMPUTS, OPERAÇÕES e OUTPUTS.</p>
+</section>
+<section id="a-estrutura-de-uma-função-no-r" class="slide level2">
+<h2><span style="font-size:32pt"><strong>A estrutura de uma função no R</strong></span></h2>
+<blockquote>
+<p>minha_funcao = function(input1, input2) {<br>
+… operações …<br>
+return(output)<br>
+}</p>
+</blockquote>
+<ul>
+<li><strong>Minha_funcao</strong> é o nome da funcão.<br>
+</li>
+<li><strong>{ }</strong> representam o início e o fim da função.</li>
+<li><strong>Function</strong> e <strong>return</strong>: palavras reservadas do R.</li>
+<li><strong>Operações</strong> são os cálculos que geram o output.</li>
+</ul>
+</section>
+<section id="exemplos-de-funções-no-r" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Exemplos de funções no R</strong></span></h2>
+<p>Exemplo 1: Função para somar dois números.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>soma2num <span class="ot">=</span> <span class="cf">function</span>(x1,x2) {</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  x_tot <span class="ot">=</span> x1 <span class="sc">+</span> x2</span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="fu">return</span>(x_tot)</span>
+<span id="cb1-4"><a href="#cb1-4"></a>}</span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="co"># Testando a função</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="fu">soma2num</span>(<span class="dv">12</span>,<span class="dv">14</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Exemplo 2: Função para concatenar duas strings.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>alo_mundo <span class="ot">=</span> <span class="cf">function</span>(s1,s2) {</span>
+<span id="cb2-2"><a href="#cb2-2"></a>  s <span class="ot">=</span> (<span class="fu">paste</span>(s1, s2))</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="fu">return</span>(s)</span>
+<span id="cb2-4"><a href="#cb2-4"></a>}</span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="co"># Testando a função</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="fu">alo_mundo</span>(<span class="st">'Hello,'</span>,<span class="st">'world!'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exercícios-de-funcões-no-r" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Exercícios de funcões no R</strong></span></h2>
+<p><strong>Exercício 1</strong>: Crie uma função que receba dois números e realize a multiplicação entre eles.</p>
+<p><strong>Exercício 2</strong>: Escreva uma função que receba três números e imprima a média deles.</p>
+<p><strong>Exercício 3</strong>: Crie uma função que receba dois números (<strong>a</strong> e <strong>b</strong>) e eleve o valor de <strong>a</strong> pelo de <strong>b</strong>.</p>
+<p><strong>Exercício 4</strong>: Crie uma função que receba o valor do raio e devolva o valor da circunferência de um círculo.</p>
+</section>
+<section id="mais-exercícios-de-funcões-no-r" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Mais exercícios de funcões no R</strong></span></h2>
+<p><strong>Exercício 5</strong>: Crie uma função que receba o valor do raio e devolva o valor da circunferência <strong>e</strong> da área de um círculo.</p>
+<p><strong>Exercício 6</strong>: Crie uma função que receba do usuário a sua altura e o seu peso e mostre na tela o seu Índice de Massa Corporal (IMC):</p>
+
+<img data-src="/images/imc.png" style="width:40.0%" class="r-stretch"></section>
+<section id="mais-exercícios-de-funcões-no-r-1" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Mais exercícios de funcões no R</strong></span></h2>
+<p><strong>Exercício 7</strong>: Faça um programa que receba do usuário um valor de temperatura em graus Fahrenheit e mostre na tela o valor transformado em graus Célsius, lembrando que:</p>
+
+<img data-src="/images/FormulaCF.png" style="width:50.0%" class="r-stretch"><p><strong>Exercício 8</strong>: Crie uma função que receba um valor em Dólar e converta o valor para Real, considerando que 1 Dólar = 5,7 reais.</p>
+</section>
+<section id="mais-exercícios-de-funções-no-r" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Mais exercícios de funções no R</strong></span></h2>
+<p><strong>Exercício 9</strong>: A partir da fórmula quadrática, crie uma função que receba os valores de <strong>a</strong>, <strong>b</strong> e <strong>c</strong> e devolva as duas raizes quadráticas.<br>
+<img data-src="/images/equacao2grau.png"></p>
+</section>
+<section id="estruturas-de-condição-em-r" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Estruturas de Condição em R</strong></span></h2>
+<p>Estruturas de condição permitem que o programa tome decisões com base em uma verificação lógica.</p>
+<p>Em R, a verificação lógica resulta em <strong>TRUE</strong> (verdadeiro) ou <strong>FALSE</strong> (falso).</p>
+<p>
+</p><p>
+</p><p>Exemplo:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>x <span class="sc">&gt;</span> <span class="dv">5</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="co"># Resultado: TRUE</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="estrutura-básica-if" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Estrutura básica if</strong></span></h2>
+<p>Usada quando queremos executar um bloco de código apenas se uma condição for verdadeira.</p>
+<p>Sintaxe:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="cf">if</span> (condição) {</span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="co"># código a ser executado se a condição for verdadeira</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="ot">=</span> <span class="dv">7</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="cf">if</span> (x <span class="sc">&gt;</span> <span class="dv">5</span>) {</span>
+<span id="cb5-3"><a href="#cb5-3"></a>  <span class="fu">print</span>(<span class="st">"x é maior que 5"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="estrutura-ifelse" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Estrutura if…else</strong></span></h2>
+<p>Permite executar um código quando a condição é verdadeira e outro quando é falsa.</p>
+<p>Sintaxe:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="cf">if</span> (condição) {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="co"># código se verdadeiro</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>} <span class="cf">else</span> {</span>
+<span id="cb6-4"><a href="#cb6-4"></a>  <span class="co"># código se falso</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>idade <span class="ot">=</span> <span class="dv">16</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="cf">if</span> (idade <span class="sc">&gt;=</span> <span class="dv">18</span>) {</span>
+<span id="cb7-3"><a href="#cb7-3"></a>  <span class="fu">print</span>(<span class="st">"Maior de idade"</span>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>} <span class="cf">else</span> {</span>
+<span id="cb7-5"><a href="#cb7-5"></a>  <span class="fu">print</span>(<span class="st">"Menor de idade"</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="estrutura-ifelse-ifelse" class="slide level2">
+<h2><span style="font-size:30pt"><strong>Estrutura if…else if…else</strong></span></h2>
+<p>Permite testar várias condições em sequência.<br>
+Sintaxe:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">if</span> (condição1) {</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="co"># código se condição1 for verdadeira</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a>} <span class="cf">else</span> <span class="cf">if</span> (condição2) {</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  <span class="co"># código se condição2 for verdadeira</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>} <span class="cf">else</span> {</span>
+<span id="cb8-6"><a href="#cb8-6"></a>  <span class="co"># código se nenhuma condição for verdadeira</span></span>
+<span id="cb8-7"><a href="#cb8-7"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Exemplo:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>nota <span class="ot">=</span> <span class="dv">8</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="cf">if</span> (nota <span class="sc">&gt;=</span> <span class="dv">9</span>) {</span>
+<span id="cb9-3"><a href="#cb9-3"></a>  <span class="fu">print</span>(<span class="st">"Excelente"</span>)</span>
+<span id="cb9-4"><a href="#cb9-4"></a>} <span class="cf">else</span> <span class="cf">if</span> (nota <span class="sc">&gt;=</span> <span class="dv">7</span>) {</span>
+<span id="cb9-5"><a href="#cb9-5"></a>  <span class="fu">print</span>(<span class="st">"Bom"</span>)</span>
+<span id="cb9-6"><a href="#cb9-6"></a>} <span class="cf">else</span> {</span>
+<span id="cb9-7"><a href="#cb9-7"></a>  <span class="fu">print</span>(<span class="st">"Precisa melhorar"</span>)</span>
+<span id="cb9-8"><a href="#cb9-8"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exercícios-de-if" class="slide level2">
+<h2><span style="font-size:30pt"><strong>Exercícios de <em>if</em> </strong></span></h2>
+<p><strong>Exercício 9:</strong> Escreva uma função que receba do usuário um valor numérico e mostre na tela se é positivo ou negativo.</p>
+<p><strong>Exercício 10:</strong> Escreva um código que leia um número inteiro (variável num) e verifique:<br>
+- se é positivo, imprima “Número positivo”<br>
+- se é negativo, imprima “Número negativo”<br>
+- se for zero, imprima “Número neutro”</p>
+<p><strong>Exercício 11:</strong> Crie uma função que receba do usuário um valor e mostre na tela se é par ou impar (use o operador %%).</p>
+</section>
+<section id="exercícios-de-ifelse" class="slide level2">
+<h2><span style="font-size:30pt"><strong>Exercícios de <em>if…else</em> </strong></span></h2>
+<p><strong>Exercício 12:</strong> Crie uma função que receba uma idade e retorne: “Criança” se menor que 12<br>
+“Adolescente” se entre 12 e 17<br>
+“Adulto” se entre 18 e 59<br>
+“Idoso” se 60 ou mais</p>
+</section>
+<section id="mais-exercícios-de-ifelse" class="slide level2">
+<h2><span style="font-size:30pt"><strong>Mais exercícios de <em>if…else</em> </strong></span></h2>
+<p><strong>Exercício 13:</strong> Crie uma função que receba o peso e a altura de alguém e determine a sua situação, conforme a tabela abaixo:</p>
+<p><img data-src="/images/imc_limites.png"></p>
+<p><img src="images/furg3.png" class="slide-logo"></p>
+<div class="footer footer-default">
 
 </div>
 </section>
