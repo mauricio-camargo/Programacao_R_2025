@@ -135,7 +135,7 @@ alo_mundo('Hello,','world!')
 
 ## <span style="font-size:40pt">**Mais exercícios de funcões no R**</span>
 
-**Exercício 7**: Faça um programa que receba do usuário um valor de temperatura em graus Fahrenheit e mostre na tela o valor transformado em graus Célsius, lembrando que:
+**Exercício 7**: Faça um programa que receba do usuário um valor de temperatura em graus Célsius e mostre na tela o valor transformado em graus Fahrenheit, lembrando que:
 
 ![](images/FormulaCF.png){width=50%}  
 
@@ -228,25 +228,27 @@ if (nota >= 9) {
 }
 ```
 
-## <span style="font-size:30pt">**Exercícios de *if* **</span>  
+## <span style="font-size:30pt">**Exercícios de *if...else* **</span>  
 
-**Exercício 9:** Escreva uma função que receba do usuário um valor numérico e mostre na tela se é positivo ou negativo.
+**Exercício 10:** Escreva uma função que receba do usuário um valor numérico e mostre na tela se é positivo ou negativo.
 
-**Exercício 10:** Escreva um código que leia um número inteiro (variável num) e verifique:  
+**Exercício 11:** Escreva um código que leia um número inteiro (variável num) e verifique:  
 - se é positivo, imprima "Número positivo"  
 - se é negativo, imprima "Número negativo"  
 - se for zero, imprima "Número neutro"  
 
-**Exercício 11:** Crie uma função que receba do usuário um valor e mostre na tela se é par ou impar (use o operador %%).
+**Exercício 12:** Crie uma função que receba do usuário um valor e mostre na tela se é par ou impar (use o operador %%).
 
 ## <span style="font-size:30pt">**Exercícios de *if...else* **</span>  
-**Exercício 12:** Crie uma função que receba uma idade e retorne:
+
+**Exercício 13:** Crie uma função que receba uma idade e retorne:
 "Criança" se menor que 12  
 "Adolescente" se entre 12 e 17  
 "Adulto" se entre 18 e 59  
 "Idoso" se 60 ou mais  
 
 ## <span style="font-size:30pt">**Mais exercícios de *if...else* **</span>  
-**Exercício 13:** Crie uma função que receba o peso e a altura de alguém e determine a sua situação, conforme a tabela abaixo:
+
+**Exercício 14:** Crie uma função que receba o peso e a altura de uma pessoa e determine a sua situação segundo o IMC (veja exercício 7), conforme a tabela abaixo:
 
 ![](/images/imc_limites.png)
