@@ -131,7 +131,7 @@ alo_mundo('Hello,','world!')
 
 **Exercício 6**: Crie uma função que receba do usuário a sua altura e o seu peso e mostre na tela o seu Índice de Massa Corporal (IMC): 
 
-![](/images/imc.png){width=40%}
+![/images/imc.png](/images/imc.png)
 
 ## <span style="font-size:40pt">**Mais exercícios de funcões no R**</span>
 
