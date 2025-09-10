@@ -92,7 +92,7 @@ f_quadrat = function(a,b,c) {
 # Testando a função
 f_quadrat(2,8,3)
 
-####### Exercício 9b: Positivo ou negativo. ####
+####### Exercício 10: Positivo ou negativo. ####
 f_pos_neg = function(x) {
   if (x>0) {
     s='Positivo'
@@ -106,7 +106,7 @@ f_pos_neg = function(x) {
 # Testando a função
 f_pos_neg(0) #Se colocar zero não funciona
 
-####### Exercício 10: Positivo, negativo e zero. ####
+####### Exercício 11: Positivo, negativo e zero. ####
 f_pos_neg_zero = function(x) {
   if (x==0) {
     s = 'Número Neutro'
@@ -120,7 +120,7 @@ f_pos_neg_zero = function(x) {
 # Testando a função
 f_pos_neg_zero(0)
 
-####### Exercício 11: Par ou impar. ####
+####### Exercício 12: Par ou impar. ####
 f_par_impar = function(x) {
   if (x==0) {
     s = 'Número Neutro'
@@ -134,7 +134,7 @@ f_par_impar = function(x) {
 # Testando a função
 f_par_impar(7)
 
-####### Exercício 12: Categorização da Idade. ####
+####### Exercício 13: Categorização da Idade. ####
 f_idade = function(x) {
   if (x<12) {
     s = 'Criança'
@@ -153,7 +153,7 @@ f_idade = function(x) {
 # Testando a função
 f_idade(88)
 
-####### Exercício 13: Calcular IMC categorizado. ####
+####### Exercício 14: Calcular IMC categorizado. ####
 f_imc_cat = function(peso,altura) {
   imc = peso/(altura)^2
   if (imc<18.5) {
