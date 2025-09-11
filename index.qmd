@@ -20,7 +20,7 @@ gitcreds::gitcreds_set()
 
 - Aulas
 
-[Aula 3 - 12-09-25](Aula3.html)  
+Aula 3 - 12-09-25  
 [Aula 2 - 05-09-25](Aula2.html)  
 [Aula 1 - 29-08-25](Aula1.html)  
 
