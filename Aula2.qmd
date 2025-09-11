@@ -1,7 +1,7 @@
 ---
 title: "Programação no R - Aula 2"
 institute: "Prof. Maurício Garcia de Camargo. IO-FURG."
-author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R."
+author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R.."
 date: 2025-09-05
 lang: pt-br
 format: 
