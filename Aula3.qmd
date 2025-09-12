@@ -88,6 +88,27 @@ tem_autorizacao <- TRUE
 (idade >= 18) | FALSE            # FALSE (nenhuma condição é verdadeira)
 ```
 
+## <span style="font-size:40pt">**Operador != (Diferente de)**</span>
+
+Verifica se dois valores são diferentes.  
+Exemplo: 
+```r
+a <- 3
+b <- 5
+
+a != b       # TRUE  (3 é diferente de 5)
+a != 3       # FALSE (3 não é diferente de 3)
+```
+Pode ser combinado com & e |:  
+```r
+nota <- 8
+freq <- 65
+(nota >= 7) & (freq != 0)  # TRUE (nota >=7 e freq diferente de 0)
+```
+
+
+
+
 ## <span style="font-size:40pt">**Exemplo de Função com Operador Lógico**</span>
 
 **Exemplo **

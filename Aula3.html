@@ -477,21 +477,35 @@ return(output)<br>
 <span id="cb4-4"><a href="#cb4-4"></a>(idade <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|</span> tem_autorizacao  <span class="co"># TRUE (tem autorização mesmo sendo menor)</span></span>
 <span id="cb4-5"><a href="#cb4-5"></a>(idade <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|</span> <span class="cn">FALSE</span>            <span class="co"># FALSE (nenhuma condição é verdadeira)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
+<section id="operador-diferente-de" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Operador != (Diferente de)</strong></span></h2>
+<p>Verifica se dois valores são diferentes.<br>
+Exemplo:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>a <span class="ot">&lt;-</span> <span class="dv">3</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a>b <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a></span>
+<span id="cb5-4"><a href="#cb5-4"></a>a <span class="sc">!=</span> b       <span class="co"># TRUE  (3 é diferente de 5)</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>a <span class="sc">!=</span> <span class="dv">3</span>       <span class="co"># FALSE (3 não é diferente de 3)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Pode ser combinado com &amp; e |:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>nota <span class="ot">&lt;-</span> <span class="dv">8</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>freq <span class="ot">&lt;-</span> <span class="dv">65</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>(nota <span class="sc">&gt;=</span> <span class="dv">7</span>) <span class="sc">&amp;</span> (freq <span class="sc">!=</span> <span class="dv">0</span>)  <span class="co"># TRUE (nota &gt;=7 e freq diferente de 0)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
 <section id="exemplo-de-função-com-operador-lógico" class="slide level2">
 <h2><span style="font-size:40pt"><strong>Exemplo de Função com Operador Lógico</strong></span></h2>
 <p><strong>Exemplo </strong> Crie uma função que receba um número inteiro e devolva se o número está no intervalo entre 5 e 10.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>f_intervalo <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
-<span id="cb5-2"><a href="#cb5-2"></a>  <span class="cf">if</span> (x<span class="sc">&gt;=</span><span class="dv">5</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">10</span>) {</span>
-<span id="cb5-3"><a href="#cb5-3"></a>    <span class="fu">return</span>(<span class="st">'SIM'</span>)</span>
-<span id="cb5-4"><a href="#cb5-4"></a>} <span class="cf">else</span> {</span>
-<span id="cb5-5"><a href="#cb5-5"></a> <span class="fu">return</span>(<span class="st">'NÃO'</span>)</span>
-<span id="cb5-6"><a href="#cb5-6"></a>  }</span>
-<span id="cb5-7"><a href="#cb5-7"></a>}  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>f_intervalo <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="cf">if</span> (x<span class="sc">&gt;=</span><span class="dv">5</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">10</span>) {</span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="fu">return</span>(<span class="st">'SIM'</span>)</span>
+<span id="cb7-4"><a href="#cb7-4"></a>} <span class="cf">else</span> {</span>
+<span id="cb7-5"><a href="#cb7-5"></a> <span class="fu">return</span>(<span class="st">'NÃO'</span>)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>  }</span>
+<span id="cb7-7"><a href="#cb7-7"></a>}  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Mesma função com as chaves {} abreviadas.</p>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>f_intervalo <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
-<span id="cb6-2"><a href="#cb6-2"></a>  <span class="cf">if</span> (x<span class="sc">&gt;=</span><span class="dv">5</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">10</span>) <span class="fu">return</span>(<span class="st">'SIM'</span>)</span>
-<span id="cb6-3"><a href="#cb6-3"></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="st">'NÃO'</span>)</span>
-<span id="cb6-4"><a href="#cb6-4"></a>}  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>f_intervalo <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb8-2"><a href="#cb8-2"></a>  <span class="cf">if</span> (x<span class="sc">&gt;=</span><span class="dv">5</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">10</span>) <span class="fu">return</span>(<span class="st">'SIM'</span>)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="st">'NÃO'</span>)</span>
+<span id="cb8-4"><a href="#cb8-4"></a>}  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exercícios-de-operadores-lógicos" class="slide level2">
 <h2><span style="font-size:40pt"><strong>Exercícios de Operadores Lógicos</strong></span></h2>
