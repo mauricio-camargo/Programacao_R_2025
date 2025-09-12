@@ -28,17 +28,139 @@ format:
 -  **Function** e **return**: palavras reservadas do R.
  - **Operações** são os cálculos que geram o output.
 
-## <span style="font-size:40pt">**Exercícios de funcões no R**</span>
+## <span style="font-size:40pt">**Estrutura de condição (if...else)**</span>
 
-::: {.fragment} 
-**Exercício 1**: Crie uma função que receba dois números e realize a multiplicação entre eles.  
+Permite executar um código quando a condição é verdadeira e outro quando é falsa.
+
+Sintaxe:
+```r
+if (condição) {
+  # código se verdadeiro
+} else {
+  # código se falso
+}
+```
+
+Exemplo:
+```r
+idade = 16
+if (idade >= 18) {
+  print("Maior de idade")
+} else {
+  print("Menor de idade")
+}
+```
+
+## <span style="font-size:40pt">**Resolução dos exercícios anteriores**</span>
+<br><br>
+Abrir Aula2_Exerc_Resolvidos.R
+
+## <span style="font-size:40pt">**Operadores Lógicos**</span>
+
+Avaliar expressões em que o resultado pode ser **verdadeiro** ou **falso**, implementando a lógica booleana.
+
+![](images/operadores_logicos.png)
+
+## <span style="font-size:40pt">**Operadores Lógicos**</span>
+
+**Retorno das expressões**
+
+![](images/retorno_expressoes.png)
+
+## <span style="font-size:40pt">**Exemplo de Operadores Lógicos**</span>
+
+**Exemplo **
+Crie uma função que receba um número inteiro e devolva se o número está no intervalo entre 5 e 10.
+```r
+f_intervalo = function(x) {
+  if (x>=5 & x<=10) {
+    return('SIM')
+} else {
+ return('NÃO')
+  }
+}  
+```
+Mesma função com as chaves {} abreviadas.
+```r
+f_intervalo = function(x) {
+  if (x>=5 & x<=10) return('SIM')
+  else return('NÃO')
+}  
+```
+
+## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
+<br>
+**Exercício 1**
+Crie uma função que receba a idade e o sexo (T ou F para masculino) de uma pessoa e determine se está em idade militar.
+<br>
+
+:::{.fragment}
+**Exercício 2**
+Crie uma função que receba a nota e a frequencia em uma disciplina e devolva 'Aprovado' se a nota for maior que 7 e a frequência maior que 70%, caso contrário devolva 'Reprovado'.
 :::
 
-**Exercício 2**: Escreva uma função que receba três números e imprima a média deles.
+## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
+<br>
+
+**Exercício 3**  
+Parecido com o anterior, porém mais completo. Crie uma função que receba 4 notas bimestrais e a frequência de um aluno. A função deve calcular a média anual do aluno e depois devolver 'Aprovado' ou 'Reprovado', da mesma maneira que o exercício anterior.
+
+## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
+<br>
+
+**Exercício 4**  
+Crie uma função que receba três valores (a,b e c) representando os lados de um triângulo e devolva a classificação do triângulo:  
+- 'Equilátero' se todos os lados forem iguais.  
+- 'Isósceles' se dois lados forem iguais.  
+- 'Escaleno' se todos forem diferentes.
+
+
+## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
+<br>
+
+**Exercício 5**
+Crie uma função que receba o salário de um funcionário e o seu cargo (A ou B) e devolva o valor do aumento salarial na seguinte forma:
+- Cargo A: se o salário for menor que 2000, aumenta 20%. Se for maior, aumenta 10%.
+- Cargo B: se o salário for menor que 6000, aumenta 10%. Se for maior, aumenta 5%.
+
+
+## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
+<br>
+
+**Exercício 6**  
+Crie uma função que receba um número e determine se devolva se ele é:  
+- 'Positivo e par'  
+- 'Positivo e ímpar'  
+- 'Negativo'  
+- 'Zero'
+
+## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
+**Exercício 7.** Crie uma função que receba um número inteiro e devolva TRUE or FALSE se aquele ano é bissexto ou não, sabendo que ano bissexto é aquele divisível por 4 ou divisível por 400.
+
+:::{.fragment}
+**Exercício 8** 
+Crie uma função que receba três variáveis (renda, idade e score) e de termine se o banco pode realizar o empréstimo, sendo "Autorizado" se a idade for maior que 25 e a renda for maior que 3000, ou então se o score for maior que 750. Caso contrário, será "Negado".
 :::
 
-**Exercício 3**: Crie uma função que receba dois números (**a** e **b**) e eleve o valor de **a** pelo de **b**.
-:::
+## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
+<br>
+**Exercício 9**   
+Crie uma função que receba a altura (H) e o sexo de uma pessoa e determine seu peso ideal, baseado nas seguintes fórmnulas:  
+- para homens (72,7 x H) - 58  
+- para mulheres (62,1 x H) - 44,7
 
-**Exercício 4**: Crie uma função que receba o valor do raio e devolva o valor da circunferência de um círculo.  
-:::
+## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
+**Exercício 10**   
+Crie uma função que receba os valores de pressão e glicose e devolva o resultado da avaliação de risco de infarte:  
+*  'Risco alto' se a pressão for maior que 140 e a glicose maior que 125.  
+* 'Risco moderado' se a pressão for maior que 140 ou a glicose maior que 125.  
+* 'Risco baixo' caso contrário.
+
+
+## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
+**Exercício 11 (Desafio!)**   
+Crie uma função que receba o código de produto e devolva sua classificação, conforme a tabela de referência:  
+
+![](images/tabela_alimentos.png)
+
+

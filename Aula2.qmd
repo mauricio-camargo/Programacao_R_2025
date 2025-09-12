@@ -78,7 +78,7 @@ Um algoritmo pode ser implementado de diferentes maneiras com a mesma linguagem,
 
 <br>
 
-**Funções** existem em todas as linguagens de programação e funcionam como um programa inteiro, podendo conter IMPUTS, OPERAÇÕES e OUTPUTS.
+**Funções** existem em todas as linguagens de programação e funcionam como um programa inteiro, podendo conter INPUTS, OPERAÇÕES e OUTPUTS.
 
 ## <span style="font-size:32pt">**A estrutura de uma função no R**</span>
 
@@ -119,23 +119,33 @@ alo_mundo('Hello,','world!')
 
 **Exercício 1**: Crie uma função que receba dois números e realize a multiplicação entre eles.  
 
+:::{.fragment}
 **Exercício 2**: Escreva uma função que receba três números e imprima a média deles.
+:::
 
+:::{.fragment}
 **Exercício 3**: Crie uma função que receba dois números (**a** e **b**) e eleve o valor de **a** pelo de **b**.
+:::
 
-**Exercício 4**: Crie uma função que receba o valor do raio e devolva o valor da circunferência de um círculo.  
+:::{.fragment}
+**Exercício 4**: Crie uma função que receba o valor do raio e devolva o valor da circunferência de um círculo. 
+:::
+ 
 
 ## <span style="font-size:40pt">**Mais exercícios de funcões no R**</span>
 
 **Exercício 5**: Crie uma função que receba o valor do raio e devolva o valor da circunferência **e** da área de um círculo.  
 
+:::{.fragment}
 **Exercício 6**: Crie uma função que receba do usuário a sua altura e o seu peso e mostre na tela o seu Índice de Massa Corporal (IMC): 
 
 ![/images/imc.png](images/imc.png)
+:::
+
 
 ## <span style="font-size:40pt">**Mais exercícios de funcões no R**</span>
 
-**Exercício 7**: Faça um programa que receba do usuário um valor de temperatura em graus Célsius e mostre na tela o valor transformado em graus Fahrenheit, lembrando que:
+**Exercício 7**: Faça um programa que receba do usuário um valor de temperatura em graus Célsius e mostre na tela o valor transformado em graus Fahrenheit:
 
 ![](images/FormulaCF.png){width=50%}  
 
