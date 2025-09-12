@@ -57,7 +57,7 @@ Abrir Aula2_Exerc_Resolvidos.R
 
 ## <span style="font-size:40pt">**Operadores Lógicos**</span>
 
-Avaliar expressões em que o resultado pode ser **verdadeiro** ou **falso**, implementando a lógica booleana.
+Permitem comparar expressões em que o resultado pode ser **verdadeiro** ou **falso**, implementando a *lógica booleana*.
 
 ![](images/operadores_logicos.png)
 
@@ -67,7 +67,28 @@ Avaliar expressões em que o resultado pode ser **verdadeiro** ou **falso**, imp
 
 ![](images/retorno_expressoes.png)
 
-## <span style="font-size:40pt">**Exemplo de Operadores Lógicos**</span>
+## <span style="font-size:40pt">**Exemplo de Operador &**</span>
+
+Usado para testar se duas condições são verdadeiras ao mesmo tempo.
+```r
+x <- 5
+y <- 10
+
+(x > 0) & (y > 0)      # TRUE (as duas condições são verdadeiras)
+(x > 0) & (y < 0)      # FALSE (a segunda não é verdadeira)
+```
+## <span style="font-size:40pt">**Exemplo de Operador |**</span>
+
+Retorna TRUE se pelo menos uma condição for verdadeira.
+```r
+idade <- 17
+tem_autorizacao <- TRUE
+
+(idade >= 18) | tem_autorizacao  # TRUE (tem autorização mesmo sendo menor)
+(idade >= 18) | FALSE            # FALSE (nenhuma condição é verdadeira)
+```
+
+## <span style="font-size:40pt">**Exemplo de Função com Operador Lógico**</span>
 
 **Exemplo **
 Crie uma função que receba um número inteiro e devolva se o número está no intervalo entre 5 e 10.

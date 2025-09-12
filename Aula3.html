@@ -451,7 +451,7 @@ return(output)<br>
 </section>
 <section id="operadores-lógicos" class="slide level2">
 <h2><span style="font-size:40pt"><strong>Operadores Lógicos</strong></span></h2>
-<p>Avaliar expressões em que o resultado pode ser <strong>verdadeiro</strong> ou <strong>falso</strong>, implementando a lógica booleana.</p>
+<p>Permitem comparar expressões em que o resultado pode ser <strong>verdadeiro</strong> ou <strong>falso</strong>, implementando a <em>lógica booleana</em>.</p>
 
 <img data-src="images/operadores_logicos.png" class="r-stretch"></section>
 <section id="operadores-lógicos-1" class="slide level2">
@@ -459,21 +459,39 @@ return(output)<br>
 <p><strong>Retorno das expressões</strong></p>
 
 <img data-src="images/retorno_expressoes.png" class="r-stretch"></section>
-<section id="exemplo-de-operadores-lógicos" class="slide level2">
-<h2><span style="font-size:40pt"><strong>Exemplo de Operadores Lógicos</strong></span></h2>
+<section id="exemplo-de-operador" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Exemplo de Operador &amp;</strong></span></h2>
+<p>Usado para testar se duas condições são verdadeiras ao mesmo tempo.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="ot">&lt;-</span> <span class="dv">5</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>y <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a>(x <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">&amp;</span> (y <span class="sc">&gt;</span> <span class="dv">0</span>)      <span class="co"># TRUE (as duas condições são verdadeiras)</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>(x <span class="sc">&gt;</span> <span class="dv">0</span>) <span class="sc">&amp;</span> (y <span class="sc">&lt;</span> <span class="dv">0</span>)      <span class="co"># FALSE (a segunda não é verdadeira)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exemplo-de-operador-1" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Exemplo de Operador |</strong></span></h2>
+<p>Retorna TRUE se pelo menos uma condição for verdadeira.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>idade <span class="ot">&lt;-</span> <span class="dv">17</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>tem_autorizacao <span class="ot">&lt;-</span> <span class="cn">TRUE</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a></span>
+<span id="cb4-4"><a href="#cb4-4"></a>(idade <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|</span> tem_autorizacao  <span class="co"># TRUE (tem autorização mesmo sendo menor)</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>(idade <span class="sc">&gt;=</span> <span class="dv">18</span>) <span class="sc">|</span> <span class="cn">FALSE</span>            <span class="co"># FALSE (nenhuma condição é verdadeira)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="exemplo-de-função-com-operador-lógico" class="slide level2">
+<h2><span style="font-size:40pt"><strong>Exemplo de Função com Operador Lógico</strong></span></h2>
 <p><strong>Exemplo </strong> Crie uma função que receba um número inteiro e devolva se o número está no intervalo entre 5 e 10.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>f_intervalo <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
-<span id="cb3-2"><a href="#cb3-2"></a>  <span class="cf">if</span> (x<span class="sc">&gt;=</span><span class="dv">5</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">10</span>) {</span>
-<span id="cb3-3"><a href="#cb3-3"></a>    <span class="fu">return</span>(<span class="st">'SIM'</span>)</span>
-<span id="cb3-4"><a href="#cb3-4"></a>} <span class="cf">else</span> {</span>
-<span id="cb3-5"><a href="#cb3-5"></a> <span class="fu">return</span>(<span class="st">'NÃO'</span>)</span>
-<span id="cb3-6"><a href="#cb3-6"></a>  }</span>
-<span id="cb3-7"><a href="#cb3-7"></a>}  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>f_intervalo <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb5-2"><a href="#cb5-2"></a>  <span class="cf">if</span> (x<span class="sc">&gt;=</span><span class="dv">5</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">10</span>) {</span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="fu">return</span>(<span class="st">'SIM'</span>)</span>
+<span id="cb5-4"><a href="#cb5-4"></a>} <span class="cf">else</span> {</span>
+<span id="cb5-5"><a href="#cb5-5"></a> <span class="fu">return</span>(<span class="st">'NÃO'</span>)</span>
+<span id="cb5-6"><a href="#cb5-6"></a>  }</span>
+<span id="cb5-7"><a href="#cb5-7"></a>}  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Mesma função com as chaves {} abreviadas.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>f_intervalo <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
-<span id="cb4-2"><a href="#cb4-2"></a>  <span class="cf">if</span> (x<span class="sc">&gt;=</span><span class="dv">5</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">10</span>) <span class="fu">return</span>(<span class="st">'SIM'</span>)</span>
-<span id="cb4-3"><a href="#cb4-3"></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="st">'NÃO'</span>)</span>
-<span id="cb4-4"><a href="#cb4-4"></a>}  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>f_intervalo <span class="ot">=</span> <span class="cf">function</span>(x) {</span>
+<span id="cb6-2"><a href="#cb6-2"></a>  <span class="cf">if</span> (x<span class="sc">&gt;=</span><span class="dv">5</span> <span class="sc">&amp;</span> x<span class="sc">&lt;=</span><span class="dv">10</span>) <span class="fu">return</span>(<span class="st">'SIM'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3"></a>  <span class="cf">else</span> <span class="fu">return</span>(<span class="st">'NÃO'</span>)</span>
+<span id="cb6-4"><a href="#cb6-4"></a>}  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="exercícios-de-operadores-lógicos" class="slide level2">
 <h2><span style="font-size:40pt"><strong>Exercícios de Operadores Lógicos</strong></span></h2>
