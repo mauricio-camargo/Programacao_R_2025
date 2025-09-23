@@ -97,14 +97,14 @@ f_pos_neg = function(x) {
   if (x>0) {
     s='Positivo'
   }
-  #Não há necessidade de else, caso contrário "negativo" incluirá o zero
+#Não há necessidade de else, caso contrário "negativo" incluirá o zero
   if (x<0) {
     s='Negativo'
   }
  return(s)
 }
 # Testando a função
-f_pos_neg(0) #Se colocar zero não funciona
+f_pos_neg(-10) #Se colocar zero não funciona
 
 ####### Exercício 11: Positivo, negativo e zero. ####
 f_pos_neg_zero = function(x) {
@@ -118,7 +118,7 @@ f_pos_neg_zero = function(x) {
   return(s)
 }
 # Testando a função
-f_pos_neg_zero(0)
+f_pos_neg_zero(0) #Agora o zero foi incluído
 
 ####### Exercício 12: Par ou impar. ####
 f_par_impar = function(x) {
@@ -132,7 +132,7 @@ f_par_impar = function(x) {
   return(s)
 }
 # Testando a função
-f_par_impar(7)
+f_par_impar(8)
 
 ####### Exercício 13: Categorização da Idade. ####
 f_idade = function(x) {
@@ -151,7 +151,7 @@ f_idade = function(x) {
   return(s)
 }
 # Testando a função
-f_idade(88)
+f_idade(45)
 
 ####### Exercício 14: Calcular IMC categorizado. ####
 f_imc_cat = function(peso,altura) {

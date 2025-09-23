@@ -61,7 +61,8 @@ z=x/y
 z
 #Remover objetos
 rm(z)
-z
+z #Dá erro porque não existe mais.
+
 #Nomes de objetos
 #Têm que começar com letra.
 #Máx 256 caracteres
