@@ -187,7 +187,7 @@ Crie uma função que receba três variáveis (renda, idade e score) e de termin
 ## <span style="font-size:40pt">**Exercícios de Operadores Lógicos**</span>
 <br>
 **Exercício 9**   
-Crie uma função que receba a altura (H) e o sexo de uma pessoa e determine seu peso ideal, baseado nas seguintes fórmnulas:  
+Crie uma função que receba a altura (H) e o sexo de uma pessoa e determine seu peso ideal, baseado nas seguintes fórmulas:  
 - para homens (72,7 x H) - 58  
 - para mulheres (62,1 x H) - 44,7
 

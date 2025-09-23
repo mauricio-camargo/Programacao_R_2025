@@ -26,7 +26,7 @@ gitcreds::gitcreds_set()
 
 - Arquivos em R
 
-Aula3_Exerc_Resolvidos.R   
+[Aula3_Exerc_Resolvidos.R](Aula3_Exerc_Resolvidos.R)   
 [Aula2_Exerc_Resolvidos.R](Aula2_Exerc_Resolvidos.R)  
-[Aula1.R](Aula1.R)  
+[Aula1_Exerc_Resolvidos.R](Aula1_Exerc_Resolvidos.R)  
 

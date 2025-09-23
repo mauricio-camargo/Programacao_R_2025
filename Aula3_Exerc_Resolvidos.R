@@ -69,9 +69,60 @@ f_aumento = function(sal,cargo) {
 }
 f_aumento(8000,'B')
 
-asd=function(ano){
+# Exercício 6. Positivo, negativo, par ou impar.
+f_numero = function(x) {
+  if (x==0) return('Zero')
+   else
+  if (x<0) return('Negativo')
+   else
+  if (x%%2 == 0) return('Positivo e par')
+   else return('Positivo e impar')
+}
+f_numero(2)
+
+# Exercício 7. Ano é bissexto?
+f_biss=function(ano){
 if (ano %% 4 == 0  | ano %% 400 == 0)
 return('Bissexto')
   else ('Não')
 }
-asd(2024)
+f_biss(2026)
+
+# Exercício 8. Empréstimo bancário.
+f_emp = function(renda,idade,score) {
+  if ((idade>25 & renda>3000) | (score>750) )
+    return('Aprovado')
+  else return('Negado')
+}
+f_emp(3001,26,750)
+
+# Exercício 9. Peso ideal.
+f_peso = function(alt,sexo) {
+  if (sexo=='M') return(72.7*alt - 58)
+  else return(62.1*alt - 44.7)
+}
+f_peso(1.80,'F')
+
+# Exercício 10. Risco de infarte.
+f_infarte = function(pressao,glicose) {
+  if (pressao>140 & glicose>125) return('Risco alto')
+   else
+  if (pressao>140 | glicose>125) return('Risco moderado')
+   else return('Risco baixo')
+}
+f_infarte(120,100)
+
+# Exercício 11. Código do produto.
+f_codigo = function(cod) {
+  if (cod==1) return('Alimento não-perecível')
+   else
+  if (cod==2 | cod==3 | cod==4) return('Alimento perecível')
+   else
+  if (cod==5 | cod==6) return('Vestuário')
+   else
+  if (cod==7) return('Higiene pessoal')
+   else
+  if (cod >= 8 & cod <= 15) return('Limpeza')
+   else return('Outro')
+}
+f_codigo(9)
