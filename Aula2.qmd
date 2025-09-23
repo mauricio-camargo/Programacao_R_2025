@@ -149,7 +149,9 @@ alo_mundo('Hello,','world!')
 
 ![](images/FormulaCF.png){width=50%}  
 
+:::{.fragment}
 **Exercício 8**: Crie uma função que receba um valor em Dólar e converta o valor para Real, considerando que 1 Dólar = 5,7 reais.
+:::
 
 ## <span style="font-size:40pt">**Mais exercícios de funções no R**</span>
 
@@ -242,12 +244,16 @@ if (nota >= 9) {
 
 **Exercício 10:** Escreva uma função que receba do usuário um valor numérico e mostre na tela se é positivo ou negativo.
 
+:::{.fragment}
 **Exercício 11:** Escreva um código que leia um número inteiro (variável num) e verifique:  
 - se é positivo, imprima "Número positivo"  
 - se é negativo, imprima "Número negativo"  
 - se for zero, imprima "Número neutro"  
+:::
 
+:::{.fragment}
 **Exercício 12:** Crie uma função que receba do usuário um valor e mostre na tela se é par ou impar (use o operador %%).
+:::
 
 ## <span style="font-size:30pt">**Exercícios de *if...else* **</span>  
 
