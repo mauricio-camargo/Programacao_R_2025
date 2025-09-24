@@ -16,15 +16,15 @@ justify !important}
 gitcreds::gitcreds_set()
 -->
 
-## Links para as aulas e arquivos
+## Links para Aulas e Arquivos
 
-- Aulas
+- **Aulas**  
 
-[Aula 3 - 12-09-25](Aula3.html)  
-[Aula 2 - 05-09-25](Aula2.html)  
-[Aula 1 - 29-08-25](Aula1.html)  
+Aula 3 (12 Set 2025) [Online](Aula3.html)  [PDF](Aula3.pdf)  
+Aula 2 (05 Set 2025) [Online](Aula2.html)  [PDF](Aula3.pdf)  
+Aula 1 (29 Ago 2025) [Online](Aula1.html)  [PDF](Aula1.pdf)  
 
-- Arquivos em R
+- **Arquivos em R**
 
 [Aula3_Exerc_Resolvidos.R](Aula3_Exerc_Resolvidos.R)   
 [Aula2_Exerc_Resolvidos.R](Aula2_Exerc_Resolvidos.R)  
