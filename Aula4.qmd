@@ -1,0 +1,59 @@
+---
+title: "Programação no R - Aula 4"
+institute: "Prof. Maurício Garcia de Camargo. IO-FURG."
+author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R"
+date: 2025-09-26
+lang: pt-br
+format: 
+  revealjs:
+#    theme: [serif, MeuCustom.scss]
+    logo: images/furg3.png
+    slide-number: true
+    chalkboard: true #Muito bom para aula
+    show-slide-number: all
+    controls: true #Não é menu. ToDo.
+    #Sem estes css o :::box não funciona
+    css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
+---
+
+## <span style="font-size:40pt">Estrutura de repetição</span>
+
+São comandos que permitem que uma sequência de instruções seja executada várias vezes até que uma condição seja satisfeita.
+
+:::{.fragment}
+Se uma instrução ou uma sequência de instruções precisa ser executada
+várias vezes, deve-se utilizar uma estrutura de repetição.
+:::
+
+## <span style="font-size:40pt">Estrutura de repetição</span>
+
+Servem para repetir um conjunto de instruções sem que seja necessário escrevê-las várias vezes.
+
+:::{.fragment}
+Permitem que um trecho do algoritmo seja repetido, em um número
+determinado ou indeterminado de vezes, sem que o código a ser repetido
+tenha que ser escrito novamente.
+:::
+
+:::{.fragment}
+As estruturas de repetição também são chamadas de Laços ou Loops.
+:::
+
+## <span style="font-size:40pt">FOR - principal estrutura de repetição</span>
+
+Deve ser usada quando o número exato de repetições é conhecido. Utiliza uma variável de controle que deve ser do tipo Inteiro.
+
+:::{.fragment}
+Esqueleto da estrutura de repetição **FOR**  
+```r
+for (i in valores) {
+  #Instruções que dependem de i
+}
+```
+:::
+
+:::{.fragment}
+Que dever ser lida assim:  
+"*para cada valor de **i** de 1 até 10 imprima esse valor*".
+:::
+
