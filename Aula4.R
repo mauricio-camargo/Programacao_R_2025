@@ -24,7 +24,7 @@ for (i in vet) {
     print(i)
 }
 
-# Exercício 2 
+# Exercício 1a 
 vet = c(13,25,8,6,33)
 for (i in vet) {
   if (i>20) 
@@ -109,8 +109,8 @@ ft_substituir = function(vet,y,z) {
   print(vet)
 }
 
-v1 = c(2,5,10,12,20,40,50)
-ft_substituir(v1,20,200)
+v2 = c(2,5,10,12,20,40,50)
+ft_substituir(v2,20,200)
 
 # Exercício 11
 ft_remove_vazias = function (x) { 
@@ -124,7 +124,8 @@ ft_remove_vazias = function (x) {
   }
   dw
 }
-ft_remove_vazias(v2)
+v3=c('A','','B','C','')
+ft_remove_vazias(v3)
 
 # Exercício 12
 ft_incluir_no_fim = function (x,y) { 
@@ -132,12 +133,11 @@ ft_incluir_no_fim = function (x,y) {
   x[n+1]=y
   print(x)
 }
-v3 = c(50,60,70,80,90,100,110)
-ft_incluir_no_fim(v3,120)
+v4 = c(50,60,70,80,90,100,110)
+ft_incluir_no_fim(v4,120)
 
 
 # Exercício 13
-v6 = c(5, 20, 15, 20, 25, 50, 20)
 ft_remove_todas = function (x,y) { 
   dw = c()
   Count = 0
@@ -149,4 +149,5 @@ ft_remove_todas = function (x,y) {
   }
   dw
 }
+v5 = c(5, 20, 15, 20, 25, 50, 20)
 ft_remove_todas(v6,20)

@@ -146,41 +146,47 @@ O laço FOR pode ser utilizado em conjunto com estruturas de repetição *(IF...
 **Exercício 1:**  
 Seja o vetor (13,25,8,6,33), crie um laço FOR para percorrer o vetor e imprimir apenas os números maiores que 20.
 
-**Exercício 2:**  
+:::{.fragment}
+**Exercício 1a:**  
 Seja o vetor (13,25,8,6,33), crie um laço FOR para percorrer o vetor e criar um novo vetor para os números maiores que 20.
-
+:::
 
 :::{.fragment}
 **Exercício 2:**  
 Com o mesmo vetor, crie um laço FOR para imprimir para cada número a frase "*O número n é par*" ou "*O número n é impar*", usando para isso a função *paste()*.
 :::
 
-:::{.fragment}
+## <span style="font-size:40pt">Laço FOR - Exercício e desafio</span>
 **Exercício 3:**  
 Ainda com o mesmo vetor, crie um laço FOR para imprimir apenas os números impares e menor que 30.
-:::
 
-## <span style="font-size:40pt">Laço FOR - Exercício e desafio</span>
-
+:::{.fragment}
 **Exercício 4:**  
 Seja uma lista com 3 nomes ('David','Roger','Syd') e outra com 3 sobrenomes ('Guilmour','Waters','Barrett'), crie um laço FOR para imprimir o nome e o sobrenome correspondente (use índice de vetores).
+:::
 
+:::{.fragment}
 **Exercício 5 (desafio):**  
 Seja o vetor (2,3,5,8), crie um laço FOR para calcular a soma deste vetor.
+:::
 
 ## <span style="font-size:40pt">Exercícios de funções e laços FOR</span>
 **Exercício 6:**  
 Crie uma função que receba um vetor e devolva a soma dos seus elementos.
 
+:::{.fragment}
 **Exercício 7:**  
 Crie uma função que receba um vetor e devolva a média dos seus elementos, usando a função anterior de soma.
+:::
 
 ## <span style="font-size:40pt">Exercícios de funções e laços FOR</span>
 **Exercício 8:**  
 Crie um função para encontrar o fatorial de qualquer número.
 
+:::{.fragment}
 **Exercício 9 (desafio):**  
 Crie uma função que receba um vetor de dados de abundância de determinada espécie em um costão rochoso. Transforme este vetor de dados numéricos num vetor de presença/ausência, ou seja, quando a abundância for maior que zero registra-se o valor 1 e na ausência registra-se o valor 0. Teste a função com o conjunto (0,4,1,6,0,0,7,0,35,0).
+:::
 
 ## <span style="font-size:40pt">Exercícios de funções e laços FOR</span>
 **Exercício 10:**  
@@ -189,10 +195,12 @@ Escreva uma função chamada *ft_substituir* que substituirá um valor y por um 
 Teste a função substituindo o valor de 20 por 200 no vetor  
 v1 = c(2,5,10,12,20,40,50)
 
+:::{.fragment}
 **Exercício 11:**  
 Escreva uma função chamada ft_remove_vazias que remova as strings vazias de um vetor v.  
 Teste a função com o vetor   
 v2 = c('a1','a2','','a3','a4','')
+:::
 
 ## <span style="font-size:40pt">Exercícios de funções e laços FOR</span>
 **Exercício 12**  
