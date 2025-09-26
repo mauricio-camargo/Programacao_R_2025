@@ -1,0 +1,15 @@
+Planilha -> BD -> Relações entre tabelas -> SQL
+
+SELECT , INSERT , DELETE , UPDATE
+
+SELECT 
+    *
+    DISTINCT
+    FROM
+    WHERE
+        AND, OR, NOT
+    ORDER BY
+        DESC
+    GROUP BY 
+        count,sum,avg,sd   
+    

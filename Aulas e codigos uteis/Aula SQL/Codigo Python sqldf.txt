@@ -1,0 +1,5 @@
+import pandas as pd
+compras = pd.read_csv("C:/Users/camar/Dropbox/Projetos/Programacao em Python e R - 2022/Semana9a12/Compras.csv",sep=";")
+!pip install pandasql
+from pandasql import sqldf
+sqldf('select * from compras')

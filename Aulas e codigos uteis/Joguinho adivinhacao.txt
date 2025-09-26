@@ -1,0 +1,7 @@
+Escrever um programa de adivinhação em Python e em R, que analisa um número de 1 a 99 sugerido pelo usuário, segundo o algoritmo:
+- o programa gera um número aleatório entre 1 e 99
+- o programa pede ao usuário que entre com um número entre 1 e 99
+- o programa testa se o número informado é maior ou menor do que o número gerado aleatoriamente
+- se for maior, emite uma notificação para que um número maior seja informado novamente
+- se for menor, emite uma notificação para que um número menor seja informado novamente
+- se for igual, emite uma notificação de fim de jogo!

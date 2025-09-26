@@ -412,36 +412,166 @@ Disciplina: Lógica da programação (de computadores) e análise de dados no R
 
   <p class="date">2025-09-26</p>
 </section>
+<section id="revisão-de-ifelse" class="slide level2">
+<h2><span style="font-size:40pt">Revisão de IF…ELSE</span></h2>
+<p>Lembrando estruturas de decisão (IF…ELSE).</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="cf">if</span> (condicao) {</span>
+<span id="cb1-2"><a href="#cb1-2"></a> Comando1</span>
+<span id="cb1-3"><a href="#cb1-3"></a> Comando2</span>
+<span id="cb1-4"><a href="#cb1-4"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Lembrando como criar e utilizar <strong>vetores</strong>, que é um conjunto de elementos do mesmo tipo (numérico, string etc).</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="do">###  Usando "c" para criar um vetor numérico.</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>v1 <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">25</span>,<span class="dv">42</span>,<span class="dv">51</span>)</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="do">###  Usando ":" ou "seq" para criar uma sequência.</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>v2 <span class="ot">=</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>v3 <span class="ot">=</span> <span class="fu">seq</span>(<span class="dv">1</span>,<span class="dv">5</span>,<span class="at">by=</span><span class="dv">1</span>)</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="do">###  Usando "rep" para criar uma repetições. </span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>v4 <span class="ot">=</span> <span class="fu">rep</span>(<span class="dv">5</span>, <span class="at">times=</span><span class="dv">4</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="revisão-de-vetores" class="slide level2">
+<h2><span style="font-size:40pt">Revisão de vetores</span></h2>
+<p>Índice de vetores</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">3</span>, <span class="dv">8</span>, <span class="sc">-</span><span class="dv">5</span>, <span class="dv">12</span>, <span class="dv">9</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a>x[<span class="dv">1</span>]          <span class="co"># primeiro</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>x[<span class="dv">2</span><span class="sc">:</span><span class="dv">4</span>]        <span class="co"># do 2 ao 4</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>x[<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">5</span>)]   <span class="co"># índices não sequenciais</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Alterar e anexar vetores</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a>x[<span class="dv">3</span>] <span class="ot">=</span> <span class="dv">99</span>           <span class="co"># altera o 3º elemento</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>x <span class="ot">=</span> <span class="fu">c</span>(x, <span class="dv">33</span>)      <span class="co"># adiciona elemento no final</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="revisão-de-vetores-1" class="slide level2">
+<h2><span style="font-size:40pt">Revisão de vetores</span></h2>
+<p>Funções úteis para usar com vetores</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="ot">=</span> (<span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">6</span>,<span class="dv">8</span>)</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">length</span>(x)</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fu">sum</span>(x)</span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">mean</span>(x)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Criar um vetor vazio para preenchimento</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>vet <span class="ot">=</span> <span class="fu">c</span>()    <span class="co">#Criando um vetor vazio.</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a>    <span class="do">### Preenchendo o vetor vazio.</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a>vet[<span class="dv">1</span>] <span class="ot">=</span> <span class="dv">15</span>     <span class="co"># Atribui o valor de 15 ao primeiro elemento. </span></span>
+<span id="cb6-4"><a href="#cb6-4"></a>vet[<span class="dv">2</span>] <span class="ot">=</span> <span class="dv">21</span>     <span class="co"># Atribui o valor de 21 ao segundo elemento.</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
 <section id="estrutura-de-repetição" class="slide level2">
 <h2><span style="font-size:40pt">Estrutura de repetição</span></h2>
 <p>São comandos que permitem que uma sequência de instruções seja executada várias vezes até que uma condição seja satisfeita.</p>
 <div class="fragment">
-<p>Se uma instrução ou uma sequência de instruções precisa ser executada várias vezes, deve-se utilizar uma estrutura de repetição.</p>
-</div>
-</section>
-<section id="estrutura-de-repetição-1" class="slide level2">
-<h2><span style="font-size:40pt">Estrutura de repetição</span></h2>
-<p>Servem para repetir um conjunto de instruções sem que seja necessário escrevê-las várias vezes.</p>
-<div class="fragment">
-<p>Permitem que um trecho do algoritmo seja repetido, em um número determinado ou indeterminado de vezes, sem que o código a ser repetido tenha que ser escrito novamente.</p>
+<p>Servem para <strong>repetir</strong> um conjunto de instruções sem que seja necessário escrevê-las várias vezes.</p>
 </div>
 <div class="fragment">
-<p>As estruturas de repetição também são chamadas de Laços ou Loops.</p>
+<p>As estruturas de repetição também são chamadas de <strong>Loops</strong> (<strong>Laços</strong>, em português). Os dois principais laços são <em>FOR</em> e <em>WHILE</em>.</p>
 </div>
 </section>
-<section id="for---principal-estrutura-de-repetição" class="slide level2">
-<h2><span style="font-size:40pt">FOR - principal estrutura de repetição</span></h2>
-<p>Deve ser usada quando o número exato de repetições é conhecido. Utiliza uma variável de controle que deve ser do tipo Inteiro.</p>
+<section id="laço-for" class="slide level2">
+<h2><span style="font-size:40pt">Laço FOR </span></h2>
+<p>Deve ser usada quando o número exato de repetições é conhecido. Utiliza uma <strong>variável de controle</strong> que deve ser do tipo Inteiro.</p>
 <div class="fragment">
 <p>Esqueleto da estrutura de repetição <strong>FOR</strong></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>) {</span>
-<span id="cb1-2"><a href="#cb1-2"></a>  <span class="fu">print</span>(i)</span>
-<span id="cb1-3"><a href="#cb1-3"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="cf">for</span> (i <span class="cf">in</span> itens) {</span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="co">#Instruções que dependem de "i" (ou qualquer outro nome de variável)</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
-<p>Que dever ser lida assim:<br>
-“<em>para cada valor de <strong>i</strong> de 1 até 10 imprima esse valor</em>”.</p>
+<p>Onde <em>i</em> é uma variável de controle que serve para representar qualquer um dos valores de <em>itens</em>, que pode ser um vetor, por exemplo.</p>
 </div>
+</section>
+<section id="laço-for---exemplo-em-r" class="slide level2">
+<h2><span style="font-size:40pt">Laço FOR - Exemplo em R</span></h2>
+<p>Exemplo 1. Simples laço FOR com um vetor numérico:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) { </span>
+<span id="cb8-2"><a href="#cb8-2"></a> <span class="fu">print</span>(i)</span>
+<span id="cb8-3"><a href="#cb8-3"></a>}</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Que dever ser lida assim: “<em>Para cada valor de <strong>i</strong> dentro do vetor de 1 até 5, imprima esse valor</em>”.</p>
+</div>
+<div class="fragment">
+<p>Lembrando que podemos escrever esse código em uma linha:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>) <span class="fu">print</span>(i)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="laço-for---exemplo-em-r-1" class="slide level2">
+<h2><span style="font-size:40pt">Laço FOR - Exemplo em R</span></h2>
+<p>Exemplo 2. Criando um vetor numérico para ser percorrido pelo laço FOR:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a>vet <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">1</span>,<span class="dv">9</span>)</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="cf">for</span> (i <span class="cf">in</span> vet) <span class="fu">print</span>(i)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="fragment">
+<p>Exemplo 3. Estrutura simples de laço FOR com um vetor de strings:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>pessoas <span class="ot">=</span> <span class="fu">c</span>(<span class="st">'Carla'</span>,<span class="st">'Mauro'</span>,<span class="st">'Sofia'</span>)</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="cf">for</span> (p <span class="cf">in</span> pessoas) <span class="fu">print</span>(p)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<div class="fragment">
+<p>Que dever ser lida assim: “<em>Para cada nome <strong>p</strong> dentro do vetor <strong>pessoas</strong>, imprima o valor de <strong>p</strong> </em>”.</p>
+</div>
+<div class="fragment">
+<p>O laço FOR pode ser utilizado em conjunto com estruturas de repetição <em>(IF…ELSE)</em>.</p>
+</div>
+</section>
+<section id="laço-for---exercícios" class="slide level2">
+<h2><span style="font-size:40pt">Laço FOR - Exercícios</span></h2>
+<p><strong>Exercício 1:</strong><br>
+Seja o vetor (13,25,8,6,33), crie um laço FOR para percorrer o vetor e imprimir apenas os números maiores que 20.</p>
+<p><strong>Exercício 2:</strong><br>
+Seja o vetor (13,25,8,6,33), crie um laço FOR para percorrer o vetor e criar um novo vetor para os números maiores que 20.</p>
+<div class="fragment">
+<p><strong>Exercício 2:</strong><br>
+Com o mesmo vetor, crie um laço FOR para imprimir para cada número a frase “<em>O número n é par</em>” ou “<em>O número n é impar</em>”, usando para isso a função <em>paste()</em>.</p>
+</div>
+<div class="fragment">
+<p><strong>Exercício 3:</strong><br>
+Ainda com o mesmo vetor, crie um laço FOR para imprimir apenas os números impares e menor que 30.</p>
+</div>
+</section>
+<section id="laço-for---exercício-e-desafio" class="slide level2">
+<h2><span style="font-size:40pt">Laço FOR - Exercício e desafio</span></h2>
+<p><strong>Exercício 4:</strong><br>
+Seja uma lista com 3 nomes (‘David’,‘Roger’,‘Syd’) e outra com 3 sobrenomes (‘Guilmour’,‘Waters’,‘Barrett’), crie um laço FOR para imprimir o nome e o sobrenome correspondente (use índice de vetores).</p>
+<p><strong>Exercício 5 (desafio):</strong><br>
+Seja o vetor (2,3,5,8), crie um laço FOR para calcular a soma deste vetor.</p>
+</section>
+<section id="exercícios-de-funções-e-laços-for" class="slide level2">
+<h2><span style="font-size:40pt">Exercícios de funções e laços FOR</span></h2>
+<p><strong>Exercício 6:</strong><br>
+Crie uma função que receba um vetor e devolva a soma dos seus elementos.</p>
+<p><strong>Exercício 7:</strong><br>
+Crie uma função que receba um vetor e devolva a média dos seus elementos, usando a função anterior de soma.</p>
+</section>
+<section id="exercícios-de-funções-e-laços-for-1" class="slide level2">
+<h2><span style="font-size:40pt">Exercícios de funções e laços FOR</span></h2>
+<p><strong>Exercício 8:</strong><br>
+Crie um função para encontrar o fatorial de qualquer número.</p>
+<p><strong>Exercício 9 (desafio):</strong><br>
+Crie uma função que receba um vetor de dados de abundância de determinada espécie em um costão rochoso. Transforme este vetor de dados numéricos num vetor de presença/ausência, ou seja, quando a abundância for maior que zero registra-se o valor 1 e na ausência registra-se o valor 0. Teste a função com o conjunto (0,4,1,6,0,0,7,0,35,0).</p>
+</section>
+<section id="exercícios-de-funções-e-laços-for-2" class="slide level2">
+<h2><span style="font-size:40pt">Exercícios de funções e laços FOR</span></h2>
+<p><strong>Exercício 10:</strong><br>
+Escreva uma função chamada <em>ft_substituir</em> que substituirá um valor y por um valor z no vetor v.</p>
+<p>Teste a função substituindo o valor de 20 por 200 no vetor<br>
+v1 = c(2,5,10,12,20,40,50)</p>
+<p><strong>Exercício 11:</strong><br>
+Escreva uma função chamada ft_remove_vazias que remova as strings vazias de um vetor v.<br>
+Teste a função com o vetor<br>
+v2 = c(‘a1’,‘a2’,’‘,’a3’,‘a4’,’’)</p>
+</section>
+<section id="exercícios-de-funções-e-laços-for-3" class="slide level2">
+<h2><span style="font-size:40pt">Exercícios de funções e laços FOR</span></h2>
+<p><strong>Exercício 12</strong><br>
+Escreva uma função chamada <em>ft_incluir_no_fim</em> que incluirá um valor y no final de um vetor v. Teste a função incluindo o valor de 120 ao vetor<br>
+v3 = c(50,60,70,80,90,100,110)</p>
+</section>
+<section id="exercícios-de-funções-e-laços-for-4" class="slide level2">
+<h2><span style="font-size:40pt">Exercícios de funções e laços FOR</span></h2>
+<p><strong>Exercício 13</strong><br>
+Escreva uma função para remover todas as ocorrências de um valor y no vetor x.<br>
+Teste a função removendo as ocorrências do valor 20.<br>
+v4 = c(5, 20, 15, 20, 25, 50, 20)</p>
 
 <img src="images/furg3.png" class="slide-logo r-stretch"><div class="footer footer-default">
 

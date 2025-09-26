@@ -16,44 +16,192 @@ format:
     css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
 ---
 
-## <span style="font-size:40pt">Estrutura de repetição</span>
-
-São comandos que permitem que uma sequência de instruções seja executada várias vezes até que uma condição seja satisfeita.
+## <span style="font-size:40pt">Revisão de IF...ELSE</span>
+Lembrando estruturas de decisão (IF...ELSE).
+```r
+if (condicao) {
+ Comando1
+ Comando2
+}
+```
 
 :::{.fragment}
-Se uma instrução ou uma sequência de instruções precisa ser executada
-várias vezes, deve-se utilizar uma estrutura de repetição.
+Lembrando como criar e utilizar **vetores**, que é um conjunto de elementos do mesmo tipo (numérico, string etc).
+
+```r
+###  Usando "c" para criar um vetor numérico.
+v1 = c(25,42,51)
+###  Usando ":" ou "seq" para criar uma sequência.
+v2 = 1:5
+v3 = seq(1,5,by=1)
+###  Usando "rep" para criar uma repetições. 
+v4 = rep(5, times=4)
+```
+:::
+
+
+## <span style="font-size:40pt">Revisão de  vetores</span>
+Índice de vetores
+```r
+x = c(3, 8, -5, 12, 9)
+
+x[1]          # primeiro
+x[2:4]        # do 2 ao 4
+x[c(1,2,5)]   # índices não sequenciais
+```
+:::{.fragment}
+Alterar e anexar vetores
+```r
+x[3] = 99           # altera o 3º elemento
+x = c(x, 33)      # adiciona elemento no final
+```
+:::
+
+## <span style="font-size:40pt">Revisão de  vetores</span>
+Funções úteis para usar com vetores
+```r
+x = (2,4,6,8)
+length(x)
+sum(x)
+mean(x)
+```
+
+:::{.fragment}
+Criar um vetor vazio para preenchimento
+```r
+vet = c()    #Criando um vetor vazio.
+    ### Preenchendo o vetor vazio.
+vet[1] = 15     # Atribui o valor de 15 ao primeiro elemento. 
+vet[2] = 21     # Atribui o valor de 21 ao segundo elemento.
+```
 :::
 
 ## <span style="font-size:40pt">Estrutura de repetição</span>
+São comandos que permitem que uma sequência de instruções seja executada várias vezes até que uma condição seja satisfeita.  
 
-Servem para repetir um conjunto de instruções sem que seja necessário escrevê-las várias vezes.
-
-:::{.fragment}
-Permitem que um trecho do algoritmo seja repetido, em um número
-determinado ou indeterminado de vezes, sem que o código a ser repetido
-tenha que ser escrito novamente.
+:::{.fragment}  
+Servem para **repetir** um conjunto de instruções sem que seja necessário escrevê-las várias vezes.
 :::
 
 :::{.fragment}
-As estruturas de repetição também são chamadas de Laços ou Loops.
+As estruturas de repetição também são chamadas de  **Loops** (**Laços**, em português). Os dois principais laços são *FOR* e *WHILE*.   
 :::
 
-## <span style="font-size:40pt">FOR - principal estrutura de repetição</span>
-
-Deve ser usada quando o número exato de repetições é conhecido. Utiliza uma variável de controle que deve ser do tipo Inteiro.
+## <span style="font-size:40pt">Laço FOR </span>
+Deve ser usada quando o número exato de repetições é conhecido. Utiliza uma **variável de controle** que deve ser do tipo Inteiro.
 
 :::{.fragment}
 Esqueleto da estrutura de repetição **FOR**  
 ```r
-for (i in valores) {
-  #Instruções que dependem de i
+for (i in itens) {
+  #Instruções que dependem de "i" (ou qualquer outro nome de variável)
 }
 ```
 :::
 
 :::{.fragment}
-Que dever ser lida assim:  
-"*para cada valor de **i** de 1 até 10 imprima esse valor*".
+Onde *i* é uma variável de controle que serve para representar qualquer um dos valores de *itens*, que pode ser um vetor, por exemplo.
 :::
 
+## <span style="font-size:40pt">Laço FOR - Exemplo em R</span>
+Exemplo 1. Simples laço FOR com um vetor numérico:  
+```r
+for (i in 1:5) { 
+ print(i)
+}
+```
+:::{.fragment}
+Que dever ser lida assim: "*Para cada valor de **i** dentro do vetor de 1 até 5, imprima esse valor*".
+:::
+:::{.fragment}
+Lembrando que podemos escrever esse código em uma linha:  
+```r
+for (i in 1:5) print(i)
+```
+:::
+
+## <span style="font-size:40pt">Laço FOR - Exemplo em R</span>
+Exemplo 2. Criando um vetor numérico para ser percorrido pelo laço FOR:  
+```r
+vet = c(2,5,1,9)
+for (i in vet) print(i)
+```
+
+:::{.fragment}
+Exemplo 3.  Estrutura simples de laço FOR com um vetor de strings:  
+```r
+pessoas = c('Carla','Mauro','Sofia')
+for (p in pessoas) print(p)
+```
+:::
+:::{.fragment}
+Que dever ser lida assim: "*Para cada nome **p** dentro do vetor **pessoas**, imprima o valor de **p** *".
+:::
+:::{.fragment}
+O laço FOR pode ser utilizado em conjunto com estruturas de repetição *(IF...ELSE)*.
+:::
+
+## <span style="font-size:40pt">Laço FOR - Exercícios</span>
+
+**Exercício 1:**  
+Seja o vetor (13,25,8,6,33), crie um laço FOR para percorrer o vetor e imprimir apenas os números maiores que 20.
+
+**Exercício 2:**  
+Seja o vetor (13,25,8,6,33), crie um laço FOR para percorrer o vetor e criar um novo vetor para os números maiores que 20.
+
+
+:::{.fragment}
+**Exercício 2:**  
+Com o mesmo vetor, crie um laço FOR para imprimir para cada número a frase "*O número n é par*" ou "*O número n é impar*", usando para isso a função *paste()*.
+:::
+
+:::{.fragment}
+**Exercício 3:**  
+Ainda com o mesmo vetor, crie um laço FOR para imprimir apenas os números impares e menor que 30.
+:::
+
+## <span style="font-size:40pt">Laço FOR - Exercício e desafio</span>
+
+**Exercício 4:**  
+Seja uma lista com 3 nomes ('David','Roger','Syd') e outra com 3 sobrenomes ('Guilmour','Waters','Barrett'), crie um laço FOR para imprimir o nome e o sobrenome correspondente (use índice de vetores).
+
+**Exercício 5 (desafio):**  
+Seja o vetor (2,3,5,8), crie um laço FOR para calcular a soma deste vetor.
+
+## <span style="font-size:40pt">Exercícios de funções e laços FOR</span>
+**Exercício 6:**  
+Crie uma função que receba um vetor e devolva a soma dos seus elementos.
+
+**Exercício 7:**  
+Crie uma função que receba um vetor e devolva a média dos seus elementos, usando a função anterior de soma.
+
+## <span style="font-size:40pt">Exercícios de funções e laços FOR</span>
+**Exercício 8:**  
+Crie um função para encontrar o fatorial de qualquer número.
+
+**Exercício 9 (desafio):**  
+Crie uma função que receba um vetor de dados de abundância de determinada espécie em um costão rochoso. Transforme este vetor de dados numéricos num vetor de presença/ausência, ou seja, quando a abundância for maior que zero registra-se o valor 1 e na ausência registra-se o valor 0. Teste a função com o conjunto (0,4,1,6,0,0,7,0,35,0).
+
+## <span style="font-size:40pt">Exercícios de funções e laços FOR</span>
+**Exercício 10:**  
+Escreva uma função chamada *ft_substituir* que substituirá um valor y por um valor z no vetor v.
+
+Teste a função substituindo o valor de 20 por 200 no vetor  
+v1 = c(2,5,10,12,20,40,50)
+
+**Exercício 11:**  
+Escreva uma função chamada ft_remove_vazias que remova as strings vazias de um vetor v.  
+Teste a função com o vetor   
+v2 = c('a1','a2','','a3','a4','')
+
+## <span style="font-size:40pt">Exercícios de funções e laços FOR</span>
+**Exercício 12**  
+Escreva uma função chamada *ft_incluir_no_fim* que incluirá um valor y no final de um vetor v.
+Teste a função incluindo o valor de 120 ao vetor  
+v3 = c(50,60,70,80,90,100,110)
+
+## <span style="font-size:40pt">Exercícios de funções e laços FOR</span>
+**Exercício 13**  
+Escreva uma função para remover todas as ocorrências de um valor y no vetor x.  
+Teste a função removendo as ocorrências do valor 20.  
+v4 = c(5, 20, 15, 20, 25, 50, 20)
