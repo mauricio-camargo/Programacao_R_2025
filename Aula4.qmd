@@ -60,7 +60,7 @@ x = c(x, 33)      # adiciona elemento no final
 ## <span style="font-size:40pt">Revisão de  vetores</span>
 Funções úteis para usar com vetores
 ```r
-x = (2,4,6,8)
+x = c(2,4,6,8)
 length(x)
 sum(x)
 mean(x)
