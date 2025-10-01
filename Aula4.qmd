@@ -17,6 +17,7 @@ format:
 ---
 
 ## <span style="font-size:40pt">Revisão de IF...ELSE</span>
+<br>
 Lembrando estruturas de decisão (IF...ELSE).
 ```r
 if (condicao) {
