@@ -12,22 +12,53 @@ format:
     chalkboard: true #Muito bom para aula
     show-slide-number: all
     controls: true #Não é menu. ToDo.
-    #Sem estes css o :::box não funciona
+    #Sem estes css o :::box ou info-box não funciona
     css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
 ---
 
+
+## <span style="font-size:40pt">Matrizes no R</span>
+- Revisão de vetores
+```r
+v1 = c(2,4,5,7,11)   # Criando um vetor
+v2 = 1:5             # Sequência simples
+length(v1)           # Número de elementos do vetor
+v1[1]                # Primeiro elemento
+v[2:5]               # Do segundo ao quinto elemento
+v[c(2,4)]            # Segundo e quarto elemento
+v[-1]                # Todos exceto o primeiro
+v[c(-2,3)]
+
+
+
+```
+
+
 ## <span style="font-size:40pt">Revisão de FOR</span>
+Esqueleto da estrutura de repetição FOR
+```r
+for (i in vetor) {
+  #Instruções do looping
+}
+```
 
-Opa!
+Exemplos:
+```r
+for (i in 1:5) {
+print(i)
+}
 
-:::info-box
-sdsdf
-:::
+### Somando os elementos de um vetor
+y = 0                   # Valor inicial da variável y
+for (i in 1:10)  {               # Início do looping
+ y = y + i     # Acumulando o valor de soma
+}                                # Fim do looping
+
+y                             # Chamando o valor da variável y 
+```
 
 
-## <span style="font-size:40pt">ToDo:</span>
+## <span style="font-size:40pt">FOR duplo (aninhado)</span>
 
-:::info-box
-- Filtros em índices de vetores (começar com for)
-- 
-:::
+Primeiramente, vamos aprender sobre
+
