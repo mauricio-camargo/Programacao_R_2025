@@ -2,7 +2,7 @@
 title: "Programação no R - Aula 5"
 institute: "Prof. Maurício Garcia de Camargo. IO-FURG."
 author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R"
-date: 2025-09-26
+date: 2025-10-03
 lang: pt-br
 format: 
   revealjs:
@@ -16,49 +16,202 @@ format:
     css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
 ---
 
+## <span style="font-size:40pt">Revisão de vetores</span>
+Os cinco fundamentos da programação são:  
+**1. Function**  (abstração)
 
-## <span style="font-size:40pt">Matrizes no R</span>
-- Revisão de vetores
 ```r
-v1 = c(2,4,5,7,11)   # Criando um vetor
-v2 = 1:5             # Sequência simples
+f_soma = function(n1,n2) {
+  print(paste('Soma = ',n1+n2))
+}
+f_soma(7,5)
+```
+
+**2. IF**  
+**3. ELSE**  
+**4. FOR**  
+**5. WHILE**  
+
+
+## <span style="font-size:40pt">Revisão de vetores</span>
+Criando vetores
+```r
+v1 = c(2,4,5,7,11)   # Criando um vetor numérico
+v2 = c('A','B','C')  # Criando um vetor de strings
+v3 = 1:5             # Sequência simples
+v4 = rep(12,5)       # Função rep() para criar um vetor 
+```
+:::{.fragment}
+Funções vetoriais
+```r
 length(v1)           # Número de elementos do vetor
-v1[1]                # Primeiro elemento
-v[2:5]               # Do segundo ao quinto elemento
-v[c(2,4)]            # Segundo e quarto elemento
-v[-1]                # Todos exceto o primeiro
-v[c(-2,3)]
+sum(v1)              # Soma dos elementos do vetor
+```
+:::
+:::{.fragment}
+Índices de vetores
+```r
+x = c(3,8,5,12,4)
+x[1]                # Primeiro o elemento
+x[2:5]              # Do segundo ao quinto elemento
+x[c(2,4)]           # Segundo E quarto elemento
+#### Atribuir valores a um elemento do vetor ####
+x[3] = 99           # Atribuir um elemento individual
+x = c(x, 33)        # Concatenar um elemento a um vetor
+```
+:::
 
-
-
+## <span style="font-size:40pt">Novidades sobre vetores</span>
+```{r, echo=T}
+x = c(0,3,8,5,12,4)
+x[-1]                       # Todos, exceto o primeiro
+x[c(-2,-3)]                 # Todos, exceto o segundo e o terceiro
+x[x >= 7]                   # Filtragem lógica
+x[(x < 5) & (x != 0 )]      # Filtragem lógica com operadores booleanos
 ```
 
+## <span style="font-size:40pt">Matrizes</span>
+Um vetor numérico pode ser compreendido como uma linha (ou coluna) de números.
+```{r,echo=T}
+x = c(1,2,3,4,5)
+x
+```
+:::{.fragment}
+Uma matriz é uma junção de dois ou mais vetores, que podem ser combinados usando a função **rbind** para unir linhas ou **cbind** para unir colunas.
+```{r,echo=T}
+m = rbind(c(1,2,3), c(4,5,6))
+m
+```
+Existem muitas outras maneiras de contruir matrizes.
+:::
 
-## <span style="font-size:40pt">Revisão de FOR</span>
-Esqueleto da estrutura de repetição FOR
+## <span style="font-size:40pt">Tranformando um vetor em matriz</span>
+Seja o vetor v:
+```{r,echo=T}
+v = c(1,2,3,4,5,6)
+v
+```
+:::{.fragment}
+Para tranformá-lo em matriz:
+```{r, echo=T}
+m = matrix(v, nrow = 2)
+m
+```
+Repare nos índices das linhas e colunas.
+:::
+
+## <span style="font-size:40pt">Índices de matrizes</span>
+Exemplo de matriz com 4 linhas e 3 colunas:
+```{r,echo=T}
+v = 1:12
+v
+m = matrix(v, nrow = 4)
+m
+```
+O índice da matriz é dados por *m[linha,coluna]*  
+Vetor tem 1 dimensão (*linhas*).  
+Matriz tem 2 dimensões (*linhas* e *colunas*).
+
+## <span style="font-size:40pt">Mais sobre índices de matrizes</span>
+```{r,echo=T}
+m
+### Para selecionar a terceira linha inteira:
+m[3,]
+### Para selecionar a segunda coluna inteira:
+m[,2]
+### Para selecionar as 3 primeiras linhas da segunda coluna:
+m[1:3,2]
+```
+
+## <span style="font-size:40pt">Exemplos de índices</span>
+A lógica de utilização de índices é a mesma de vetores, porém com duas dimensões.
+```{r,echo=T}
+m
+m[2,3] #Extrai a segunda linha e a terceira coluna
+m[c(1,3),c(2,3)] #Extrai a primeira e terceira linha e segunda e quarta coluna.
+```
+
+## <span style="font-size:40pt">Exercício de índices em matrizes</span>
+**Exercício 1.** Seja a matriz **m**, criada da seguinta maneira:
+```{r,echo=T}
+m = matrix(1:8,nrow = 4)
+m
+```
+A. Extraia o valor da primeira linha e primeira coluna.   
+B. Extraia o valor da última linha e última coluna.  
+C. Extraia todos os valores da primeira linha.  
+D. Extraia todos os valores da última coluna.  
+E. Extraia os segundo e terceiro valores das linha da primeira coluna.
+
+## <span style="font-size:40pt">*Back to programming - lembrando o laço FOR*</span>
+
+O laço **FOR** deve ser usada quando o número exato de repetições é conhecido. Utiliza uma *variável de controle* que deve ser do tipo número inteiro.
+
+:::{.fragment}
+Esqueleto da estrutura de repetição **FOR** é:
 ```r
-for (i in vetor) {
-  #Instruções do looping
+#for (i in itens) {
+#  #Instruções que dependem de "i" (ou qualquer #outro nome de variável)
 }
 ```
+Onde *i* é uma variável de controle que serve para representar qualquer um dos valores de *itens*, que pode ser um vetor, por exemplo.
+:::
 
-Exemplos:
-```r
-for (i in 1:5) {
-print(i)
-}
+## <span style="font-size:30pt">Usando FOR em matrizes</span>
+<span style="font-size:24pt">Para percorrer todos os elementos da matriz, é preciso usar dois laços FOR, um para o número de linhas (**nrow**) e outro para o número de colunas (**ncol**):</span>
 
-### Somando os elementos de um vetor
-y = 0                   # Valor inicial da variável y
-for (i in 1:10)  {               # Início do looping
- y = y + i     # Acumulando o valor de soma
-}                                # Fim do looping
-
-y                             # Chamando o valor da variável y 
+```{r, echo=T}
+m = matrix(1:8,nrow = 4)
+m
+for (i in 1:nrow(m))
+  for (j in 1:ncol(m))
+    print(m[i,j])
 ```
 
+## <span style="font-size:40pt">Exercícios com matrizes</span>
+**Exercício 2.**  
+Crie uma matriz **m** com elementos sequenciais de 1 até 16 distribuídos em 4 linhas.  
+<br>  
 
-## <span style="font-size:40pt">FOR duplo (aninhado)</span>
+:::{.fragment}
+**Exercício 3.**  
+Substitua na matriz **m** o elemento da linha 2 e  coluna 3 pelo valor de zero.  
+:::
+## <span style="font-size:40pt">Exercícios com matrizes</span>
+**Exercício 4.**  
+Com a mesma matriz **m**, faça um laço FOR para acumular a soma de todos os elementos da matriz. <br>  
 
-Primeiramente, vamos aprender sobre
+:::{.fragment}
+**Exercício 5.**  
+Com a mesma matriz m, faça um laço que irá acumular (em um vetor vazio) a soma de cada linha.
+:::
+
+## <span style="font-size:40pt">Exercícios com matrizes</span>
+**Exercício 6.**  
+Com a matriz **m**, conte o número de elementos que são maiores do que 12.  
+
+:::{.fragment}
+**Exercício 7.**  
+Crie uma função que receba uma matriz e devolva um vetor contendo os valores da diagonal principal (quando i=j).
+:::
+
+## <span style="font-size:40pt">Exercícios com matrizes</span>
+**Exercício 8 (DESAFIO).**  
+Crie uma função que receberá dois números (a e b) e imprima a tabuada de a até b.  
+Por exemplo: imprimir a tabuada de 1 até 10.
+
+"Tabuada do 1"  
+"1 x 1 = 1"  
+"1 x 2 = 2"  
+...
+"Tabuada do 2"  
+"2 x 1 = 2"  
+"2 x 2 = 4"  
+... etc até a tabuada do 10.
+
+## <span style="font-size:40pt">Laço WHILE</span>
+-  **FOR**: você sabe previamente quantas iterações fará (o número de elementos a percorrer).
+
+-  **WHILE**: você não sabe quantas iterações serão necessárias. o laço para quando a condição deixar de ser verdadeira.
+
 

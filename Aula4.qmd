@@ -89,7 +89,7 @@ As estruturas de repetição também são chamadas de  **Loops** (**Laços**, em
 :::
 
 ## <span style="font-size:40pt">Laço FOR </span>
-Deve ser usada quando o número exato de repetições é conhecido. Utiliza uma **variável de controle** que deve ser do tipo Inteiro.
+Deve ser usado quando o número exato de repetições é conhecido. Utiliza uma **variável de controle** que deve ser do tipo Inteiro.
 
 :::{.fragment}
 Esqueleto da estrutura de repetição **FOR**  

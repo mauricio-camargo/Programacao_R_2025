@@ -1,0 +1,23 @@
+NO QUADRO:
+1. Function
+    Exemplo
+
+soma2n = function(n1,n2) {
+  print(paste('Soma = ',n1+n2))
+}
+soma2(7,5)
+
+-> Function é uma abstração. Falar sobre a importância 
+da abstração na história da humanidade (Sapiens)
+
+2. IF
+3. ELSE
+4. FOR
+5. WHILE
+
+OUTROS:
+- Desafio da Tabuada com FOR duplo.
+- Separar em grupos de no mínimo 3, por sorteio?
+- Resolver o problema da tabuada, seja por qual meio for.
+- O grupo terá que apresentar o método.
+- 
