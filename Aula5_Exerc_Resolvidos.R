@@ -1,9 +1,30 @@
-#### Exercício 2
+#### Exercício 1 ####
+m = matrix(1:8,nrow=4)
+m
+
+### A
+m[1,1]
+### B
+m[4,2]
+ou
+m[nrow(m),ncol(m)]
+### C
+m[1,]
+### D
+m[,ncol(m)]
+### E
+m[2:3,1]
+ou
+m[c(2,3),1]
+
+#### Exercício 2 ####
 m=matrix(1:16,nrow=4)
 m
 
 #### Exercício 3
 m[2,3] = 0
+ou
+m[2,3] <- 0
 m
 
 #### Exercício 4
@@ -28,8 +49,8 @@ v_soma
 
 #### Exercício 6
 cont = 0
-for (i in 1:(nrow(m))) 
-  for (j in 1:(ncol(m))) 
+for (i in 1:nrow(m)) 
+  for (j in 1:ncol(m)) 
     if (m[i,j] > 12)
      cont = cont + 1
 
@@ -45,14 +66,3 @@ for (i in 1:(nrow(m)))
 return(vet)
 }
 f_diag(m)
-
-
-#### Exercício 8
-f_tab = function(a,b) {
-for (n1 in a:b) {
-  print(paste('Tabuada do ', n1))
-  for (n2 in a:b)
-    print(paste(n1, 'x', n2, ' = ', n1 * n2))
-}
-}
-f_tab(1,3)
