@@ -209,9 +209,3 @@ Por exemplo: imprimir a tabuada de 1 até 10.
 "2 x 2 = 4"  
 ... etc até a tabuada do 10.
 
-## <span style="font-size:40pt">Laço WHILE</span>
--  **FOR**: você sabe previamente quantas iterações fará (o número de elementos a percorrer).
-
--  **WHILE**: você não sabe quantas iterações serão necessárias. o laço para quando a condição deixar de ser verdadeira.
-
-
