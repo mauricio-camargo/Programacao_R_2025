@@ -66,3 +66,13 @@ for (i in 1:(nrow(m)))
 return(vet)
 }
 f_diag(m)
+
+#### Exercício 8
+f_tab = function(a,b) {
+  for (n1 in a:b) {
+    print(paste('Tabuada do ', n1))
+    for (n2 in a:10)
+      print(paste(n1, 'x', n2, ' = ', n1 * n2))
+  }
+}
+f_tab(1,4)

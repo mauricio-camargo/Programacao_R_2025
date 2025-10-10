@@ -16,8 +16,7 @@ format:
     css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
 ---
 
-## <span style="font-size:40pt">Revisão de vetores</span>
-Os cinco fundamentos da programação são:  
+## <span style="font-size:40pt">Os cinco fundamentos da programação</span>
 **1. Function**  (abstração)
 
 ```r
