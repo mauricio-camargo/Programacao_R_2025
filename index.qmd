@@ -1,6 +1,6 @@
 ---
 title: "Lógica da programação (de computadores) e análise de dados no R"
-subtitle: Prof. Mauricio Camargo
+subtitle: Prof. Mauricio Camargo (2025-2)
 format: html
 lang: pt-br
 engine: knitr
@@ -20,7 +20,7 @@ gitcreds::gitcreds_set()
 
 - **Aulas**  
 
-Aula 7 (17 Out 2025)
+Aula 7 (17 Out 2025)  
 Aula 6 (10 Out 2025) [Online](Aula6.html) [PDF](Aula6.pdf)   
 Aula 5 (03 Out 2025) [Online](Aula5.html) [PDF](Aula5.pdf)  
 Aula 4 (26 Set 2025) [Online](Aula4.html)  [PDF](Aula4.pdf)  
