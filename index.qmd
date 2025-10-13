@@ -30,11 +30,10 @@ Aula 1 (29 Ago 2025) [Online](Aula1.html)  [PDF](Aula1.pdf)
 
 - **Arquivos em R**
 
-Aula6_Exerc_Resolvidos.R  
+[Aula6_Exerc_Resolvidos.R](Aula6_Exerc_Resolvidos.R)  
 [Aula5_Exerc_Resolvidos.R](Aula5_Exerc_Resolvidos.R)  
 [Aula4_Exerc_Resolvidos.R](Aula4_Exerc_Resolvidos.R)   
 [Aula3_Exerc_Resolvidos.R](Aula3_Exerc_Resolvidos.R)   
 [Aula2_Exerc_Resolvidos.R](Aula2_Exerc_Resolvidos.R)  
-
 [Aula1_Exerc_Resolvidos.R](Aula1_Exerc_Resolvidos.R)  
 

@@ -1,0 +1,20 @@
+---
+title: "Programação no R - Aula 7"
+institute: "Prof. Maurício Garcia de Camargo. IO-FURG."
+author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R"
+date: 2025-10-17
+lang: pt-br
+format: 
+  revealjs:
+#    theme: [serif, MeuCustom.scss]
+    logo: images/furg3.png
+    slide-number: true
+    chalkboard: true #Muito bom para aula
+    show-slide-number: all
+    controls: true #Não é menu. ToDo.
+    #Sem estes css o :::box ou info-box não funciona
+    css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
+---
+
+## 
+Desafio da aula anterior?

@@ -1,4 +1,14 @@
-#### Exemplo 1 ####
+#### Desafio da aula passada (Exercício 8)####
+f_tab = function(a,b) {
+  for (i1 in a:b) {
+    print(paste('Tabuada do ',i1))
+    for (i2 in a:10)
+    print(paste(i1,'X',i2,'=',i1*i2 ))
+        }
+}
+f_tab(1,3)
+
+#### Exemplo 1 (slide 20)####
 id = 1:4
 sexo = c('F','M','M','F')
 altura = c(1.58, 1.87, 1.75, 1.72)

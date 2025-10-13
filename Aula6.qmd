@@ -19,19 +19,30 @@ format:
 ## 
 **Exercício 8 (DESAFIO da aula passada).** 
 
-Crie uma função que receberá dois números (a e b) e imprima a tabuada de a até b.  
-Por exemplo: imprimir a tabuada de 1 até 10.
+Crie uma função **f_tab()** que receberá dois números (a e b) e imprima a tabuada de a até b.  
+<br>
+Por exemplo: imprimir a tabuada de 1 até 3.
 
-<!--
+`f_tab(1,3)`
+
 "Tabuada do 1"  
 "1 x 1 = 1"  
 "1 x 2 = 2"  
-...
+...  
+"1 x 10 = 10"  
+
+##
 "Tabuada do 2"  
 "2 x 1 = 2"  
 "2 x 2 = 4"  
-... etc até a tabuada do 10.
--->
+...  
+"2 x 10 = 20"  
+<br>
+"Tabuada do 3"  
+"2 x 1 = 3"  
+"3 x 2 = 6"  
+...  
+"3 x 10 = 30"  
 
 ## <span style="font-size:40pt">Estruturas de repetição WHILE no R </span>
 
