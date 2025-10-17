@@ -16,5 +16,182 @@ format:
     css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
 ---
 
-## 
-Desafio da aula anterior?
+## <span style="font-size:34pt">Dataframes (DF) no R</span>
+
+Já sabemos:  
+
+- Criar DF  
+```{r echo=T}
+dad = data.frame(col1=c(5,3,8) , col2=c('A','B','C'))
+dad
+```
+
+:::{.fragment}  
+- Criar colunas em um DF
+```{r echo=T}
+dad$nova_col = 0
+dad
+```
+:::
+
+## <span style="font-size:34pt">Dataframes (DF) no R</span>
+- Extrair elementos do DF (linha,coluna):  
+```{r echo=T}
+dad
+dad[2,1]  # linha 2, coluna 1 
+```
+:::{.fragment}  
+- Extrair as colunas do DF:  
+```{r echo=T}
+dad$col1
+# ou
+dad[,1]
+```
+:::
+
+## <span style="font-size:34pt">Dataframes (DF) no R</span>
+- Filtrar um DF  
+```{r echo=T}
+dad
+dad[dad$col1>4 , c(1,2)]
+```
+
+:::{.fragment}  
+```{r echo=T}
+dad[dad$col2=='A' | dad$col2=='B' , c(1,2)]
+```
+:::
+
+## <span style="font-size:34pt">Exemplo de Dataframe (DF)</span>
+
+Crie o seguinte DF:  
+
+```{r echo=T}
+estacao = c(rep('V',4) , rep('I',4))
+local = rep(c('L1','L2'),4)
+set.seed(18)           # Semente dos números aleatórios a seguir
+sp1 = trunc(runif(8,0,4))
+sp2 = trunc(runif(8,0,12))
+sp3 = trunc(runif(8,0,6))
+sal = round( rnorm(8,25,8) , 1)
+temp = round( rnorm(8,20,6) , 1)
+df1 = data.frame(local,estacao,sp1,sp2,sp3,sal,temp)
+df1
+```
+
+## <span style="font-size:34pt">Fatores em Dataframes (DF)</span>
+Variáveis categóricas são chamadas de **fatores** (factors) no R, e as categorias são chamadas de **níveis** (levels).
+```{r echo=T}
+is.factor(df1$estacao)  #False
+df1$estacao = as.factor(df1$estacao)  #Transforma o vetor num fator
+is.factor(df1$estacao)  #True
+df1$estacao
+```
+
+## <span style="font-size:32pt">Funções específicas para DF</span>
+```{r echo=T}
+head(df1, 3)      # primeiras linhas
+```
+:::{.fragment}  
+```{r echo=T}
+tail(df1, 2)      # últimas
+```
+:::
+:::{.fragment}  
+```{r echo=T}
+dim(df1) 
+nrow(df1) 
+ncol(df1)
+```
+:::
+
+## <span style="font-size:32pt">Funções específicas para DF</span>
+```{r echo=T}
+names(df1)        # nomes das colunas
+```
+:::{.fragment}  
+```{r echo=T}
+str(df1)          # estrutura (tipos por coluna)
+```
+:::
+:::{.fragment}  
+```{r echo=T}
+summary(df1)      # resumo estatístico
+```
+:::
+
+## <span style="font-size:32pt">Exercício 1  - fatiando um DF</span>
+Separe o df1 em três novos DF:   
+1. fat (fatores: local e estacao)  
+
+:::{.fragment}  
+2. bio (bióticos: espécies)  
+:::
+:::{.fragment}  
+3. abio (abióticos: sal e temp)  
+:::
+
+## <span style="font-size:32pt">Exercício 2 - criando novos DF</span>
+Crie os novos DF:  
+
+2.1. tab_bio = Fatores + dados bióticos apenas
+
+:::{.fragment}  
+2.2. tab_abio = Fatores + dados abióticos apenas
+:::
+:::{.fragment}  
+2.3. tab_inv = Fatores + dados bióticos e filtrar as linhas de inverno
+:::
+:::{.fragment}  
+2.4. tab_ver = Fatores + dados bióticos e filtrar as linhas de verão
+:::
+
+## <span style="font-size:32pt">Exercício 3 - filtrando um DF</span>
+3.1. Crie um novo DF contendo apenas amostras do local L1 do verão
+
+:::{.fragment}  
+3.2. Crie um novo DF contendo apenas amostras do inverno com temperatures abaixo de 15 graus.
+:::
+:::{.fragment}  
+3.2. Crie um novo DF contendo apenas amostras com salinidade abaixo de 30 OU temperatures acima de 20 graus.
+:::
+:::{.fragment}  
+3.3. Crie um novo DF contendo apenas amostras do inverno com abundâncias da espécies sp3 diferentes de zero.
+:::
+:::{.fragment}  
+3.4. Crie um novo DF contendo apenas amostras do com abundâncias da spp1 E da spp2 maiores que zero.
+:::
+
+## <span style="font-size:32pt">Exercícios com DF - cálculos com DF</span>
+- **Exercício 4**  
+
+4.1. Calcule o valor médio e o desvio padrão da salinidade  
+
+:::{.fragment}  
+4.2. Calcule o valor máximo e mínimo da temperatura
+:::
+
+:::{.fragment}  
+4.3. Calcule a abundância total das 3 espécies (soma das 3 abundâncias por linha)
+:::
+
+:::{.fragment}  
+4.4. Calcule a riqueza de espécies das 3 espécies (primeiro crie uma tabela de presença-ausência, depois somar as linhas)
+:::
+
+##
+**Manipulação de arquivos no R para abrir planilhas do Excel como DF no R**
+
+* Mostrar como manipular **Working dir** no RStudio. 
+
+:::{.fragment}  
+* Criar uma planilha qualquer no Excel com nomes nas colunas e salvar como formato csv.
+:::
+
+:::{.fragment}  
+* No R, abrir o arquivo usando a função `read.csv` ou `read.csv2`. 
+:::
+
+:::{.fragment}  
+* Alternativamente, é possível abrir um arquivo Excel (xls ou xlsx) diretamente no R, usando o pacote `readxl`.
+:::

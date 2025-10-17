@@ -76,16 +76,35 @@ dados[(dados$local == 'L2') & (dados$abund > 30) , ]
 # 5. Extraia apenas as colunas amostra e abund dos locais L1 em que a abundância seja diferente de zero.
 dados[(dados$local == 'L1') & (dados$abund != 0) , ]
 
-# DESAFIO: Crie uma nova coluna no dataframe chamada pres_aus com valores de 1 e 0 para presença e ausência de abundância.
-
+# 6. DESAFIO: Crie uma nova coluna no dataframe chamada pres_aus com valores de 1 e 0 para presença e ausência de abundância.
 # Sugestão de algoritmo:
 #  - crie a coluna dados$pres_aus e atribua o valor zero.
 #  - crie um laço FOR de 1 até o comprimento do vetor
 #     dados$abund. 
-#  - Dentro do laço, crie uma condição IF para testar 
-#    se cada valor do vetor dados$abund é igual a zero
-#    ou não. 
-#  - Se for, atribua o valor de zero para o elemento
-#    correspondente do vetor dados$pres_aus.
-#  - Caso contrário (ELSE), atribua o valor de 1.
+#  - Dentro do laço, crie uma condição IF para testar se cada valor do vetor dados$abund é igual a zero ou não. 
+#  - Se for, atribua o valor de zero para o elemento correspondente do vetor dados$pres_aus.
+#  - Caso contrário (ELSE), atribua o valor de 1
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+dados$pres_aus = 0
+dados
+for (i in 1:length(dados$abund)) {
+  if (dados$abund[i] == 0) 
+    dados$pres_aus[i] = 0
+  else
+    dados$pres_aus[i] = 1
+}
+
+dados

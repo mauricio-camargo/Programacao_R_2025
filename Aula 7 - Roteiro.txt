@@ -1,0 +1,3 @@
+- Revisão desde dataframe (DF)
+- Exercício 6 aula passada no R
+- Aula 7
