@@ -340,10 +340,3 @@ Com esses dados, crie um dataframe chamado "dados" e responda:
 
 6. DESAFIO: Crie uma nova coluna no dataframe chamada **pres_aus** com valores de 1 e 0 para presença e ausência de abundância.
 
-##
-**Manipulação de arquivos no R para abrir planilhas do Excel como dataframe no R**
-
-* **Working dir** no RStudio: como manipular.
-* Criar uma planilha no Excel, como nome de coluna e salvar como formato csv.
-* No R, abrir o arquivo usando a função `read.csv` ou `read.csv2`. 
-* Alternativamente, é possível abrir um arquivo Excel (xls ou xlsx) diretamente no R, usando o pacote `readxl`.
