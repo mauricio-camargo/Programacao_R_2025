@@ -158,7 +158,7 @@ Crie os novos DF:
 3.4. Crie um novo DF contendo apenas amostras do inverno com abundâncias da espécie sp3 diferentes de zero.
 :::
 :::{.fragment}  
-3.5. Crie um novo DF contendo apenas amostras do com abundâncias da spp1 E da spp2 maiores que zero.
+3.5. Crie um novo DF contendo apenas amostras do com abundâncias da sp1 E da sp2 maiores que zero.
 :::
 
 ## <span style="font-size:32pt">Exercícios com DF - cálculos com DF</span>

@@ -20,16 +20,18 @@ gitcreds::gitcreds_set()
 
 - **Aulas**  
 
-Aula 7 (17 Out 2025) [Online](Aula7.html)  
-Aula 6 (10 Out 2025) [Online](Aula6.html) [PDF](Aula6.pdf)   
-Aula 5 (03 Out 2025) [Online](Aula5.html) [PDF](Aula5.pdf)  
+Aula 8 (31 Out 2025)  
+Aula 7 (17 Out 2025) [Online](Aula7.html)  [PDF](Aula7.pdf)  
+Aula 6 (10 Out 2025) [Online](Aula6.html)  [PDF](Aula6.pdf)   
+Aula 5 (03 Out 2025) [Online](Aula5.html)  [PDF](Aula5.pdf)  
 Aula 4 (26 Set 2025) [Online](Aula4.html)  [PDF](Aula4.pdf)  
 Aula 3 (12 Set 2025) [Online](Aula3.html)  [PDF](Aula3.pdf)  
 Aula 2 (05 Set 2025) [Online](Aula2.html)  [PDF](Aula2.pdf)  
 Aula 1 (29 Ago 2025) [Online](Aula1.html)  [PDF](Aula1.pdf)  
 
 - **Arquivos em R**  
-Aula7_Exerc_Resolvidos.R  
+Aula8_Exerc_Resolvidos.R  
+[Aula7_Exerc_Resolvidos.R](Aula7_Exerc_Resolvidos.R)  
 [Aula6_Exerc_Resolvidos.R](Aula6_Exerc_Resolvidos.R)  
 [Aula5_Exerc_Resolvidos.R](Aula5_Exerc_Resolvidos.R)  
 [Aula4_Exerc_Resolvidos.R](Aula4_Exerc_Resolvidos.R)   
