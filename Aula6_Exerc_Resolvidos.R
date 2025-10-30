@@ -84,45 +84,14 @@ dados
 #  - crie um laço FOR de 1 até o comprimento do vetor dados$abund.
 for (i in 1:nrow(dados)) {
 #  - Dentro do laço, crie uma condição IF para testar se cada valor do vetor dados$abund é igual a zero ou não. 
- if (dados$abund == 0) 
+ if (dados$abund[i] == 0) 
 #  - Se for, atribua o valor de zero para o elemento correspondente do vetor dados$pres_aus.
- dados$pres_aus = 0
+ dados$pres_aus[i] = 0
 #  - Caso contrário (ELSE), atribua o valor de 1
 else
-  dados$pres_aus = 1
+  dados$pres_aus[i] = 1
 }
 
 
-dados$pres_aus = 0
 dados
-for (i in 1:nrow(dados)) {
-  if (dados$abund[i] == 0) 
-    dados$pres_aus[i] = 0
-  else
-    dados$pres_aus[i] = 1
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-dados$pres_aus = 0
-dados
-for (i in 1:length(dados$abund)) {
-  if (dados$abund[i] == 0) 
-    dados$pres_aus[i] = 0
-  else
-    dados$pres_aus[i] = 1
-}
-
-dados

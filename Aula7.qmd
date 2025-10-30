@@ -122,13 +122,13 @@ summary(df1)      # resumo estatístico
 
 ## <span style="font-size:32pt">Exercício 1  - fatiando um DF</span>
 Separe o df1 em três novos DF:   
-1. fat (fatores: local e estacao)  
+1.1. fat (fatores: local e estacao)  
 
 :::{.fragment}  
-2. bio (bióticos: espécies)  
+1.2. bio (bióticos: espécies)  
 :::
 :::{.fragment}  
-3. abio (abióticos: sal e temp)  
+1.3. abio (abióticos: sal e temp)  
 :::
 
 ## <span style="font-size:32pt">Exercício 2 - criando novos DF</span>
@@ -153,13 +153,13 @@ Crie os novos DF:
 3.2. Crie um novo DF contendo apenas amostras do inverno com temperatures abaixo de 15 graus.
 :::
 :::{.fragment}  
-3.2. Crie um novo DF contendo apenas amostras com salinidade abaixo de 30 OU temperatures acima de 20 graus.
+3.3. Crie um novo DF contendo apenas amostras com salinidade abaixo de 30 OU temperatures acima de 20 graus.
 :::
 :::{.fragment}  
-3.3. Crie um novo DF contendo apenas amostras do inverno com abundâncias da espécies sp3 diferentes de zero.
+3.4. Crie um novo DF contendo apenas amostras do inverno com abundâncias da espécies sp3 diferentes de zero.
 :::
 :::{.fragment}  
-3.4. Crie um novo DF contendo apenas amostras do com abundâncias da spp1 E da spp2 maiores que zero.
+3.5. Crie um novo DF contendo apenas amostras do com abundâncias da spp1 E da spp2 maiores que zero.
 :::
 
 ## <span style="font-size:32pt">Exercícios com DF - cálculos com DF</span>
