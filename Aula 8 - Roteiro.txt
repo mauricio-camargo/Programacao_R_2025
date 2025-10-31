@@ -1,1 +1,10 @@
-- esqueci
+- Duas maneiras de usar pacotes:
+
+1. 
+
+library(readxl)
+readexcel('plan1.xlsx')
+
+2. 
+
+readxl::readexcel('plan1.xlsx')
