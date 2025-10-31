@@ -314,5 +314,27 @@ Onde:
 **FUN** = mean → função do resumo.
 
 ## <span style="font-size:32pt">Exercício 2</span>
-2.1 Abra a planilha 2 na página da disciplina. 2.1. Armazene esta planilha num objeto tipo `dataframe` chamado `dad` usando o pacote `readxl`.  
+2.1 Abra a planilha `limno.xlsx` na página da disciplina.  
 
+:::{.fragment}  
+2.2.Armazene esta planilha num objeto tipo `dataframe` chamado `dad` usando o pacote `readxl`.    
+:::
+
+:::{.fragment}  
+2.3. Crie 3 novos dataframes a partir de `dad`:  
+-  fat (ponto, estacao e setor)  
+-  abio (temp, pH, etc)  
+-  bio(Bosmina,	Bosminopsis,	Calanoida, etc)  
+:::
+
+:::{.fragment}  
+2.4. Crie uma coluna para a abundância total por amostra.  
+:::
+
+:::{.fragment}  
+2.5. Separe uma planilha para cada estação do ano.  
+:::
+
+:::{.fragment}  
+2.6. Extraia a média da combinação de `estacao` e `setor`.
+:::
