@@ -1,0 +1,162 @@
+---
+title: "Programação no R - Aula 8"
+institute: "Prof. Maurício Garcia de Camargo. IO-FURG."
+author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R"
+date: 2025-10-31
+lang: pt-br
+format: 
+  revealjs:
+#    theme: [serif, MeuCustom.scss]
+    logo: images/furg3.png
+    slide-number: true
+    chalkboard: true #Muito bom para aula
+    show-slide-number: all
+    controls: true #Não é menu. ToDo.
+    #Sem estes css o :::box ou info-box não funciona
+    css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
+---
+
+## <span style="font-size:34pt">Dataframes (DF) no R</span>
+
+Você certamente já sabe:
+
+- O que é um dataframe?
+
+:::{.fragment}  
+Linhas e colunas de qualquer tipo de dado (numéro ou texto)
+:::
+
+:::{.fragment}  
+- Criar uma dataframe usando função `data.frame`
+:::
+
+:::{.fragment}  
+`data.frame(vet1,vet2,vet3)`
+:::
+
+## <span style="font-size:34pt">Criar colunas em um DF</span>
+
+```{r echo=T}
+DF = data.frame(col1=0:5,col2=10:15)
+DF
+```
+
+:::{.fragment}  
+```{r echo=T}
+DF$nova_col = LETTERS[1:6] # O vetor de letras LETTERS vem embutido no R
+DF
+```
+:::
+
+## <span style="font-size:34pt">Filtar linhas e colunas do DF</span>
+
+ Extrair elementos do DF (linha,coluna):  
+```{r echo=T}
+DF
+DF[3,2]  # linha 2, coluna 1 
+```
+
+## <span style="font-size:34pt">Dataframes (DF) no R</span>
+
+- Extrair colunas do DF:  
+```{r echo=T}
+DF
+DF$col1
+# ou
+DF[,1]
+```
+
+## <span style="font-size:34pt">Dataframes (DF) no R</span>
+
+:::{.fragment}  
+- Extrair linhas do DF:  
+```{r echo=T}
+DF
+DF[1,]
+```
+:::
+
+
+## <span style="font-size:34pt">Filtros  de linhas e colunas de um DF</span>
+```{r echo=T}
+DF
+DF[DF$col1>3 , c(1,2)]
+```
+:::{.fragment}  
+```{r echo=T}
+DF[DF$col1 > 2 & DF$col2 > 14 ,]
+```
+:::
+
+## <span style="font-size:34pt">Criando um fator no DF</span>
+Variáveis categóricas são chamadas de **fatores** (*factors*) no R, e as categorias são chamadas de **níveis** (*levels*).
+```{r echo=T}
+fat = c(rep('Pré-adol',3) , rep('Adol',3))
+fat
+```
+```{r echo=T}
+DF$fator = fat
+DF
+```
+
+## <span style="font-size:34pt">Funções para criar e testar fatores</span>
+```{r echo=T}
+is.factor(DF$fator)  #False
+```
+:::{.fragment}  
+```{r echo=T}
+DF$fator = as.factor(DF$fator)  #Transforma o vetor num fator
+is.factor(DF$fator)  #True
+```
+:::
+
+:::{.fragment}  
+```{r echo=T}
+DF$fator
+```
+:::
+
+## <span style="font-size:32pt">Funções específicas para DF</span>
+```{r echo=T}
+head(DF, 3)      # 2 primeiras linhas
+```
+:::{.fragment}  
+```{r echo=T}
+tail(DF, 2)      # 3 últimas
+```
+:::
+:::{.fragment}  
+```{r echo=T}
+dim(DF) 
+```
+:::
+:::{.fragment}  
+```{r echo=T}
+nrow(DF) 
+```
+:::
+:::{.fragment}  
+```{r echo=T}
+```{r echo=T}
+ncol(DF)
+```
+:::
+
+## <span style="font-size:32pt">Funções específicas para DF</span>
+```{r echo=T}
+names(DF)        # nomes das colunas
+```
+:::{.fragment}  
+```{r echo=T}
+str(DF)          # estrutura (tipos por coluna)
+```
+:::
+:::{.fragment}  
+```{r echo=T}
+summary(DF)      # resumo estatístico
+```
+:::
+
+## <span style="font-size:32pt">Funções específicas para DF</span>
+- Exercício 1  
+kjasd ad
