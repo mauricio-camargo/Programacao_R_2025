@@ -20,7 +20,7 @@ gitcreds::gitcreds_set()
 
 - **Aulas**  
 
-Aula 8 (31 Out 2025) [Online](Aula8.html)
+Aula 8 (31 Out 2025) 
 Aula 7 (17 Out 2025) [Online](Aula7.html)  [PDF](Aula7.pdf)  
 Aula 6 (10 Out 2025) [Online](Aula6.html)  [PDF](Aula6.pdf)   
 Aula 5 (03 Out 2025) [Online](Aula5.html)  [PDF](Aula5.pdf)  

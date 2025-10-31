@@ -161,7 +161,7 @@ summary(DF)      # resumo estatístico
 Para o exercício 1, você vai usar o pacote `readxl`, que não vem com o R base.
 
 :::{.fragment}  
-Existem 2 maneiras de usar pacotes no R:  
+O pacote pode ser usado de 2 maneiras, após acertar o `WorkDir`:  
 
 Assim:  
 `library(readxl)`  
@@ -178,7 +178,8 @@ Ou...
 ).  
 
 :::{.fragment}  
-1.2. Armazene esta planilha num objeto tipo `dataframe` chamado `dados` usando o pacote `readxl`.
+1.2. Armazene esta planilha num objeto tipo `dataframe` chamado `dados` usando o pacote `readxl`.  
+Lembre-se de acertar o WorkDir usando o menu *Session>Set Working Directory*.
 :::
 
 :::{.fragment}  
@@ -188,5 +189,123 @@ Ou...
 -  bio(sp1, sp2 e sp3)
 :::
 
-:::{.fragment}  
+## <span style="font-size:32pt">Voltando ao exercício 1</span>
+
 1.4. Crie uma nova coluna no dataframe `dados` chamada `abund` correspondente à abundância total das espécies em cada amostra.
+
+:::{.fragment}  
+1.5. Crie uma nova coluna chamada `riqueza` contendo a riqueza de espécies, ou seja, o número de espécies em cada amostra.
+:::
+
+:::{.fragment}  
+1.6. Crie um novo dataframe chamado `indices` contendo os novos índices de abundância e riqueza recém criados.
+:::
+
+## <span style="font-size:32pt">Voltando ao exercício 1</span>
+1.7. Extraia as médias de salinidades para cada `local`.  
+Sugestão: crie um filtro para cada local e extraia as médias individualmente.
+
+:::{.fragment}  
+1.8. Extraia as médias de temperatura para cada estação. 
+:::
+
+<br>
+
+:::{.fragment}  
+**TEM QUE HAVER FORMA MAIS AMIGÁVEL DE FAZER ISSO!**
+:::
+
+## <span style="font-size:32pt">Apresentando a função aggregate()</span>
+
+:::{.fragment}  
+`aggregate()` resume uma ou mais colunas por **grupos**.
+:::
+
+:::{.fragment}  
+Exemplos de perguntas que ela resolve:
+
+- média da temperatura por local
+:::
+
+:::{.fragment}  
+- desvio padrão da temperatura por local
+:::
+
+:::{.fragment}  
+- média da salinidade por local **E** estação;
+:::
+
+:::{.fragment}  
+- soma da abundância por estação;
+:::
+
+:::{.fragment}  
+- número de observações por local.
+:::
+
+## <span style="font-size:32pt">Sintaxe básica da função `aggregate()`</span>
+
+Existem várias maneiras de montar os argumentos da função. 
+
+A forma mais poderosa é usando as fórmulas do R:
+
+```{r echo=T}
+# aggregate(variavel ~ grupos,
+#           data = dados,
+#           FUN = funcao)
+```
+
+onde:  
+**variavel**: o que será resumido (ex.: Temp)  
+**grupos**: por quem será agrupar (ex.: Local, ou Local + Estacao)  
+**data**: o dataframe que será resumido
+**FUN**: função de resumo (ex.: mean, sum, length, sd)
+
+## <span style="font-size:32pt">Exemplos com a nossa planilha `dados`</span>
+
+- 1. Média da temperatura por local  
+
+```{r echo=T}
+# aggregate(temp ~ local, data = dados, FUN = mean)
+```
+
+o R junta todas as linhas de cada local e calcula a média.
+
+:::{.fragment}  
+- 2. Média da salinidade por local **E** estação
+
+```{r echo=T}
+# aggregate(Sal ~ Local + Estacao, data = dados, FUN = mean)
+```
+Agora cada linha da saída é um grupo (Local × Estacao).
+:::
+
+## <span style="font-size:32pt">Exemplos com a nossa planilha `dados`</span>
+
+- 3. Soma da abundância por estação
+```{r echo=T}
+# aggregate(Abundancia ~ Estacao, data = dados, FUN = sum)
+```
+
+:::{.fragment}  
+- 4. Quantas amostras tenho por local?
+```{r echo=T}
+# aggregate(Temp ~ Local, data = dados, FUN = length)
+```
+Aqui a função `length` apenas conta quantas linhas existem por local.
+:::
+
+## <span style="font-size:32pt">Resumo para várias variáveis ao mesmo tempo</span>
+Quando tem várias variáveis para resumir juntas (Temp, Sal, pH), se usa outro formato da `aggregate()`:
+
+```{r echo=T}
+# aggregate(dados[, c("temp", "sal", "pH")],
+#           by = list(Local = dados$local,
+#                     Estacao = dados$estacao),
+#           FUN = mean)
+```
+Onde:  
+**dados[, c(...)]** → quais colunas serão resumidas;  
+**by** = list(...) → por quem serão agrupadas;  
+**FUN** = mean → função do resumo.
+
