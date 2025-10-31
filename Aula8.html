@@ -709,7 +709,11 @@ Levels: Adol Pré-adol</code></pre>
 </section>
 <section id="voltando-ao-exercício-1" class="slide level2">
 <h2><span style="font-size:32pt">Voltando ao exercício 1</span></h2>
-<p>1.1. Baixe a planilha (.xlsx) para o exercício <a href="https://github.com/mauricio-camargo/Programacao_R_2025/raw/353367b7ce84d2d096ef4abd078af2abd9b1af0a/plan1.xlsx">aqui</a>.</p>
+<p>1.1. Baixe a planilha 1 (plan1.xlsx) na página da disciplina.</p>
+<!--
+1.1. Baixe a planilha (.xlsx) para o exercício [aqui](https://github.com/mauricio-camargo/Programacao_R_2025/raw/353367b7ce84d2d096ef4abd078af2abd9b1af0a/plan1.xlsx
+).  
+-->
 <div class="fragment">
 <p>1.2. Armazene esta planilha num objeto tipo <code>dataframe</code> chamado <code>dados</code> usando o pacote <code>readxl</code>.<br>
 Lembre-se de acertar o WorkDir usando o menu <em>Session&gt;Set Working Directory</em>.</p>
@@ -807,7 +811,7 @@ Sugestão: crie um filtro para cada local e extraia as médias individualmente.<
 </ol></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># aggregate(Sal ~ Local + Estacao, data = dados, FUN = mean)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># aggregate(sal ~ local + estacao, data = dados, FUN = mean)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Agora cada linha da saída é um grupo (Local × Estacao).</p>
 </div>
@@ -820,7 +824,7 @@ Sugestão: crie um filtro para cada local e extraia as médias individualmente.<
 </ol></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># aggregate(Abundancia ~ Estacao, data = dados, FUN = sum)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># aggregate(sp1 ~ estacao, data = dados, FUN = sum)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <div class="fragment">
 <ul>
@@ -829,7 +833,7 @@ Sugestão: crie um filtro para cada local e extraia as médias individualmente.<
 </ol></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># aggregate(Temp ~ Local, data = dados, FUN = length)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># aggregate(temp ~ local, data = dados, FUN = length)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>Aqui a função <code>length</code> apenas conta quantas linhas existem por local.</p>
 </div>
@@ -847,6 +851,10 @@ Sugestão: crie um filtro para cada local e extraia as médias individualmente.<
 <strong>dados[, c(…)]</strong> → quais colunas serão resumidas;<br>
 <strong>by</strong> = list(…) → por quem serão agrupadas;<br>
 <strong>FUN</strong> = mean → função do resumo.</p>
+</section>
+<section id="exercício-2" class="slide level2">
+<h2><span style="font-size:32pt">Exercício 2</span></h2>
+<p>Abra a planilha 2 na página da disciplina.</p>
 
 <img src="images/furg3.png" class="slide-logo r-stretch"><div class="footer footer-default">
 

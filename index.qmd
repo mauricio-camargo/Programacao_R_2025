@@ -20,7 +20,11 @@ gitcreds::gitcreds_set()
 
 - **Aulas**  
 
-Aula 8 (31 Out 2025) 
+Aula 8 (31 Out 2025)  
+- [Planilha 1](https://github.com/mauricio-camargo/Programacao_R_2025/raw/353367b7ce84d2d096ef4abd078af2abd9b1af0a/plan1.xlsx
+)    
+- Planilha 2
+
 Aula 7 (17 Out 2025) [Online](Aula7.html)  [PDF](Aula7.pdf)  
 Aula 6 (10 Out 2025) [Online](Aula6.html)  [PDF](Aula6.pdf)   
 Aula 5 (03 Out 2025) [Online](Aula5.html)  [PDF](Aula5.pdf)  

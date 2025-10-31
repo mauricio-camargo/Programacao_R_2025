@@ -174,8 +174,12 @@ Ou...
 
 ## <span style="font-size:32pt">Voltando ao exercício 1</span>
 
+1.1. Baixe a planilha 1 (plan1.xlsx) na página da disciplina.
+
+<!--
 1.1. Baixe a planilha (.xlsx) para o exercício [aqui](https://github.com/mauricio-camargo/Programacao_R_2025/raw/353367b7ce84d2d096ef4abd078af2abd9b1af0a/plan1.xlsx
 ).  
+-->
 
 :::{.fragment}  
 1.2. Armazene esta planilha num objeto tipo `dataframe` chamado `dados` usando o pacote `readxl`.  
@@ -275,7 +279,7 @@ o R junta todas as linhas de cada local e calcula a média.
 - 2. Média da salinidade por local **E** estação
 
 ```{r echo=T}
-# aggregate(Sal ~ Local + Estacao, data = dados, FUN = mean)
+# aggregate(sal ~ local + estacao, data = dados, FUN = mean)
 ```
 Agora cada linha da saída é um grupo (Local × Estacao).
 :::
@@ -284,13 +288,13 @@ Agora cada linha da saída é um grupo (Local × Estacao).
 
 - 3. Soma da abundância por estação
 ```{r echo=T}
-# aggregate(Abundancia ~ Estacao, data = dados, FUN = sum)
+# aggregate(sp1 ~ estacao, data = dados, FUN = sum)
 ```
 
 :::{.fragment}  
 - 4. Quantas amostras tenho por local?
 ```{r echo=T}
-# aggregate(Temp ~ Local, data = dados, FUN = length)
+# aggregate(temp ~ local, data = dados, FUN = length)
 ```
 Aqui a função `length` apenas conta quantas linhas existem por local.
 :::
@@ -308,4 +312,7 @@ Onde:
 **dados[, c(...)]** → quais colunas serão resumidas;  
 **by** = list(...) → por quem serão agrupadas;  
 **FUN** = mean → função do resumo.
+
+## <span style="font-size:32pt">Exercício 2</span>
+2.1 Abra a planilha 2 na página da disciplina. 2.1. Armazene esta planilha num objeto tipo `dataframe` chamado `dad` usando o pacote `readxl`.  
 
