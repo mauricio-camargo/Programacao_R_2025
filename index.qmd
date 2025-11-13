@@ -18,15 +18,13 @@ gitcreds::gitcreds_set()
 
 ## Aulas e Arquivos
 
-- **Aulas**  
-
-Aula 8 (31 Out 2025) [Online](Aula8.html) [PDF](Aula8.pdf) [Script R](Aula8_Exerc_Resolvidos.R)  [plan1.xlsx](https://github.com/mauricio-camargo/Programacao_R_2025/raw/353367b7ce84d2d096ef4abd078af2abd9b1af0a/plan1 Nova.xlsx
+Aula 8 (31 Out 2025) [Online](Aula8.html) [PDF](Aula8.pdf) [Arquivo R](Aula8_Exerc_Resolvidos.R)  [plan1.xlsx](https://github.com/mauricio-camargo/Programacao_R_2025/raw/353367b7ce84d2d096ef4abd078af2abd9b1af0a/plan1 Nova.xlsx
 ) [limno.xlsx](https://github.com/mauricio-camargo/Programacao_R_2025/raw/refs/heads/main/limno.xlsx)  
-Aula 7 (17 Out 2025) [Online](Aula7.html)  [PDF](Aula7.pdf)  [Script R](Aula7_Exerc_Resolvidos.R)  
-Aula 6 (10 Out 2025) [Online](Aula6.html)  [PDF](Aula6.pdf)  [Script R](Aula6_Exerc_Resolvidos.R)  
-Aula 5 (03 Out 2025) [Online](Aula5.html)  [PDF](Aula5.pdf)  [Script R](Aula5_Exerc_Resolvidos.R)  
-Aula 4 (26 Set 2025) [Online](Aula4.html)  [PDF](Aula4.pdf)  [Script R](Aula4_Exerc_Resolvidos.R)  
-Aula 3 (12 Set 2025) [Online](Aula3.html)  [PDF](Aula3.pdf)  [Script R](Aula3_Exerc_Resolvidos.R)  
-Aula 2 (05 Set 2025) [Online](Aula2.html)  [PDF](Aula2.pdf)  [Script R](Aula2_Exerc_Resolvidos.R)  
-Aula 1 (29 Ago 2025) [Online](Aula1.html)  [PDF](Aula1.pdf)  [Script R](Aula1_Exerc_Resolvidos.R)  
+Aula 7 (17 Out 2025) [Online](Aula7.html)  [PDF](Aula7.pdf)  [Arquivo R](Aula7_Exerc_Resolvidos.R)  
+Aula 6 (10 Out 2025) [Online](Aula6.html)  [PDF](Aula6.pdf)  [Arquivo R](Aula6_Exerc_Resolvidos.R)  
+Aula 5 (03 Out 2025) [Online](Aula5.html)  [PDF](Aula5.pdf)  [Arquivo R](Aula5_Exerc_Resolvidos.R)  
+Aula 4 (26 Set 2025) [Online](Aula4.html)  [PDF](Aula4.pdf)  [Arquivo R](Aula4_Exerc_Resolvidos.R)  
+Aula 3 (12 Set 2025) [Online](Aula3.html)  [PDF](Aula3.pdf)  [Arquivo R](Aula3_Exerc_Resolvidos.R)  
+Aula 2 (05 Set 2025) [Online](Aula2.html)  [PDF](Aula2.pdf)  [Arquivo R](Aula2_Exerc_Resolvidos.R)  
+Aula 1 (29 Ago 2025) [Online](Aula1.html)  [PDF](Aula1.pdf)  [Arquivo R](Aula1_Exerc_Resolvidos.R)  
 
