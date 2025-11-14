@@ -17,7 +17,7 @@ gitcreds::gitcreds_set()
 -->
 
 ## Aulas e Arquivos
-Aula 9 (13 Nov 2025)  
+Aula 9 (13 Nov 2025) [Online](Aula9.html)  
 Aula 8 (31 Out 2025) [Online](Aula8.html) [PDF](Aula8.pdf) [Arquivo R](Aula8_Exerc_Resolvidos.R)  [plan1.xlsx](https://github.com/mauricio-camargo/Programacao_R_2025/raw/refs/heads/main/plan1.xlsx)   [limno.xlsx](https://github.com/mauricio-camargo/Programacao_R_2025/raw/refs/heads/main/limno.xlsx)  
 Aula 7 (17 Out 2025) [Online](Aula7.html)  [PDF](Aula7.pdf)  [Arquivo R](Aula7_Exerc_Resolvidos.R)  
 Aula 6 (10 Out 2025) [Online](Aula6.html)  [PDF](Aula6.pdf)  [Arquivo R](Aula6_Exerc_Resolvidos.R)  
