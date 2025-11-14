@@ -1,6 +1,7 @@
 #### EXERCÍCIO 1 ####
 # 1.1. Baixar a planilha e armazenar
-dados = readxl::read_excel('plan1.xlsx')
+library(readxl)
+dados = read_excel('plan1.xlsx')
 dados
 # 1.3. Criando novos dataframes
 fat = dados[,1:3]
@@ -70,9 +71,13 @@ dad$abund = rowSums(bio)
 chuva = dad[dad$estacao == 'C',]
 seca = dad[dad$estacao == 'S',]
 # 2.5. Extraindo a média da abundância da combinação estacao e setor
-mediasAbund = aggregate(dad[,"abund"],
-                by = list(Local = dad$setor,
+mediasAbundAgg = aggregate(dad[,"abund"],
+                by = list(Setor = dad$setor,
                           Estacao = dad$estacao),
                 data = dad,
                 FUN = mean)
-mediasAbund
+mediasAbundAgg
+
+# A sentença SQL abaixo cria mesma tabela (próxima aula). 
+mediasAbundSQL = sqldf('select setor, estacao, avg(abund) from dad group by setor,estacao')
+mediasAbundSQL

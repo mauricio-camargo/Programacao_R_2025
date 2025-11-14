@@ -462,17 +462,207 @@ Disciplina: Lógica da programação (de computadores) e análise de dados no R
 deve ser lido como: para cada valor do vetor <code>x</code>, se for igual a zero substitui por “sim”, caso contrário, por “não”.</p>
 </div>
 </section>
-<section id="exercício-de-funções-vetorizada" class="slide level2">
-<h2><span style="font-size:34pt">Exercício de funções vetorizada</span></h2>
+<section id="exercício.-funções-vetorizadas" class="slide level2">
+<h2><span style="font-size:34pt">Exercício. Funções vetorizadas</span></h2>
 <ul>
 <li>Baixe a planilha <code>Plan1.xlsx</code> da página da disciplina.<br>
 </li>
-<li>Abra o arquivo e armazene no dataframe chamado de <code>dados</code>.<br>
+<li>Abra o arquivo e armazene no dataframe chamado de <code>dat</code>.<br>
 </li>
-<li>Crie uma nova coluna num dataframe para a abundância total das 3 espécies.<br>
-</li>
-<li>Crie três novas colunas no dataframe para o registro de presença-ausência das três espécies.</li>
+<li>Crie um novo dataframe para o registro de presença-ausência das três espécies usando <code>ifelse</code>.</li>
 </ul>
+</section>
+<section id="rever-aggregate-da-aula-passada" class="slide level2">
+<h2><span style="font-size:34pt">Rever aggregate() da aula passada</span></h2>
+</section>
+<section id="breve-aula-sobre-sql" class="slide level2">
+<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
+<ul>
+<li><strong><em>SQL = Structured Query Language</em></strong></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Nasceu na IBM, em 1970.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>A ideia é guardar informações em tabelas (linhas e colunas) e depois relacioná-las através de uma linguagem parecida com o inglês.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>SQL virou padrão universal como linguagem de banco de dados.</li>
+</ul>
+</div>
+</section>
+<section id="breve-aula-sobre-sql-1" class="slide level2">
+<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
+<ul>
+<li><strong><em>SQL é capaz de fazer tudo com banco de dados</em></strong></li>
+</ul>
+<div class="fragment">
+<ul>
+<li>Criar estruturas de dados: criar, alterar e apagar bancos, tabelas, índices.</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Consultar dados: o clássico SELECT … FROM … WHERE ….</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Inserir, atualizar e excluir dados (INSERT, UPDATE, DELETE).</li>
+</ul>
+</div>
+<div class="fragment">
+<ul>
+<li>Criar relatórios e análises: agregações (SUM, AVG, COUNT), agrupamentos (GROUP BY), filtros, junções entre tabelas (JOIN).</li>
+</ul>
+</div>
+</section>
+<section id="breve-aula-sobre-sql-2" class="slide level2">
+<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
+<p>Vamos começar criando um dataframe rudimentar chamado <code>tab</code>.</p>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
+<span id="cb7-2"><a href="#cb7-2"></a>col1 <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'A'</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="st">'B'</span>,<span class="dv">4</span>))</span>
+<span id="cb7-3"><a href="#cb7-3"></a>col2 <span class="ot">=</span> <span class="fu">trunc</span>(<span class="fu">runif</span>(<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">4</span>))</span>
+<span id="cb7-4"><a href="#cb7-4"></a>col3 <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">4</span>)</span>
+<span id="cb7-5"><a href="#cb7-5"></a>tab <span class="ot">=</span> <span class="fu">data.frame</span>(col1,col2,col3)</span>
+<span id="cb7-6"><a href="#cb7-6"></a>tab</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  col1 col2      col3
+1    A    0  2.009432
+2    A    3  8.910816
+3    A    3  8.738605
+4    A    1  7.486979
+5    B    0  9.574144
+6    B    0 11.712059
+7    B    0  6.889122
+8    B    2  4.824471</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="breve-aula-sobre-sql-3" class="slide level2">
+<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
+<p>A função sqldf() cria um novo dataframe baseado na seleção feita pela linguagem SQL, que é muito simples.<br>
+Exemplos:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(sqldf)</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># Seleciona todas as colunas (*) e todas as linhas</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  col1 col2      col3
+1    A    0  2.009432
+2    A    3  8.910816
+3    A    3  8.738605
+4    A    1  7.486979
+5    B    0  9.574144
+6    B    0 11.712059
+7    B    0  6.889122
+8    B    2  4.824471</code></pre>
+</div>
+</div>
+</section>
+<section id="breve-aula-sobre-sql-4" class="slide level2">
+<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Seleciona apenas a primeira colunas e todas as linhas</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">sqldf</span>(<span class="st">'select col1 from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  col1
+1    A
+2    A
+3    A
+4    A
+5    B
+6    B
+7    B
+8    B</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Seleciona as duas primeira colunas e todas as linhas</span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">sqldf</span>(<span class="st">'select col1,col2 from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  col1 col2
+1    A    0
+2    A    3
+3    A    3
+4    A    1
+5    B    0
+6    B    0
+7    B    0
+8    B    2</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="breve-aula-sobre-sql-5" class="slide level2">
+<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Filtro para as linhas (usando where)</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab where col1="A" '</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  col1 col2     col3
+1    A    0 2.009432
+2    A    3 8.910816
+3    A    3 8.738605
+4    A    1 7.486979</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Filtro para as linhas com operador booleano (and / or)</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab where col1="A" and col2=3'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  col1 col2     col3
+1    A    3 8.910816
+2    A    3 8.738605</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab where col1="A" or col2=3'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  col1 col2     col3
+1    A    0 2.009432
+2    A    3 8.910816
+3    A    3 8.738605
+4    A    1 7.486979</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="breve-aula-sobre-sql-6" class="slide level2">
+<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Cálculos por grupos (usando group by)</span></span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="fu">sqldf</span>(<span class="st">'select avg(col3) from tab group by col1'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  avg(col3)
+1  6.786458
+2  8.249949</code></pre>
+</div>
+</div>
+<div class="fragment">
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Adicionando col1</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">sqldf</span>(<span class="st">'select col1, avg(col3) from tab group by col1'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  col1 avg(col3)
+1    A  6.786458
+2    B  8.249949</code></pre>
+</div>
+</div>
+</div>
+</section>
+<section id="breve-aula-sobre-sql-7" class="slide level2">
+<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
+<p>A sentença abaixo cria mesma tabela que usamos com <code>aggregate()</code> na aula passada.</p>
+<p><code>sqldf('select setor, estacao, avg(abund) from dad group by setor,estacao') mediasAbundSQL</code></p>
 
 <img src="images/furg3.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
