@@ -336,5 +336,5 @@ Onde:
 :::
 
 :::{.fragment}  
-2.6. Extraia a média da combinação de `estacao` e `setor`.
+2.6. Extraia a média da abundância da combinação de `estacao` e `setor`.
 :::

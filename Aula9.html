@@ -1,23 +1,23 @@
 <!DOCTYPE html>
 <html lang="pt-br"><head>
-<script src="Aula8_files/libs/clipboard/clipboard.min.js"></script>
-<script src="Aula8_files/libs/quarto-html/tabby.min.js"></script>
-<script src="Aula8_files/libs/quarto-html/popper.min.js"></script>
-<script src="Aula8_files/libs/quarto-html/tippy.umd.min.js"></script>
-<link href="Aula8_files/libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="Aula8_files/libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="Aula8_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
-<link href="Aula8_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="Aula9_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Aula9_files/libs/quarto-html/tabby.min.js"></script>
+<script src="Aula9_files/libs/quarto-html/popper.min.js"></script>
+<script src="Aula9_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="Aula9_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Aula9_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="Aula9_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="Aula9_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.3.340">
 
   <meta name="author" content="Disciplina: Lógica da programação (de computadores) e análise de dados no R">
-  <meta name="dcterms.date" content="2025-10-31">
-  <title>Programação no R - Aula 8</title>
+  <meta name="dcterms.date" content="2025-11-13">
+  <title>Programação no R - Aula 9</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="Aula8_files/libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="Aula8_files/libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="Aula9_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="Aula9_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -96,17 +96,17 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="Aula8_files/libs/revealjs/dist/theme/quarto.css" id="theme">
+  <link rel="stylesheet" href="Aula9_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="assets/syntax-highlight.css">
   <link rel="stylesheet" href="assets/sydney.css">
   <link rel="stylesheet" href="assets/custom.css">
   <link rel="stylesheet" href="assets/sydney-fonts.css">
-  <link href="Aula8_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="Aula8_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="Aula8_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="Aula8_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
-  <link href="Aula8_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
-  <link href="Aula8_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="Aula9_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="Aula9_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="Aula9_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Aula9_files/libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="Aula9_files/libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="Aula9_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
 
   .callout {
@@ -397,7 +397,7 @@
     <div class="slides">
 
 <section id="title-slide" class="quarto-title-block center">
-  <h1 class="title">Programação no R - Aula 8</h1>
+  <h1 class="title">Programação no R - Aula 9</h1>
 
 <div class="quarto-title-authors">
 <div class="quarto-title-author">
@@ -410,469 +410,69 @@ Disciplina: Lógica da programação (de computadores) e análise de dados no R
     </div>
 </div>
 
-  <p class="date">2025-10-31</p>
+  <p class="date">2025-11-13</p>
 </section>
-<section id="dataframes-df-no-r" class="slide level2">
-<h2><span style="font-size:34pt">Dataframes (DF) no R</span></h2>
-<p>Você certamente já sabe:</p>
-<ul>
-<li>O que é um dataframe?</li>
-</ul>
-<div class="fragment">
-<p>Linhas e colunas de qualquer tipo de dado (numéro ou texto)</p>
-</div>
-<div class="fragment">
-<ul>
-<li>Criar uma dataframe usando função <code>data.frame</code></li>
-</ul>
-</div>
-<div class="fragment">
-<p><code>data.frame(vet1,vet2,vet3)</code></p>
-</div>
-</section>
-<section id="criar-colunas-em-um-df" class="slide level2">
-<h2><span style="font-size:34pt">Criar colunas em um DF</span></h2>
+<section id="funções-vetorizadas" class="slide level2">
+<h2><span style="font-size:34pt">Funções vetorizadas</span></h2>
+<p>Vocês aprenderam a fazer na unha a transformação de um vetor de abundância em vetor de presência-ausência.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>DF <span class="ot">=</span> <span class="fu">data.frame</span>(<span class="at">col1=</span><span class="dv">0</span><span class="sc">:</span><span class="dv">5</span>,<span class="at">col2=</span><span class="dv">10</span><span class="sc">:</span><span class="dv">15</span>)</span>
-<span id="cb1-2"><a href="#cb1-2"></a>DF</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>pres_aus <span class="ot">=</span> <span class="fu">c</span>()  <span class="co"># cria vetor vazio</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">12</span>)</span>
+<span id="cb1-4"><a href="#cb1-4"></a></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {</span>
+<span id="cb1-6"><a href="#cb1-6"></a>  <span class="cf">if</span> (x[i] <span class="sc">&gt;</span> <span class="dv">0</span>) </span>
+<span id="cb1-7"><a href="#cb1-7"></a>    pres_aus[i] <span class="ot">=</span> <span class="dv">1</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>   <span class="cf">else</span> </span>
+<span id="cb1-9"><a href="#cb1-9"></a>    pres_aus[i] <span class="ot">=</span> <span class="dv">0</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>}</span>
+<span id="cb1-11"><a href="#cb1-11"></a></span>
+<span id="cb1-12"><a href="#cb1-12"></a>pres_aus</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2
-1    0   10
-2    1   11
-3    2   12
-4    3   13
-5    4   14
-6    5   15</code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>DF<span class="sc">$</span>nova_col <span class="ot">=</span> LETTERS[<span class="dv">1</span><span class="sc">:</span><span class="dv">6</span>] <span class="co"># O vetor de letras LETTERS vem embutido no R</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a>DF</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col
-1    0   10        A
-2    1   11        B
-3    2   12        C
-4    3   13        D
-5    4   14        E
-6    5   15        F</code></pre>
-</div>
+<pre><code>[1] 1 0 1 0 1</code></pre>
 </div>
 </div>
 </section>
-<section id="filtar-linhas-e-colunas-do-df" class="slide level2">
-<h2><span style="font-size:34pt">Filtar linhas e colunas do DF</span></h2>
-<p>Extrair elementos do DF (linha,coluna):</p>
+<section id="funções-vetorizadas-1" class="slide level2">
+<h2><span style="font-size:34pt">Funções vetorizadas</span></h2>
+<p>Isso pode ser feito de maneira muito mais simples com a função vetorizada <code>ifelse</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>DF</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">12</span>)</span>
+<span id="cb3-2"><a href="#cb3-2"></a>pres_aus <span class="ot">=</span> <span class="fu">ifelse</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
+<span id="cb3-3"><a href="#cb3-3"></a>pres_aus</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col
-1    0   10        A
-2    1   11        B
-3    2   12        C
-4    3   13        D
-5    4   14        E
-6    5   15        F</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>DF[<span class="dv">3</span>,<span class="dv">2</span>]  <span class="co"># linha 2, coluna 1 </span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 12</code></pre>
+<pre><code>[1] 1 0 1 0 1</code></pre>
 </div>
 </div>
+<p>Uma <strong>função vetorizada</strong> avalia todas as posições de um vetor lógico de uma só vez e devolve um vetor do mesmo comprimento, escolhendo elemento a elemento entre os valores de <strong><em>Verdadeiro</em></strong> ou <strong><em>falso</em></strong>.</p>
 </section>
-<section id="dataframes-df-no-r-1" class="slide level2">
-<h2><span style="font-size:34pt">Dataframes (DF) no R</span></h2>
-<ul>
-<li>Extrair colunas do DF:</li>
-</ul>
+<section id="funções-vetorizadas-2" class="slide level2">
+<h2><span style="font-size:34pt">Funções vetorizadas</span></h2>
+<p><strong>Outro exemplo:</strong></p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a>DF</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>)  </span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">ifelse</span>(x <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"sim"</span>, <span class="st">"não"</span>)  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col
-1    0   10        A
-2    1   11        B
-3    2   12        C
-4    3   13        D
-5    4   14        E
-6    5   15        F</code></pre>
+<pre><code>[1] "não" "sim" "não" "sim"</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a>DF<span class="sc">$</span>col1</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0 1 2 3 4 5</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># ou</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a>DF[,<span class="dv">1</span>]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 0 1 2 3 4 5</code></pre>
-</div>
-</div>
-</section>
-<section id="dataframes-df-no-r-2" class="slide level2">
-<h2><span style="font-size:34pt">Dataframes (DF) no R</span></h2>
-<div class="fragment">
-<ul>
-<li>Extrair linhas do DF:</li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a>DF</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col
-1    0   10        A
-2    1   11        B
-3    2   12        C
-4    3   13        D
-5    4   14        E
-6    5   15        F</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>DF[<span class="dv">1</span>,]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col
-1    0   10        A</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="filtros-de-linhas-e-colunas-de-um-df" class="slide level2">
-<h2><span style="font-size:34pt">Filtros de linhas e colunas de um DF</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>DF</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col
-1    0   10        A
-2    1   11        B
-3    2   12        C
-4    3   13        D
-5    4   14        E
-6    5   15        F</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a>DF[DF<span class="sc">$</span>col1<span class="sc">&gt;</span><span class="dv">3</span> , <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2
-5    4   14
-6    5   15</code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a>DF[DF<span class="sc">$</span>col1 <span class="sc">&gt;</span> <span class="dv">2</span> <span class="sc">&amp;</span> DF<span class="sc">$</span>col2 <span class="sc">&gt;</span> <span class="dv">14</span> ,]</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col
-6    5   15        F</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="criando-um-fator-no-df" class="slide level2">
-<h2><span style="font-size:34pt">Criando um fator no DF</span></h2>
-<p>Variáveis categóricas são chamadas de <strong>fatores</strong> (<em>factors</em>) no R, e as categorias são chamadas de <strong>níveis</strong> (<em>levels</em>).</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a>fat <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'Pré-adol'</span>,<span class="dv">3</span>) , <span class="fu">rep</span>(<span class="st">'Adol'</span>,<span class="dv">3</span>))</span>
-<span id="cb25-2"><a href="#cb25-2"></a>fat</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "Pré-adol" "Pré-adol" "Pré-adol" "Adol"     "Adol"     "Adol"    </code></pre>
-</div>
-</div>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1"></a>DF<span class="sc">$</span>fator <span class="ot">=</span> fat</span>
-<span id="cb27-2"><a href="#cb27-2"></a>DF</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col    fator
-1    0   10        A Pré-adol
-2    1   11        B Pré-adol
-3    2   12        C Pré-adol
-4    3   13        D     Adol
-5    4   14        E     Adol
-6    5   15        F     Adol</code></pre>
-</div>
-</div>
-</section>
-<section id="funções-para-criar-e-testar-fatores" class="slide level2">
-<h2><span style="font-size:34pt">Funções para criar e testar fatores</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1"></a><span class="fu">is.factor</span>(DF<span class="sc">$</span>fator)  <span class="co">#False</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] FALSE</code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1"></a>DF<span class="sc">$</span>fator <span class="ot">=</span> <span class="fu">as.factor</span>(DF<span class="sc">$</span>fator)  <span class="co">#Transforma o vetor num fator</span></span>
-<span id="cb31-2"><a href="#cb31-2"></a><span class="fu">is.factor</span>(DF<span class="sc">$</span>fator)  <span class="co">#True</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] TRUE</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a>DF<span class="sc">$</span>fator</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] Pré-adol Pré-adol Pré-adol Adol     Adol     Adol    
-Levels: Adol Pré-adol</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="funções-específicas-para-df" class="slide level2">
-<h2><span style="font-size:32pt">Funções específicas para DF</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">head</span>(DF, <span class="dv">3</span>)      <span class="co"># 2 primeiras linhas</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col    fator
-1    0   10        A Pré-adol
-2    1   11        B Pré-adol
-3    2   12        C Pré-adol</code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">tail</span>(DF, <span class="dv">2</span>)      <span class="co"># 3 últimas</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2 nova_col fator
-5    4   14        E  Adol
-6    5   15        F  Adol</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">dim</span>(DF) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 6 4</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a><span class="fu">nrow</span>(DF) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 6</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">ncol</span>(DF)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 4</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="funções-específicas-para-df-1" class="slide level2">
-<h2><span style="font-size:32pt">Funções específicas para DF</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1"></a><span class="fu">names</span>(DF)        <span class="co"># nomes das colunas</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "col1"     "col2"     "nova_col" "fator"   </code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a><span class="fu">str</span>(DF)          <span class="co"># estrutura (tipos por coluna)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>'data.frame':   6 obs. of  4 variables:
- $ col1    : int  0 1 2 3 4 5
- $ col2    : int  10 11 12 13 14 15
- $ nova_col: chr  "A" "B" "C" "D" ...
- $ fator   : Factor w/ 2 levels "Adol","Pré-adol": 2 2 2 1 1 1</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1"></a><span class="fu">summary</span>(DF)      <span class="co"># resumo estatístico</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      col1           col2         nova_col              fator  
- Min.   :0.00   Min.   :10.00   Length:6           Adol    :3  
- 1st Qu.:1.25   1st Qu.:11.25   Class :character   Pré-adol:3  
- Median :2.50   Median :12.50   Mode  :character               
- Mean   :2.50   Mean   :12.50                                  
- 3rd Qu.:3.75   3rd Qu.:13.75                                  
- Max.   :5.00   Max.   :15.00                                  </code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="exercício-1" class="slide level2">
-<h2><span style="font-size:32pt">Exercício 1</span></h2>
-<p>Para o exercício 1, você vai usar o pacote <code>readxl</code>, que não vem com o R base.</p>
-<div class="fragment">
-<p>O pacote pode ser usado de 2 maneiras, após acertar o <code>WorkDir</code>:</p>
-<p>Assim:<br>
-<code>library(readxl)</code><br>
-<code>plan = read_excel('plan1.xlsx')</code></p>
-<p>Ou…</p>
-<p><code>plan = readxl::readexcel('plan1.xlsx')</code></p>
-</div>
-</section>
-<section id="voltando-ao-exercício-1" class="slide level2">
-<h2><span style="font-size:32pt">Voltando ao exercício 1</span></h2>
-<p>1.1. Baixe a planilha 1 (plan1.xlsx) na página da disciplina.</p>
-<!--
-1.1. Baixe a planilha (.xlsx) para o exercício [aqui](https://github.com/mauricio-camargo/Programacao_R_2025/raw/353367b7ce84d2d096ef4abd078af2abd9b1af0a/plan1.xlsx
-).  
--->
-<div class="fragment">
-<p>1.2. Armazene esta planilha num objeto tipo <code>dataframe</code> chamado <code>dados</code> usando o pacote <code>readxl</code>.<br>
-Lembre-se de acertar o WorkDir usando o menu <em>Session&gt;Set Working Directory</em>.</p>
-</div>
-<div class="fragment">
-<p>1.3. Crie 3 novos dataframes a partir de <code>dados</code>:<br>
-- fat (local e estacao)<br>
-- abio (sal, temp e pH)<br>
-- bio(sp1, sp2 e sp3)</p>
-</div>
-</section>
-<section id="voltando-ao-exercício-1-1" class="slide level2">
-<h2><span style="font-size:32pt">Voltando ao exercício 1</span></h2>
-<p>1.4. Crie uma nova coluna no dataframe <code>dados</code> chamada <code>abund</code> correspondente à abundância total das espécies em cada amostra.</p>
-<div class="fragment">
-<p>1.5. Crie uma nova coluna chamada <code>riqueza</code> contendo a riqueza de espécies, ou seja, o número de espécies em cada amostra.</p>
-</div>
-<div class="fragment">
-<p>1.6. Crie um novo dataframe chamado <code>indices</code> contendo os novos índices de abundância e riqueza recém criados.</p>
-</div>
-</section>
-<section id="voltando-ao-exercício-1-2" class="slide level2">
-<h2><span style="font-size:32pt">Voltando ao exercício 1</span></h2>
-<p>1.7. Extraia as médias de salinidades para cada <code>local</code>.<br>
-Sugestão: crie um filtro para cada local e extraia as médias individualmente.</p>
-<div class="fragment">
-<p>1.8. Extraia as médias de temperatura para cada estação.</p>
 </div>
 <p><br></p>
 <div class="fragment">
-<p><strong>TEM QUE HAVER FORMA MAIS AMIGÁVEL DE FAZER ISSO!</strong></p>
+<p><code>ifelse(x == 0, "sim", "não")</code><br>
+deve ser lido como: para cada valor do vetor <code>x</code>, se for igual a zero substitui por “sim”, caso contrário, por “não”.</p>
 </div>
 </section>
-<section id="apresentando-a-função-aggregate" class="slide level2">
-<h2><span style="font-size:32pt">Apresentando a função aggregate()</span></h2>
-<div class="fragment">
-<p><code>aggregate()</code> resume uma ou mais colunas por <strong>grupos</strong>.</p>
-</div>
-<div class="fragment">
-<p>Exemplos de perguntas que ela resolve:</p>
+<section id="exercício-de-funções-vetorizada" class="slide level2">
+<h2><span style="font-size:34pt">Exercício de funções vetorizada</span></h2>
 <ul>
-<li>média da temperatura por local</li>
+<li>Baixe a planilha <code>Plan1.xlsx</code> da página da disciplina.<br>
+</li>
+<li>Abra o arquivo e armazene no dataframe chamado de <code>dados</code>.<br>
+</li>
+<li>Crie uma nova coluna num dataframe para a abundância total das 3 espécies.<br>
+</li>
+<li>Crie três novas colunas no dataframe para o registro de presença-ausência das três espécies.</li>
 </ul>
-</div>
-<div class="fragment">
-<ul>
-<li>desvio padrão da temperatura por local</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>média da salinidade por local <strong>E</strong> estação;</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>soma da abundância por estação;</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>número de observações por local.</li>
-</ul>
-</div>
-</section>
-<section id="sintaxe-básica-da-função-aggregate" class="slide level2">
-<h2><span style="font-size:32pt">Sintaxe básica da função <code>aggregate()</code></span></h2>
-<p>Existem várias maneiras de montar os argumentos da função.</p>
-<p>A forma mais poderosa é usando as fórmulas do R:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1"></a><span class="co"># aggregate(variavel ~ grupos,</span></span>
-<span id="cb51-2"><a href="#cb51-2"></a><span class="co">#           data = dados,</span></span>
-<span id="cb51-3"><a href="#cb51-3"></a><span class="co">#           FUN = funcao)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>onde:<br>
-<strong>variavel</strong>: o que será resumido (ex.: Temp)<br>
-<strong>grupos</strong>: por quem será agrupar (ex.: Local, ou Local + Estacao)<br>
-<strong>data</strong>: o dataframe que será resumido <strong>FUN</strong>: função de resumo (ex.: mean, sum, length, sd)</p>
-</section>
-<section id="exemplos-com-a-nossa-planilha-dados" class="slide level2">
-<h2><span style="font-size:32pt">Exemplos com a nossa planilha <code>dados</code></span></h2>
-<ul>
-<li><ol type="1">
-<li>Média da temperatura por local</li>
-</ol></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1"></a><span class="co"># aggregate(temp ~ local, data = dados, FUN = mean)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>o R junta todas as linhas de cada local e calcula a média.</p>
-<div class="fragment">
-<ul>
-<li><ol start="2" type="1">
-<li>Média da salinidade por local <strong>E</strong> estação</li>
-</ol></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1"></a><span class="co"># aggregate(sal ~ local + estacao, data = dados, FUN = mean)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Agora cada linha da saída é um grupo (Local × Estacao).</p>
-</div>
-</section>
-<section id="exemplos-com-a-nossa-planilha-dados-1" class="slide level2">
-<h2><span style="font-size:32pt">Exemplos com a nossa planilha <code>dados</code></span></h2>
-<ul>
-<li><ol start="3" type="1">
-<li>Soma da abundância por estação</li>
-</ol></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1"></a><span class="co"># aggregate(sp1 ~ estacao, data = dados, FUN = sum)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="fragment">
-<ul>
-<li><ol start="4" type="1">
-<li>Quantas amostras tenho por local?</li>
-</ol></li>
-</ul>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1"></a><span class="co"># aggregate(temp ~ local, data = dados, FUN = length)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Aqui a função <code>length</code> apenas conta quantas linhas existem por local.</p>
-</div>
-</section>
-<section id="resumo-para-várias-variáveis-ao-mesmo-tempo" class="slide level2">
-<h2><span style="font-size:32pt">Resumo para várias variáveis ao mesmo tempo</span></h2>
-<p>Quando tem várias variáveis para resumir juntas (Temp, Sal, pH), se usa outro formato da <code>aggregate()</code>:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1"></a><span class="co"># aggregate(dados[, c("temp", "sal", "pH")],</span></span>
-<span id="cb56-2"><a href="#cb56-2"></a><span class="co">#           by = list(Local = dados$local,</span></span>
-<span id="cb56-3"><a href="#cb56-3"></a><span class="co">#                     Estacao = dados$estacao),</span></span>
-<span id="cb56-4"><a href="#cb56-4"></a><span class="co">#           FUN = mean)</span></span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Onde:<br>
-<strong>dados[, c(…)]</strong> → quais colunas serão resumidas;<br>
-<strong>by</strong> = list(…) → por quem serão agrupadas;<br>
-<strong>FUN</strong> = mean → função do resumo.</p>
-</section>
-<section id="exercício-2" class="slide level2">
-<h2><span style="font-size:32pt">Exercício 2</span></h2>
-<p>2.1 Abra a planilha <code>limno.xlsx</code> na página da disciplina.</p>
-<div class="fragment">
-<p>2.2.Armazene esta planilha num objeto tipo <code>dataframe</code> chamado <code>dad</code> usando o pacote <code>readxl</code>.</p>
-</div>
-<div class="fragment">
-<p>2.3. Crie 3 novos dataframes a partir de <code>dad</code>:<br>
-- fat (ponto, estacao e setor)<br>
-- abio (temp, pH, etc)<br>
-- bio(Bosmina, Bosminopsis, Calanoida, etc)</p>
-</div>
-<div class="fragment">
-<p>2.4. Crie uma coluna para a abundância total por amostra.</p>
-</div>
-<div class="fragment">
-<p>2.5. Separe uma planilha para cada estação do ano.</p>
-</div>
-<div class="fragment">
-<p>2.6. Extraia a média da abundância da combinação de <code>estacao</code> e <code>setor</code>.</p>
-</div>
 
 <img src="images/furg3.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
@@ -882,20 +482,20 @@ Sugestão: crie um filtro para cada local e extraia as médias individualmente.<
   </div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="Aula8_files/libs/revealjs/dist/reveal.js"></script>
+  <script src="Aula9_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="Aula8_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="Aula8_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="Aula8_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="Aula8_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="Aula8_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
-  <script src="Aula8_files/libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="Aula8_files/libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="Aula8_files/libs/revealjs/plugin/search/search.js"></script>
-  <script src="Aula8_files/libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="Aula8_files/libs/revealjs/plugin/math/math.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="Aula9_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>

@@ -1,0 +1,70 @@
+---
+title: "Programação no R - Aula 9"
+institute: "Prof. Maurício Garcia de Camargo. IO-FURG."
+author: "Disciplina: Lógica da programação (de computadores) e análise de dados no R"
+date: 2025-11-13
+lang: pt-br
+format: 
+  revealjs:
+#    theme: [serif, MeuCustom.scss]
+    logo: images/furg3.png
+    slide-number: true
+    chalkboard: true #Muito bom para aula
+    show-slide-number: all
+    controls: true #Não é menu. ToDo.
+    #Sem estes css o :::box ou info-box não funciona
+    css: [assets/syntax-highlight.css, assets/sydney.css, assets/custom.css, assets/sydney-fonts.css]
+---
+
+## <span style="font-size:34pt">Funções vetorizadas</span>
+
+Vocês aprenderam a fazer na unha a transformação de um vetor de abundância em vetor de presência-ausência.
+
+```{r echo=TRUE}
+pres_aus = c()  # cria vetor vazio
+
+x = c(23, 0, 5, 0, 12)
+
+for (i in 1:length(x)) {
+  if (x[i] > 0) 
+    pres_aus[i] = 1
+   else 
+    pres_aus[i] = 0
+}
+
+pres_aus
+```
+
+## <span style="font-size:34pt">Funções vetorizadas</span>
+
+Isso pode ser feito de maneira muito mais simples com a função vetorizada `ifelse`.
+
+```{r echo=TRUE}
+x = c(23, 0, 5, 0, 12)
+pres_aus = ifelse(x > 0, 1, 0)
+pres_aus
+```
+
+Uma **função vetorizada** avalia todas as posições de um vetor lógico de uma só vez e devolve um vetor do mesmo comprimento, escolhendo elemento a elemento entre os valores de ***Verdadeiro*** ou ***falso***.  
+
+## <span style="font-size:34pt">Funções vetorizadas</span>
+**Outro exemplo:**
+```{r, echo=TRUE}
+x = c(-2, 0, 3, 0)  
+ifelse(x == 0, "sim", "não")  
+```
+
+<br>
+
+:::{.fragment}  
+`ifelse(x == 0, "sim", "não")`  
+deve ser lido como: para cada valor do vetor `x`, se for igual a zero substitui por "sim", caso contrário, por "não".
+:::
+
+## <span style="font-size:34pt">Exercício de funções vetorizada</span>
+
+- Baixe a planilha `Plan1.xlsx` da página da disciplina.  
+- Abra o arquivo e armazene no dataframe chamado de `dados`.  
+- Crie uma nova coluna num dataframe para a abundância total das 3 espécies.  
+- Crie três novas colunas no dataframe para o registro de presença-ausência das três espécies. 
+
