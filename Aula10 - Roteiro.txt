@@ -1,0 +1,3 @@
+- Rever aula 9 a partir de SQL
+- Resolver os exercícios 9
+- Refazer o exercício 8 usando SQL.

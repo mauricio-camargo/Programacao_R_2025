@@ -206,7 +206,7 @@ Lembre-se de acertar o WorkDir usando o menu *Session>Set Working Directory*.
 :::
 
 ## <span style="font-size:32pt">Voltando ao exercício 1</span>
-1.7. Extraia as médias de salinidades para cada `local`.  
+1.7. Extraia as médias de salinidade para cada `local`.  
 Sugestão: crie um filtro para cada local e extraia as médias individualmente.
 
 :::{.fragment}  
@@ -338,3 +338,4 @@ Onde:
 :::{.fragment}  
 2.6. Extraia a média da abundância da combinação de `estacao` e `setor`.
 :::
+

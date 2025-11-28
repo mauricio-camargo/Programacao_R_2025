@@ -367,6 +367,104 @@ Disciplina: Lógica da programação (de computadores) e análise de dados no R
 <li>SQL é baseada em apenas algumas palavras chave: <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>GROUP BY</code></li>
 </ul>
 </div>
+</section>
+<section id="estrutura-geral-de-uma-sentença-sql" class="slide level2">
+<h2><span style="font-size:34pt">Estrutura geral de uma sentença SQL</span></h2>
+<div class="small">
+<ul>
+<li>Palavras reservadas da linguagem SQL são escritas em maiúsculas.</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th>Palavra reservada</th>
+<th>Comentário</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>SELECT *</code></td>
+<td>Seleciona todas as colunas</td>
+</tr>
+<tr class="even">
+<td><code>SELECT col1</code></td>
+<td>Seleciona a coluna 1</td>
+</tr>
+<tr class="odd">
+<td><code>SELECT col1, col2</code></td>
+<td>Seleciona as colunas 1 e 2</td>
+</tr>
+<tr class="even">
+<td><code>FROM</code></td>
+<td>Tabela (dataframe)</td>
+</tr>
+<tr class="odd">
+<td><code>WHERE</code></td>
+<td>Filtro (condição)</td>
+</tr>
+<tr class="even">
+<td><code>GROUP BY</code></td>
+<td>Coluna(s) agrupadoras para AVG,COUNT,STDEV,SUM</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<section id="prática-de-sql" class="slide level2">
+<h2><span style="font-size:34pt">Prática de SQL</span></h2>
+<p><strong>Exercício 1.</strong></p>
+<p>1.1. Abra a planilha plan1.xlsx (enviada por e-mail) usando o pacote <code>readxl</code> e armazene num dataframe chamado <code>dados</code>.</p>
+<div class="fragment">
+<p>1.2. Crie 3 novos dataframes a partir de <code>dados</code>:<br>
+- <code>fat</code> (local e estacao)<br>
+- <code>abio</code> (sal, temp e pH)<br>
+- <code>bio</code> (sp1, sp2 e sp3)</p>
+</div>
+<div class="fragment">
+<p>1.3. Extraia as amostras do <code>local</code> “A”.</p>
+</div>
+<div class="fragment">
+<p>1.4. Extraia as amostras do <code>local</code> “A” ou “B”.</p>
+</div>
+<div class="fragment">
+<p>1.5. Extraia as amostras do <code>local</code> “A” e <code>estacao</code> “S”.</p>
+</div>
+</section>
+<section id="prática-de-sql-1" class="slide level2">
+<h2><span style="font-size:34pt">Prática de SQL</span></h2>
+<p>1.6. Extraia as amostras do <code>local</code> “A” que contêm salinidade maior que 17.</p>
+<div class="fragment">
+<p>1.7. Extraia a média geral da salinidade.</p>
+</div>
+<div class="fragment">
+<p>1.8. Extraia as médias de salinidade para cada <code>local</code>.</p>
+</div>
+<div class="fragment">
+<p>1.9. Extraia os desvios padrão de temperatura para cada <code>estacao</code>.</p>
+</div>
+<div class="fragment">
+<p>1.10. Extraia o desvio padrão da temperatura para o <code>local</code> “B” e <code>estacao</code> “S”.</p>
+</div>
+<div class="fragment">
+<p>1.11. Extrais a soma da abundância por estação;</p>
+</div>
+</section>
+<section id="prática-de-sql-2" class="slide level2">
+<h2><span style="font-size:34pt">Prática de SQL</span></h2>
+<p>1.12. Extraia o número de observações por local.</p>
+<div class="fragment">
+<p>1.13. Extraia a média da abundância da combinação de <code>estacao</code> e <code>setor</code>.</p>
+</div>
+<div class="fragment">
+<p><strong>Desafios</strong><br>
+1.14. Crie uma nova coluna chamada <code>abund</code> correspondente à abundância total das espécies em cada amostra.</p>
+</div>
+<div class="fragment">
+<p>1.15. Crie uma nova coluna chamada <code>riqueza</code> contendo a riqueza de espécies, ou seja, o número de espécies em cada amostra.</p>
+</div>
+<div class="fragment">
+<p>1.16. Crie um novo dataframe chamado <code>indices</code> contendo os novos índices de abundância e riqueza recém criados.</p>
+</div>
 
 <img src="images/furg3.png" class="slide-logo r-stretch"><div class="footer footer-default">
 

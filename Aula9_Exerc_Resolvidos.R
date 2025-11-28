@@ -11,22 +11,22 @@ tab
 
 # A função sqldf() cria um novo dataframe baseado na seleção feita pela linguagem SQL, que é muito simples. Exemplos:
 # Seleciona todas as colunas (*) e todas as linhas
-sqldf('select * from tab') 
+sqldf('SELECT * FROM tab') 
 # Seleciona apenas a primeira colunas e todas as linhas
-sqldf('select col1 from tab') 
+sqldf('SELECT col1 FROM tab') 
 # Seleciona as duas primeira colunas e todas as linhas
-sqldf('select col1,col2 from tab') 
+sqldf('SELECT col1,col2 FROM tab') 
 # Filtro para as linhas (usando where)
-sqldf('select * from tab where col1="A" ') 
-sqldf('select * from tab where col1="A" and col2=3')
-sqldf('select * from tab where col1="A" or col2=3') 
-# Cálculos de médias (avg), soma (sum), contagem (count) etc.  
-sqldf('select avg(col3) from tab')  
+sqldf('SELECT * FROM tab WHERE col1="A" ') 
+sqldf('SELECT * FROM tab WHERE col1="A" and col2=3')
+sqldf('SELECT * FROM tab WHERE col1="A" or col2=3') 
+# Cálculos de médias (AVG), desvio padrão (STDEV), soma (SUM), contagem (COUNT) etc.  
+sqldf('SELECT avg(col3) FROM tab')  
 # Cálculos por grupos (usando group by)
-sqldf('select avg(col3) from tab group by col1') 
+sqldf('SELECT avg(col3) FROM tab GROUP BY col1') 
 # Adicionando col1
-sqldf('select col1, avg(col3) from tab group by col1') 
+sqldf('SELECT col1, avg(col3) FROM tab GROUP BY col1') 
 
 # A sentença abaixo cria mesma tabela que usamos com aggregate() na aula passada. 
-mediasAbundSQL = sqldf('select setor, estacao, avg(abund) from dad group by setor,estacao')
+mediasAbundSQL = sqldf('SELECT setor, estacao, AVG(abund) FROM dad GROUP BY setor,estacao')
 mediasAbundSQL

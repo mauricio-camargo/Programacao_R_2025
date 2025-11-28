@@ -30,3 +30,82 @@ format:
 - SQL é baseada em apenas algumas palavras chave: `SELECT`,  `FROM`,  `WHERE`,  `GROUP BY`
 :::  
 
+## <span style="font-size:34pt">Estrutura geral de uma sentença SQL</span>
+
+:::{.small}  
+- Palavras reservadas da linguagem SQL são escritas em maiúsculas.
+
+
+Palavra reservada  | Comentário
+------------------- | -------------
+`SELECT *`          | Seleciona todas as colunas
+`SELECT col1`       | Seleciona a coluna 1
+`SELECT col1, col2` | Seleciona as colunas 1 e 2
+`FROM`              | Tabela (dataframe)
+`WHERE`             | Filtro (condição)
+`GROUP BY`          | Coluna(s) agrupadoras para AVG,COUNT,STDEV,SUM
+:::
+
+## <span style="font-size:34pt">Prática de SQL</span>
+
+**Exercício 1.**   
+
+1.1. Abra a planilha plan1.xlsx (enviada por e-mail) usando o pacote `readxl` e armazene num dataframe chamado `dados`.
+
+:::{.fragment}  
+1.2. Crie 3 novos dataframes a partir de `dados`:  
+-  `fat` (local e estacao)  
+-  `abio` (sal, temp e pH)  
+-  `bio` (sp1, sp2 e sp3)
+:::  
+:::{.fragment}  
+1.3. Extraia as amostras do `local` "A".
+:::  
+:::{.fragment}  
+1.4. Extraia as amostras do `local` "A" ou "B".
+:::  
+:::{.fragment}  
+1.5. Extraia as amostras do `local` "A" e `estacao` "S".
+:::  
+
+## <span style="font-size:34pt">Prática de SQL</span>
+
+1.6. Extraia as amostras do `local` "A" que contêm salinidade maior que 17.
+
+:::{.fragment}  
+1.7. Extraia a média geral da salinidade.
+:::  
+:::{.fragment}  
+1.8. Extraia as médias de salinidade para cada `local`. 
+:::  
+:::{.fragment}  
+1.9. Extraia os desvios padrão de temperatura para cada `estacao`. 
+:::  
+:::{.fragment}  
+1.10. Extraia o desvio padrão da temperatura para o  `local` "B" e `estacao` "S". 
+:::  
+:::{.fragment}  
+1.11. Extrais a soma da abundância por estação;
+::: 
+
+## <span style="font-size:34pt">Prática de SQL</span>
+
+1.12. Extraia o número de observações por local.
+
+:::{.fragment}  
+1.13. Extraia a média da abundância da combinação de `estacao` e `setor`.
+:::  
+
+
+:::{.fragment}  
+**Desafios**  
+1.14. Crie uma nova coluna chamada `abund` correspondente à abundância total das espécies em cada amostra.
+:::  
+
+:::{.fragment}  
+1.15. Crie uma nova coluna chamada `riqueza` contendo a riqueza de espécies, ou seja, o número de espécies em cada amostra.
+:::
+
+:::{.fragment}  
+1.16. Crie um novo dataframe chamado `indices` contendo os novos índices de abundância e riqueza recém criados.
+:::
