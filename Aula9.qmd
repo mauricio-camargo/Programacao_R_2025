@@ -128,19 +128,19 @@ Exemplos:
 ```{r echo=TRUE}
 library(sqldf)
 # Seleciona todas as colunas (*) e todas as linhas
-sqldf('select * from tab') 
+sqldf('SELECT * FROM tab') 
 ```
 
 ## <span style="font-size:34pt">Breve aula sobre SQL</span>
 ```{r echo=TRUE}
 # Seleciona apenas a primeira colunas e todas as linhas
-sqldf('select col1 from tab') 
+sqldf('SELECT col1 FROM tab') 
 ```
 
 :::{.fragment}  
 ```{r echo=TRUE}
 # Seleciona as duas primeira colunas e todas as linhas
-sqldf('select col1,col2 from tab') 
+sqldf('SELECT col1,col2 FROM tab') 
 ```
 :::
 
@@ -148,36 +148,47 @@ sqldf('select col1,col2 from tab')
 ## <span style="font-size:34pt">Breve aula sobre SQL</span>
 ```{r echo=TRUE}
 # Filtro para as linhas (usando where)
-sqldf('select * from tab where col1="A" ') 
+sqldf('SELECT * FROM tab WHERE col1="A" ') 
 ```
 
 :::{.fragment}  
 ```{r echo=TRUE}
 # Filtro para as linhas com operador booleano (and / or)
-sqldf('select * from tab where col1="A" and col2=3')
-sqldf('select * from tab where col1="A" or col2=3') 
+sqldf('SELECT * FROM tab WHERE col1="A" and col2=3')
+sqldf('SELECT * FROM tab WHERE col1="A" or col2=3') 
 ```
 :::
 
 ## <span style="font-size:34pt">Breve aula sobre SQL</span>
 ```{r echo=TRUE}
 # Cálculos de médias (avg), soma (sum), contagem (count) etc.
-sqldf('select avg(col3) from tab') 
+sqldf('SELECT AVG(col3) FROM tab') 
 ```
 
 :::{.fragment}  
 ```{r echo=TRUE}
 # Cálculos por grupos (usando group by)
-sqldf('select avg(col3) from tab group by col1') 
+sqldf('SELECT AVG(col3) FROM tab GROUP BY col1') 
 ```
 :::
 
 :::{.fragment}  
 ```{r echo=TRUE}
 # Adicionando col1
-sqldf('select col1, avg(col3) from tab group by col1') 
+sqldf('SELECT col1, AVG(col3) FROM tab GROUP BY col1') 
 ```
 :::
+
+## <span style="font-size:34pt">Resumo das sentenças SQL desta aula</span>
+SELECT * FROM tab  
+SELECT col1 FROM tab  
+SELECT col1,col2 FROM tab  
+SELECT * FROM tab WHERE col1="A"   
+SELECT * FROM tab WHERE col1="A" and col2=3  
+SELECT * FROM tab WHERE col1="A" or col2=3  
+SELECT AVG(col3) FROM tab  
+SELECT AVG(col3) FROM tab GROUP BY col1  
+SELECT col1, AVG(col3) FROM tab GROUP BY col1  
 
 ## <span style="font-size:34pt">Breve aula sobre SQL</span>
 
@@ -185,7 +196,7 @@ A sentença abaixo cria mesma tabela que usamos com `aggregate()` na aula passad
 
 <br>
 `
-sqldf('select setor, estacao, avg(abund) from dad group by setor,estacao')
+sqldf('SELECT setor, estacao, AVG(abund) FROM dad GROUP BY setor,estacao')
 `
 
 <br>

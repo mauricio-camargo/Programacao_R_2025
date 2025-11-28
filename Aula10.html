@@ -30,71 +30,6 @@
       margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
       vertical-align: middle;
     }
-    /* CSS for syntax highlighting */
-    pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-    pre > code.sourceCode > span:empty { height: 1.2em; }
-    .sourceCode { overflow: visible; }
-    code.sourceCode > span { color: inherit; text-decoration: inherit; }
-    div.sourceCode { margin: 1em 0; }
-    pre.sourceCode { margin: 0; }
-    @media screen {
-    div.sourceCode { overflow: auto; }
-    }
-    @media print {
-    pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-    }
-    pre.numberSource code
-      { counter-reset: source-line 0; }
-    pre.numberSource code > span
-      { position: relative; left: -4em; counter-increment: source-line; }
-    pre.numberSource code > span > a:first-child::before
-      { content: counter(source-line);
-        position: relative; left: -1em; text-align: right; vertical-align: baseline;
-        border: none; display: inline-block;
-        -webkit-touch-callout: none; -webkit-user-select: none;
-        -khtml-user-select: none; -moz-user-select: none;
-        -ms-user-select: none; user-select: none;
-        padding: 0 4px; width: 4em;
-        color: #aaaaaa;
-      }
-    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-    div.sourceCode
-      { color: #003b4f; background-color: #f1f3f5; }
-    @media screen {
-    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-    }
-    code span { color: #003b4f; } /* Normal */
-    code span.al { color: #ad0000; } /* Alert */
-    code span.an { color: #5e5e5e; } /* Annotation */
-    code span.at { color: #657422; } /* Attribute */
-    code span.bn { color: #ad0000; } /* BaseN */
-    code span.bu { } /* BuiltIn */
-    code span.cf { color: #003b4f; } /* ControlFlow */
-    code span.ch { color: #20794d; } /* Char */
-    code span.cn { color: #8f5902; } /* Constant */
-    code span.co { color: #5e5e5e; } /* Comment */
-    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
-    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
-    code span.dt { color: #ad0000; } /* DataType */
-    code span.dv { color: #ad0000; } /* DecVal */
-    code span.er { color: #ad0000; } /* Error */
-    code span.ex { } /* Extension */
-    code span.fl { color: #ad0000; } /* Float */
-    code span.fu { color: #4758ab; } /* Function */
-    code span.im { color: #00769e; } /* Import */
-    code span.in { color: #5e5e5e; } /* Information */
-    code span.kw { color: #003b4f; } /* Keyword */
-    code span.op { color: #5e5e5e; } /* Operator */
-    code span.ot { color: #003b4f; } /* Other */
-    code span.pp { color: #ad0000; } /* Preprocessor */
-    code span.sc { color: #5e5e5e; } /* SpecialChar */
-    code span.ss { color: #20794d; } /* SpecialString */
-    code span.st { color: #20794d; } /* String */
-    code span.va { color: #111111; } /* Variable */
-    code span.vs { color: #20794d; } /* VerbatimString */
-    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="Aula10_files/libs/revealjs/dist/theme/quarto.css" id="theme">
   <link rel="stylesheet" href="assets/syntax-highlight.css">
@@ -412,268 +347,26 @@ Disciplina: Lógica da programação (de computadores) e análise de dados no R
 
   <p class="date">2025-11-28</p>
 </section>
-<section id="funções-vetorizadas" class="slide level2">
-<h2><span style="font-size:34pt">Funções vetorizadas</span></h2>
-<p>Vocês aprenderam a fazer na unha a transformação de um vetor de abundância em vetor de presência-ausência.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>pres_aus <span class="ot">=</span> <span class="fu">c</span>()  <span class="co"># cria vetor vazio</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">12</span>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="cf">for</span> (i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)) {</span>
-<span id="cb1-6"><a href="#cb1-6"></a>  <span class="cf">if</span> (x[i] <span class="sc">&gt;</span> <span class="dv">0</span>) </span>
-<span id="cb1-7"><a href="#cb1-7"></a>    pres_aus[i] <span class="ot">=</span> <span class="dv">1</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a>   <span class="cf">else</span> </span>
-<span id="cb1-9"><a href="#cb1-9"></a>    pres_aus[i] <span class="ot">=</span> <span class="dv">0</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a>}</span>
-<span id="cb1-11"><a href="#cb1-11"></a></span>
-<span id="cb1-12"><a href="#cb1-12"></a>pres_aus</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 0 1 0 1</code></pre>
-</div>
-</div>
-</section>
-<section id="funções-vetorizadas-1" class="slide level2">
-<h2><span style="font-size:34pt">Funções vetorizadas</span></h2>
-<p>Isso pode ser feito de maneira muito mais simples com a função vetorizada <code>ifelse</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">0</span>, <span class="dv">5</span>, <span class="dv">0</span>, <span class="dv">12</span>)</span>
-<span id="cb3-2"><a href="#cb3-2"></a>pres_aus <span class="ot">=</span> <span class="fu">ifelse</span>(x <span class="sc">&gt;</span> <span class="dv">0</span>, <span class="dv">1</span>, <span class="dv">0</span>)</span>
-<span id="cb3-3"><a href="#cb3-3"></a>pres_aus</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 1 0 1 0 1</code></pre>
-</div>
-</div>
-<p>Uma <strong>função vetorizada</strong> avalia todas as posições de um vetor lógico de uma só vez e devolve um vetor do mesmo comprimento, escolhendo elemento a elemento entre os valores de <strong><em>Verdadeiro</em></strong> ou <strong><em>falso</em></strong>.</p>
-</section>
-<section id="funções-vetorizadas-2" class="slide level2">
-<h2><span style="font-size:34pt">Funções vetorizadas</span></h2>
-<p><strong>Outro exemplo:</strong></p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>x <span class="ot">=</span> <span class="fu">c</span>(<span class="sc">-</span><span class="dv">2</span>, <span class="dv">0</span>, <span class="dv">3</span>, <span class="dv">0</span>)  </span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="fu">ifelse</span>(x <span class="sc">==</span> <span class="dv">0</span>, <span class="st">"sim"</span>, <span class="st">"não"</span>)  </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] "não" "sim" "não" "sim"</code></pre>
-</div>
-</div>
-<p><br></p>
-<div class="fragment">
-<p><code>ifelse(x == 0, "sim", "não")</code><br>
-deve ser lido como: para cada valor do vetor <code>x</code>, se for igual a zero substitui por “sim”, caso contrário, por “não”.</p>
-</div>
-</section>
-<section id="exercício.-funções-vetorizadas" class="slide level2">
-<h2><span style="font-size:34pt">Exercício. Funções vetorizadas</span></h2>
-<ul>
-<li>Baixe a planilha <code>Plan1.xlsx</code> da página da disciplina.<br>
-</li>
-<li>Abra o arquivo e armazene no dataframe chamado de <code>dat</code>.<br>
-</li>
-<li>Crie um novo dataframe para o registro de presença-ausência das três espécies usando <code>ifelse</code>.</li>
-</ul>
-</section>
-<section id="rever-aggregate-da-aula-passada" class="slide level2">
-<h2><span style="font-size:34pt">Rever aggregate() da aula passada</span></h2>
-</section>
-<section id="breve-aula-sobre-sql" class="slide level2">
-<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
+<section id="revisão-de-sql" class="slide level2">
+<h2><span style="font-size:34pt">Revisão de SQL</span></h2>
 <ul>
 <li><strong><em>SQL = Structured Query Language</em></strong></li>
 </ul>
 <div class="fragment">
 <ul>
-<li>Nasceu na IBM, em 1970.</li>
+<li>Linguagem universal de banco de dados.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>A ideia é guardar informações em tabelas (linhas e colunas) e depois relacioná-las através de uma linguagem parecida com o inglês.</li>
+<li>Servem para qualquer propósito para manipulação de planilhas e banco de dados.</li>
 </ul>
 </div>
 <div class="fragment">
 <ul>
-<li>SQL virou padrão universal como linguagem de banco de dados.</li>
+<li>SQL é baseada em apenas algumas palavras chave: <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>, <code>GROUP BY</code></li>
 </ul>
 </div>
-</section>
-<section id="breve-aula-sobre-sql-1" class="slide level2">
-<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
-<ul>
-<li><strong><em>SQL é capaz de fazer tudo com banco de dados</em></strong></li>
-</ul>
-<div class="fragment">
-<ul>
-<li>Criar estruturas de dados: criar, alterar e apagar bancos, tabelas, índices.</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Consultar dados: o clássico SELECT … FROM … WHERE ….</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Inserir, atualizar e excluir dados (INSERT, UPDATE, DELETE).</li>
-</ul>
-</div>
-<div class="fragment">
-<ul>
-<li>Criar relatórios e análises: agregações (SUM, AVG, COUNT), agrupamentos (GROUP BY), filtros, junções entre tabelas (JOIN).</li>
-</ul>
-</div>
-</section>
-<section id="breve-aula-sobre-sql-2" class="slide level2">
-<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
-<p>Vamos começar criando um dataframe rudimentar chamado <code>tab</code>.</p>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="fu">set.seed</span>(<span class="dv">12</span>)</span>
-<span id="cb7-2"><a href="#cb7-2"></a>col1 <span class="ot">=</span> <span class="fu">c</span>(<span class="fu">rep</span>(<span class="st">'A'</span>,<span class="dv">4</span>),<span class="fu">rep</span>(<span class="st">'B'</span>,<span class="dv">4</span>))</span>
-<span id="cb7-3"><a href="#cb7-3"></a>col2 <span class="ot">=</span> <span class="fu">trunc</span>(<span class="fu">runif</span>(<span class="dv">8</span>,<span class="dv">0</span>,<span class="dv">4</span>))</span>
-<span id="cb7-4"><a href="#cb7-4"></a>col3 <span class="ot">=</span> <span class="fu">rnorm</span>(<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">4</span>)</span>
-<span id="cb7-5"><a href="#cb7-5"></a>tab <span class="ot">=</span> <span class="fu">data.frame</span>(col1,col2,col3)</span>
-<span id="cb7-6"><a href="#cb7-6"></a>tab</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2      col3
-1    A    0  2.009432
-2    A    3  8.910816
-3    A    3  8.738605
-4    A    1  7.486979
-5    B    0  9.574144
-6    B    0 11.712059
-7    B    0  6.889122
-8    B    2  4.824471</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="breve-aula-sobre-sql-3" class="slide level2">
-<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
-<p>A função sqldf() cria um novo dataframe baseado na seleção feita pela linguagem SQL, que é muito simples.<br>
-Exemplos:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(sqldf)</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="co"># Seleciona todas as colunas (*) e todas as linhas</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2      col3
-1    A    0  2.009432
-2    A    3  8.910816
-3    A    3  8.738605
-4    A    1  7.486979
-5    B    0  9.574144
-6    B    0 11.712059
-7    B    0  6.889122
-8    B    2  4.824471</code></pre>
-</div>
-</div>
-</section>
-<section id="breve-aula-sobre-sql-4" class="slide level2">
-<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Seleciona apenas a primeira colunas e todas as linhas</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">sqldf</span>(<span class="st">'select col1 from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1
-1    A
-2    A
-3    A
-4    A
-5    B
-6    B
-7    B
-8    B</code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Seleciona as duas primeira colunas e todas as linhas</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">sqldf</span>(<span class="st">'select col1,col2 from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2
-1    A    0
-2    A    3
-3    A    3
-4    A    1
-5    B    0
-6    B    0
-7    B    0
-8    B    2</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="breve-aula-sobre-sql-5" class="slide level2">
-<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Filtro para as linhas (usando where)</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab where col1="A" '</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2     col3
-1    A    0 2.009432
-2    A    3 8.910816
-3    A    3 8.738605
-4    A    1 7.486979</code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Filtro para as linhas com operador booleano (and / or)</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab where col1="A" and col2=3'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2     col3
-1    A    3 8.910816
-2    A    3 8.738605</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab where col1="A" or col2=3'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 col2     col3
-1    A    0 2.009432
-2    A    3 8.910816
-3    A    3 8.738605
-4    A    1 7.486979</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="breve-aula-sobre-sql-6" class="slide level2">
-<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Cálculos de médias (avg), soma (sum), contagem (count) etc.</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="fu">sqldf</span>(<span class="st">'select avg(col3) from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  avg(col3)
-1  7.518203</code></pre>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Cálculos por grupos (usando group by)</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">sqldf</span>(<span class="st">'select avg(col3) from tab group by col1'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  avg(col3)
-1  6.786458
-2  8.249949</code></pre>
-</div>
-</div>
-</div>
-<div class="fragment">
-<div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Adicionando col1</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">sqldf</span>(<span class="st">'select col1, avg(col3) from tab group by col1'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>  col1 avg(col3)
-1    A  6.786458
-2    B  8.249949</code></pre>
-</div>
-</div>
-</div>
-</section>
-<section id="breve-aula-sobre-sql-7" class="slide level2">
-<h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
-<p>A sentença abaixo cria mesma tabela que usamos com <code>aggregate()</code> na aula passada.</p>
-<p><br> <code>sqldf('select setor, estacao, avg(abund) from dad group by setor,estacao')</code></p>
-<p><br> Vejam o arquivo R de exercícios desta aula.</p>
 
 <img src="images/furg3.png" class="slide-logo r-stretch"><div class="footer footer-default">
 
@@ -892,44 +585,6 @@ Exemplos:</p>
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {

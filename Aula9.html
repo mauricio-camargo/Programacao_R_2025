@@ -554,7 +554,7 @@ Exemplos:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(sqldf)</span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="co"># Seleciona todas as colunas (*) e todas as linhas</span></span>
-<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="fu">sqldf</span>(<span class="st">'SELECT * FROM tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  col1 col2      col3
 1    A    0  2.009432
@@ -572,7 +572,7 @@ Exemplos:</p>
 <h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="co"># Seleciona apenas a primeira colunas e todas as linhas</span></span>
-<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">sqldf</span>(<span class="st">'select col1 from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="fu">sqldf</span>(<span class="st">'SELECT col1 FROM tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  col1
 1    A
@@ -588,7 +588,7 @@ Exemplos:</p>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="co"># Seleciona as duas primeira colunas e todas as linhas</span></span>
-<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">sqldf</span>(<span class="st">'select col1,col2 from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fu">sqldf</span>(<span class="st">'SELECT col1,col2 FROM tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  col1 col2
 1    A    0
@@ -607,7 +607,7 @@ Exemplos:</p>
 <h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="co"># Filtro para as linhas (usando where)</span></span>
-<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab where col1="A" '</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="fu">sqldf</span>(<span class="st">'SELECT * FROM tab WHERE col1="A" '</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  col1 col2     col3
 1    A    0 2.009432
@@ -619,13 +619,13 @@ Exemplos:</p>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a><span class="co"># Filtro para as linhas com operador booleano (and / or)</span></span>
-<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab where col1="A" and col2=3'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="fu">sqldf</span>(<span class="st">'SELECT * FROM tab WHERE col1="A" and col2=3'</span>)</span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  col1 col2     col3
 1    A    3 8.910816
 2    A    3 8.738605</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">sqldf</span>(<span class="st">'select * from tab where col1="A" or col2=3'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a><span class="fu">sqldf</span>(<span class="st">'SELECT * FROM tab WHERE col1="A" or col2=3'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  col1 col2     col3
 1    A    0 2.009432
@@ -640,18 +640,18 @@ Exemplos:</p>
 <h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1"></a><span class="co"># Cálculos de médias (avg), soma (sum), contagem (count) etc.</span></span>
-<span id="cb21-2"><a href="#cb21-2"></a><span class="fu">sqldf</span>(<span class="st">'select avg(col3) from tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="fu">sqldf</span>(<span class="st">'SELECT AVG(col3) FROM tab'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  avg(col3)
+<pre><code>  AVG(col3)
 1  7.518203</code></pre>
 </div>
 </div>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1"></a><span class="co"># Cálculos por grupos (usando group by)</span></span>
-<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">sqldf</span>(<span class="st">'select avg(col3) from tab group by col1'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="fu">sqldf</span>(<span class="st">'SELECT AVG(col3) FROM tab GROUP BY col1'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  avg(col3)
+<pre><code>  AVG(col3)
 1  6.786458
 2  8.249949</code></pre>
 </div>
@@ -660,19 +660,31 @@ Exemplos:</p>
 <div class="fragment">
 <div class="cell">
 <div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1"></a><span class="co"># Adicionando col1</span></span>
-<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">sqldf</span>(<span class="st">'select col1, avg(col3) from tab group by col1'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fu">sqldf</span>(<span class="st">'SELECT col1, AVG(col3) FROM tab GROUP BY col1'</span>) </span></code><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code>  col1 avg(col3)
+<pre><code>  col1 AVG(col3)
 1    A  6.786458
 2    B  8.249949</code></pre>
 </div>
 </div>
 </div>
 </section>
+<section id="resumo-das-sentenças-sql-desta-aula" class="slide level2">
+<h2><span style="font-size:34pt">Resumo das sentenças SQL desta aula</span></h2>
+<p>SELECT * FROM tab<br>
+SELECT col1 FROM tab<br>
+SELECT col1,col2 FROM tab<br>
+SELECT * FROM tab WHERE col1=“A”<br>
+SELECT * FROM tab WHERE col1=“A” and col2=3<br>
+SELECT * FROM tab WHERE col1=“A” or col2=3<br>
+SELECT AVG(col3) FROM tab<br>
+SELECT AVG(col3) FROM tab GROUP BY col1<br>
+SELECT col1, AVG(col3) FROM tab GROUP BY col1</p>
+</section>
 <section id="breve-aula-sobre-sql-7" class="slide level2">
 <h2><span style="font-size:34pt">Breve aula sobre SQL</span></h2>
 <p>A sentença abaixo cria mesma tabela que usamos com <code>aggregate()</code> na aula passada.</p>
-<p><br> <code>sqldf('select setor, estacao, avg(abund) from dad group by setor,estacao')</code></p>
+<p><br> <code>sqldf('SELECT setor, estacao, AVG(abund) FROM dad GROUP BY setor,estacao')</code></p>
 <p><br> Vejam o arquivo R de exercícios desta aula.</p>
 
 <img src="images/furg3.png" class="slide-logo r-stretch"><div class="footer footer-default">
