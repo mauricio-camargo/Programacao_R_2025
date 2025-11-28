@@ -1,32 +1,37 @@
 #### EXERCÍCIO 1 ####
-# 1.1. Baixar a planilha e armazenar
-library(readxl)
-dados = read_excel('plan1.xlsx')
+# 1.1. Abrir a planilha
+dados = readxl::read_excel('plan1.xlsx')
 dados
-# 1.3. Criando novos dataframes
+# 1.3. Criar novas planilhas
 fat = dados[,1:3]
 fat
 abio = dados[,4:6]
 abio
-bio = dados[7:9]
+bio = dados[,7:9]
 bio
 # 1.4. Criando coluna abund
-dados$abund = dados$sp1+dados$sp2+dados$sp3
-# 1.5. Criando coluna riqueza (primeiro crie vetores de presença-ausência para cada espécie usando ifelse, depois some os vetores))
+dados$abund = dados$sp1 + dados$sp2 + dados$sp3
+# 1.5. Criando coluna riqueza (primeiro calcule a presença-ausência de cada espécie, depois some todas as linhas)
 sp1 = ifelse(dados$sp1 > 0, 1, 0)
+sp1
 sp2 = ifelse(dados$sp2 > 0, 1, 0)
 sp3 = ifelse(dados$sp3 > 0, 1, 0)
 dados$riqueza = sp1+sp2+sp3
-# 1.6. Criando novo dataframe de índices
+dados$riqueza
+
+# 1.6. Criando dataframe de índices
 indices = data.frame(dados$abund,dados$riqueza)
-# 1.7. Extraindo as médias de salinidade para cada local
-localA = dados[dados$local == 'A',]
+indices
+
+# 1.7. Extraindo a média de salinidade para cada local
+localA = dados[dados$local=='A',]
 mean(localA$sal)
-localB = dados[dados$local == 'B',]
+localB = dados[dados$local=='B',]
 mean(localB$sal)
-localC = dados[dados$local == 'C',]
+localC = dados[dados$local=='C',]
 mean(localC$sal)
-# 1.8. Extraindo as médias de temperatura para cada estação
+
+# 1.8. Extraindo a média de temperatura para cada estação 
 estacaoC = dados[dados$estacao == 'C',]
 mean(estacaoC$temp)
 estacaoS = dados[dados$estacao == 'S',]
@@ -35,17 +40,11 @@ mean(estacaoS$temp)
 # Média da temperatura por local
 aggregate(temp ~ local, data = dados, FUN = mean)
 
-# Desvio padrão da temperatura por local
-aggregate(temp ~ local, data = dados, FUN = sd)
+# Quantas amostras tenho por local?
+aggregate(temp ~ local, data = dados, FUN = length)
 
 # Média da salinidade por local E estação
 aggregate(sal ~ local + estacao, data = dados, FUN = mean)
-
-# Soma da abundância por estação
-aggregate(sp1 ~ estacao, data = dados, FUN = sum)
-
-# Quantas amostras tenho por local?
-aggregate(temp ~ local, data = dados, FUN = length)
 
 # Para selecionar várias colunas para mostrar: 
 aggregate(dados[, c("temp", "sal", "pH")],
@@ -54,30 +53,32 @@ aggregate(dados[, c("temp", "sal", "pH")],
            data = dados,
            FUN = mean)
 
-#### Exercício 2 ####
-# 2.1. Abrir e armazenar a planilha limno.xlsx
+library(sqldf)
+sqldf('select local, estacao, avg(temp),avg(sal),avg(pH) from dados group by local, estacao') 
+
+#### EXERCÍCIO 2 ####
+# 2.1. Abrindo e armazenando a planilha
 dad = readxl::read_excel('limno.xlsx')
-dad
+View(dad)
 # 2.3. Criando novos dataframes
 fat = dad[,1:4]
-fat
-bio = dad[,4:24]
-bio
+bio = dad[,5:24]
 abio = dad[,25:30]
-abio
-# 2.3. Criando coluna abund
+# 2.4. 
+View(bio)
 dad$abund = rowSums(bio)
-# 2.4. Criando um dataframe para cada estação 
-chuva = dad[dad$estacao == 'C',]
-seca = dad[dad$estacao == 'S',]
-# 2.5. Extraindo a média da abundância da combinação estacao e setor
-mediasAbundAgg = aggregate(dad[,"abund"],
-                by = list(Setor = dad$setor,
-                          Estacao = dad$estacao),
-                data = dad,
-                FUN = mean)
-mediasAbundAgg
+dad$abund
+# 2.5.
+verao = dad[dad$estacao == 'Verão',]
+veraoSQL = sqldf('select * from dad where estacao="Verão"')
+veraoSQL
+inverno = dad[dad$estacao == 'Inverno',]
+invernoSQL = sqldf('select * from dad where estacao="Inverno"')
+primavera = dad[dad$estacao == 'Primavera',]
+primaveraSQL = sqldf('select * from dad where estacao="Primavera"')
+outono = dad[dad$estacao == 'Outono',]
+outonoSQL = sqldf('select * from dad where estacao="Outono"')
 
-# A sentença SQL abaixo cria mesma tabela (próxima aula). 
-mediasAbundSQL = sqldf('select setor, estacao, avg(abund) from dad group by setor,estacao')
-mediasAbundSQL
+# 2.6.
+aggregate(dad$abund ~ dad$setor + dad$estacao,data=dad,FUN=mean)
+sqldf('select setor,estacao,avg(abund) from dad group by setor,estacao')

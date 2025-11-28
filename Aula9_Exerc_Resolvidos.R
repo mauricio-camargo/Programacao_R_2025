@@ -20,6 +20,8 @@ sqldf('select col1,col2 from tab')
 sqldf('select * from tab where col1="A" ') 
 sqldf('select * from tab where col1="A" and col2=3')
 sqldf('select * from tab where col1="A" or col2=3') 
+# Cálculos de médias (avg), soma (sum), contagem (count) etc.  
+sqldf('select avg(col3) from tab')  
 # Cálculos por grupos (usando group by)
 sqldf('select avg(col3) from tab group by col1') 
 # Adicionando col1

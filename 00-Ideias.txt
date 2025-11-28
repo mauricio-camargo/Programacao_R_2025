@@ -1,0 +1,17 @@
+Mesmo com n muito baixo, vocês comporão minha amostra experimental para ensino de planilhagem com SQL.
+
+SQL envolve 5 chaves:
+
+Comentei na aula que SQL envolve meia dúzia de conceitos básicos.
+Na verdade, são só cinco! 
+SELECT    : Quais colunas (col1,col2)? Ou todas (*). 
+FROM      : Qual tabela?
+     Exemplo1: "SELECT * FROM dados"
+     Exemplo2: "SELECT col1,col2 FROM dados"
+WHERE     : Filtro usando operadores booleanos
+     Exemplo3: "SELECT * FROM dados WHERE col1 = 'A' and col2 > 100"
+GROUP BY  : Tipo aggregate() no R. É só elencar os fatores para agrupar e selecionar a função (FUN).
+     Exemplo4: "SELECT col1,avg(col3) from dados group by col1"
+JOIN      : Relacionar tabelas. Este é o desafio!
+
+
