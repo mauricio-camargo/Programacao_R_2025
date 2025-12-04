@@ -1,0 +1,17 @@
+Abra a planilha PoliquetasRS.xlsx e a armazene em um dataframe. 
+Esta tabela contém uma parte da lista de espécies de poliquetas da Bacia de Pelotas (RS) coletadas nos últimos 50 anos pela FURG. 
+Responda às perguntas a seguir, sempre usando a linguagem SQL, através do pacote sqldf.
+Envie as respostas em arquivo .R por e-mail.
+
+1. Quantos táxons existem no total? 
+2. Quais táxons ocorrem somente na região costeira?
+3. Quais táxons são comuns às regiões oceânica e de plataforma?
+4. Quais táxons possuem ampla distribuição em todas as regiões.
+6. A coluna "taxon" contém todas as informações sobre o gênero, espécie, autoria e ano. Crie uma nova coluna contendo apenas o nome do gênero e da espécie, concatenando a coluna "genero" com a coluna "especie". Pesquise como fazer concatenção de strings em SQL usando ||.
+4. Repare que muitos táxóns estão apenas no nível de gêneros ("sp."). Separe a planilha original em duas, uma contendo apenas s táxons a nível de gêneros e outra de táxons a nível de espécie. Pesquise sobre a cláusura LIKE para encontrar substrings ("sp.") dentro de uma string (da coluna "taxon"). 
+5. Quantos táxons existem a nível de espécie no total?
+6. Quantos táxons existem a nível de espécie na região costeira?
+7. Crie uma lista das famílias que aparecem na região. Pesquise sobre a cláusura DISTINCT para selecionar nomes únicos em SQL.
+8. Quantas famílias existem na região?
+9. Faça o mesmo para gêneros. Quantos gêneros existem na região.
+10. Crie uma função que se comunique com o WORMS para conferir se os nomes dos gêneros e das espécies estão atualizados. ISSO É UMA PIADA. NÂO TENTE ISSO EM CASA. Mas é possível de ser realizada em R. Só falta mão-de-obra! Afinal, para quê servem os alunos?

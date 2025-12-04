@@ -48,7 +48,7 @@ Palavra reservada  | Comentário
 
 ## <span style="font-size:34pt">Prática de SQL</span>
 
-**Exercício 1.**   
+**Exercício 1. Usando a planilha `plan1.xlsx` **   
 
 1.1. Abra a planilha plan1.xlsx (enviada por e-mail) usando o pacote `readxl` e armazene num dataframe chamado `dados`.
 
@@ -109,3 +109,41 @@ Palavra reservada  | Comentário
 :::{.fragment}  
 1.16. Crie um novo dataframe chamado `indices` contendo os novos índices de abundância e riqueza recém criados.
 :::
+
+## <span style="font-size:34pt">Prática de SQL</span>
+
+**Exercício 2.** Usando a planilha `planilha.TCC.xlsx`.
+
+2.1. Abra a planilha planilha.TCC.xlsx (enviada por e-mail) usando o pacote `readxl` e armazene num dataframe chamado `tcc`.
+
+:::{.fragment}  
+2.2. Criar um novo DF extraindo da planilha apenas as linhas que contêm dados para o Setor (Exclui as linhas com setor vazio).
+:::  
+
+:::{.fragment}  
+2.3. Criar uma planilha para cada estação do ano, chamadas verao, outono, primavera e inverno.
+:::  
+:::{.fragment}  
+2.4. Extrair a média da salinidade estre os setores.
+:::  
+
+## <span style="font-size:34pt">Prática de SQL</span>
+
+:::{.fragment}  
+2.5. Extrair a média da salinidade estre os locais.
+:::  
+:::{.fragment}  
+2.6. Extrair a média da salinidade estre os setores e estacao.
+:::  
+:::{.fragment}  
+2.7. Extrair as médias e os desvios padrão de salinidade e turbidez para a combinação setor e estacao.
+:::  
+:::{.fragment}  
+2.8. Criar um novo DF contendo mais uma coluna, correspondente ao Nitrogênio Total. 
+:::  
+:::{.fragment}  
+2.9. Crie um DF sem as amostras com clorofila igual a zero.  
+:::  
+:::{.fragment}  
+2.10. Extraia as amostras com sub-saturação (abaixo de 90)
+:::  
