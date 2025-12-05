@@ -142,7 +142,7 @@ Palavra reservada  | Comentário
 2.8. Criar um novo DF contendo mais uma coluna, correspondente ao Nitrogênio Total. 
 :::  
 :::{.fragment}  
-2.9. Crie um DF sem as amostras com clorofila igual a zero.  
+2.9. Crie um DF sem as amostras com clorofila igual a zero.
 :::  
 :::{.fragment}  
 2.10. Extraia as amostras com sub-saturação (abaixo de 90)
