@@ -1,0 +1,39 @@
+﻿A planilha rio_doce.xlsx contém dados simulados de nove variáveis de qualidade da água e metais (mg/L) coletadas em 35 pontos ao longo do Rio Doce, após o acidente com a barragem de Mariana em 2015. São 140 amostras de água tomadas durante 4 meses (outono e inverno), em vários municípios dos estados de MG e ES, em 5 segmentos do Rio (Alto, Médio1, Médio2, Baixo e Estuário) e de duas áreas: impactadas e não impactadas. 
+
+Nesta tarefa, cada aluno será responsável pela análise de uma única variável:
+
+Arthur: arsenio
+Bryan: chumbo
+Clara: niquel
+João: zinco
+Ketlen: sst
+Laura: nitrato
+Marcelo: cobalto
+Mariana: turbidez
+Professor: ssd
+
+Certifique-se que a tabela é um dataframe e que os fatores estão todos corretos:
+
+ponto: de 1 a 35
+mes: Maio, Junho, Julho e Agosto
+estacao: Outono e Inverno 
+segmento: Alto, Médio 1, Médio 2, Baixo e Estuário
+impacto: Sim e Não
+
+Responda, usando qualquer método para analisar sua variável (chamada "var"):
+
+1. Explore graficamente "var", criando histogramas, boxplot, qqplot e interprete a configuração da distribuição dos dados. O que acontece com as curvas se aplicamos um logarítmo a esses dados?
+
+2. Crie gráficos usando sciplot para explorar sua variável:
+- Entre segmentos apenas
+- Entre impactos apenas
+- Entre estações
+- Entre segmento e impacto
+- Entre impacto e mês.
+
+3. Qual a média da "var" entre os segmentos? 
+
+4. Qual o desvio padrão da "var" entre os segmentos e entre os impacto?
+
+5. Para a sua variável, faça uma tabela contendo a média e o desvio padrão entre as estações do ano, entre os segmentos e entre os impactos. 
+

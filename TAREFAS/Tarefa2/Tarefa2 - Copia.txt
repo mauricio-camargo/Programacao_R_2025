@@ -1,0 +1,73 @@
+﻿A planilha Rio_Doce.xlsx contém dados simulados de uma série de variáveis de qualidade da água e metais (mg/L) coletadas em 35 pontos ao longo do Rio Doce, após o acidente com a barragem de Mariana em 2015. São 140 amostras de água tomadas durante 4 meses, em vários municípios dos estados de MG e ES, em 5 segmentos do Rio (Alto, Médio1, Médio2, Baixo e Estuário) e de duas áreas: impactadas e não impactadas. 
+
+Nesta tarefa, você deverá analisar uma das variáveis da planilha, de acordo com a lista abaixo. Cada aluno será responsável pela análise de uma única variável:
+
+Josiana: arsenio
+Letícia: cadmio
+Bárbara: chumbo
+Gilvan: niquel
+Alex: zinco
+Bolton: sst
+Nuno: nitrato
+Thaís: aluminio
+Luisa: cobalto
+Marilia: ferro
+Mateus: manganes
+Mikael: turbidez
+Laura: ssd
+
+Você deverá fazer um relatório em PDF sobre a análise dos dados da sua variável, contendo os códigos do R, tabelas, gráficos, legendas e o seu texto. Não é necessário interpretar os resultados "ecológicos", apenas os resultados estatísticos. 
+
+Para criar o relatório, você pode copiar os gráficos e códigos do RStudio e colar no Word ou LibreOffice, e depois exportar o arquivo como PDF. Ou então, como desafio, você pode criar um arquivo PDF (ou html, ou mesmo um arquivo do Word) dentro do próprio RStudio, de uma maneira muito simples que pode ser aprendida pelo vídeo https://www.youtube.com/watch?v=ZNJTkjetPNU
+
+O relatório deverá conter os seguintes tópicos:
+
+1. Apresentação da sua variável. 
+Contextualize a sua variável dependente, que é contínua, com as variáveis independentes categóricas, que são os fatores e seus níveis:
+
+ponto: de 1 a 35
+mes: Maio, Junho, Julho e Agosto
+estacao: Outono e Inverno 
+segmento: Alto, Médio 1, Médio 2, Baixo e Estuário
+impacto: Sim e Não
+
+Use apenas um parágrafo curto para isso. Não é necessário contextualizar a realidade do acidente, nem local (mapas) ou detalhes não estatísticos.
+
+2. Busca por outliers, definidos como valores absurdos para a sua variável. 
+Caso os encontre, justifique sua decisão e substitua os outliers pela média do mesmo mês. 
+
+3. Tabelamento da sua variável. 
+A função aggregate() serve para extrair médias, variâncias, sd, etc, de dados agregados. 
+Veja os exemplos abaixo, supondo que o dataframe correspondente à planilha se chama "dados". 
+
+Exemplo A: Qual a média do chumbo entre os segmentos? 
+Resposta:
+aggregate(chumbo ~ segmento, data=dados, FUN=mean)
+
+Exemplo B: Qual a variância do chumbo entre os segmentos e entre os impacto?
+Resposta:
+aggregate(chumbo ~ segmento + impacto, data=dados, FUN=var)
+
+Para a sua variável, faça uma tabela contendo a média e o desvio padrão entre as estações do ano, entre os segmentos e entre os impactos. Não é necessário interpretar.
+
+4. Exploração gráfica da sua variável.
+Faça gráficos exploratórios para a sua variável, exceto o de pizza. Faça histogramas, boxplot e jitter. Coloque uma linha pontilhada vertical azul no valor da média do histograma. Não é necessário interpretar os gráficos.
+
+5. Verificação da normalidade da sua variável.
+Determine graficamente (histograma, boxplot, gráfico qqplot com ajuste) e através do teste de Shapiro se a sua variável se ajusta à distribuição normal ou não. Interprete os resultados...
+
+Caso a normalidade tenha sido rejeitada, proceda com a transformação de boxcox do pacote EnvStats. 
+Instale o pacote antes de usá-lo.
+
+Exemplo:
+library(EnvStats)
+boxcox(dados$chumbo,optimize=TRUE)
+#Use o valor resultante de lambda. A transformação consiste em elevar seus dados ao valor de lambda.
+
+6. Análises estatísticas.
+
+O objeto das análises estatísticas é responder à pergunta se existem diferenças significativas entre estações do ano, entre os impactos e entre os segmentos.
+
+Para cada fator (estacao, impacto e segmento), primeiro demonstre graficamente para a sua variável as diferenças entre as médias usando a gráficos de barra com média e erro padrão, através do pacote sciplot.
+
+Após, para cada fator, aplique uma análise estatística paramétrica adequada (mesmo que a normalidade não tenha sido alcançada com a transformação) para verificar as diferenças de médias entre os níveis dos fatores. Interprete os resultados.

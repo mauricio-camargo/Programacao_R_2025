@@ -17,7 +17,8 @@ gitcreds::gitcreds_set()
 -->
 
 ## Aulas e Arquivos
-Aula 10 (28 Nov 2025) [Online](Aula10.html) [PDF](Aula10.pdf) [Arquivo R](Aula10_Exerc_Resolvidos.R)  
+Aula 11 (04 Dez 2025) [Online](Aula11.html)  
+Aula 10 (28 Nov 2025) [Online](Aula10.html)  [PDF](Aula10.pdf) [Arquivo R](Aula10_Exerc_Resolvidos.R) [PoliquetasRS-a.xlsx](https://github.com/mauricio-camargo/Programacao_R_2025/raw/refs/heads/main/PoliquetasRS-a.xlsx)   
 Aula 9 (13 Nov 2025) [Online](Aula9.html) [PDF](Aula9.pdf) [Arquivo R](Aula9_Exerc_Resolvidos.R)  
 Aula 8 (31 Out 2025) [Online](Aula8.html) [PDF](Aula8.pdf) [Arquivo R](Aula8_Exerc_Resolvidos.R)  [plan1.xlsx](https://github.com/mauricio-camargo/Programacao_R_2025/raw/refs/heads/main/plan1.xlsx)   [limno.xlsx](https://github.com/mauricio-camargo/Programacao_R_2025/raw/refs/heads/main/limno.xlsx)  
 Aula 7 (17 Out 2025) [Online](Aula7.html)  [PDF](Aula7.pdf)  [Arquivo R](Aula7_Exerc_Resolvidos.R)  

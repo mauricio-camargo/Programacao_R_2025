@@ -1,0 +1,10 @@
+Análise de dados básica
+Robustez: média e mediana
+hist
+Medidas de tendência central
+boxplot
+Quartis
+sciplot
+Medidas de dispersão
+FUNÇÃO PARA FAZER VÁRIOS GRÁFICOS COM SCIPLOT
+

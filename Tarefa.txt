@@ -1,4 +1,4 @@
-Abra a planilha PoliquetasRS.xlsx e a armazene em um dataframe. 
+Abra a planilha PoliquetasRS-a.xlsx e a armazene em um dataframe. 
 Esta tabela contém uma parte da lista de espécies de poliquetas da Bacia de Pelotas (RS) coletadas nos últimos 50 anos pela FURG. 
 Responda às perguntas a seguir, sempre usando a linguagem SQL, através do pacote sqldf.
 Envie as respostas em arquivo .R por e-mail.
